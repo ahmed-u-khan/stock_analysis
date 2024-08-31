@@ -17,6 +17,7 @@ select
     , day_of_month
     , day_of_year
     , week_of_month
+    , format_date('%W', a_date) as week_number
     , trim(month_full) as month_full
     , lower(trim(month_full)) as month_full_lower_case
     , month_abbrev
