@@ -106,6 +106,40 @@ spy_2014_2024 as ( select * from {{ ref('base_spy_2014_2024') }} )
 
 
 
+
+
+, first_avg_daily_price_per_year as 
+(
+    select 
+        year_full
+        , avg_daily_price as avg_daily_price_year_start
+    from base
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY year_of_date ORDER BY date asc) = 1
+)
+
+, last_avg_daily_price_per_year as 
+(
+    select 
+        year_full
+        , avg_daily_price as avg_daily_price_year_end
+    from base
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY year_of_date ORDER BY date desc) = 1
+)
+
+, daily_price_movement_in_year as 
+(
+    select
+        year_full
+        , round(avg_daily_price_year_end - avg_daily_price_year_start,2) as avg_daily_price_movement_in_year
+        , round(((avg_daily_price_year_end/avg_daily_price_year_start)-1)*100.00,2) as avg_daily_price_movement_in_year_pct
+    from base
+    left join first_avg_daily_price_per_year using (year_full)
+    left join last_avg_daily_price_per_year using (year_full)
+)
+
+
+
+
 select
     distinct *
 from base
@@ -113,4 +147,5 @@ left join weekly_price using (year_full,week_number)
 left join monthly_price using (year_full,month_number)
 left join daily_price_movement_in_week using (year_full,week_number)
 left join daily_price_movement_in_month using (year_full,month_number)
+left join daily_price_movement_in_year using (year_full)
 
