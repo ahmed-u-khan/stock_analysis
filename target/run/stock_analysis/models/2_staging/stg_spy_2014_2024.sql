@@ -73,6 +73,7 @@ spy_2014_2024 as ( select * from `first-project-262802`.`stock_analysis`.`base_s
         year_full
         , week_number
         , round(avg_daily_price_week_end - avg_daily_price_week_start,2) as avg_daily_price_movement_in_week
+        , round(((avg_daily_price_week_end/avg_daily_price_week_start)-1)*100.00,2) as avg_daily_price_movement_in_week_pct
     from base
     left join first_avg_daily_price_per_week using (year_full,week_number)
     left join last_avg_daily_price_per_week using (year_full,week_number)
@@ -107,6 +108,7 @@ spy_2014_2024 as ( select * from `first-project-262802`.`stock_analysis`.`base_s
         year_full
         , month_number
         , round(avg_daily_price_month_end - avg_daily_price_month_start,2) as avg_daily_price_movement_in_month
+        , round(((avg_daily_price_month_end/avg_daily_price_month_start)-1)*100.00,2) as avg_daily_price_movement_in_month_pct
     from base
     left join first_avg_daily_price_per_month using (year_full,month_number)
     left join last_avg_daily_price_per_month using (year_full,month_number)
