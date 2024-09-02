@@ -1,8 +1,8 @@
 with 
 
-stock as ( select * from {{ ref('base_spy_2014_2024') }} )
+stock as ( select * from `first-project-262802`.`stock_analysis`.`base_spy_1993_2024` )
 
-, calendar as ( select * from {{ ref('stg_calendar') }} )
+, calendar as ( select * from `first-project-262802`.`stock_analysis`.`stg_calendar` )
 
 , base as 
 (
@@ -148,4 +148,3 @@ left join monthly_price using (year_full,month_number)
 left join daily_price_movement_in_week using (year_full,week_number)
 left join daily_price_movement_in_month using (year_full,month_number)
 left join daily_price_movement_in_year using (year_full)
-

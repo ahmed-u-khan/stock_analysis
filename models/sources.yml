@@ -6,6 +6,7 @@ sources:
     database: first-project-262802
     schema: stock
     tables:
-      - name: spy_2014_2024
       - name: 400_years_of_generated_dates_and_holidays
+      - name: spy_2014_2024
+      - name: spy_1993_2024
       

@@ -1,6 +1,6 @@
 with 
 
-stock as ( select * from {{ ref('base_spy_2014_2024') }} )
+stock as ( select * from {{ ref('base_spy_1993_2024') }} )
 
 , calendar as ( select * from {{ ref('stg_calendar') }} )
 
