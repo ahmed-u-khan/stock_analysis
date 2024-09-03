@@ -11,3 +11,35 @@ sources:
       - name: spy_2014_2024
       - name: spy_1993_2024
       - name: spus_2019_2024
+      - name: aapl
+      - name:	abbv
+      - name:	adbe
+      - name:	amd
+      - name:	amzn
+      - name:	avgo
+      - name:	bac
+      - name:	brk-b
+      - name:	cost
+      - name:	crm
+      - name:	cvx
+      - name:	goog
+      - name:	googl
+      - name:	hd
+      - name:	jnj
+      - name:	jpm
+      - name:	ko
+      - name:	lly
+      - name:	ma
+      - name:	meta
+      - name:	mrk
+      - name:	msft
+      - name:	nflx
+      - name:	nvda
+      - name:	pep
+      - name:	pg
+      - name:	tmo
+      - name:	tsla
+      - name:	unh
+      - name:	v
+      - name:	wmt
+      - name:	xom
