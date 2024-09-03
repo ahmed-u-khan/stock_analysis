@@ -44,6 +44,15 @@ stock as ( select * from `first-project-262802`.`stock_analysis`.`base_spy_1993_
     group by 1,2
 )
 
+, yearly_price as 
+(
+    select 
+        year_full
+        , round(avg(avg_daily_price),2) as avg_yearly_price
+    from base
+    group by 1
+)
+
 
 
 
@@ -156,6 +165,7 @@ select
 from base
 left join weekly_price using (year_full,week_number)
 left join monthly_price using (year_full,month_number)
+left join yearly_price using (year_full)
 left join daily_price_movement_in_week using (year_full,week_number)
 left join daily_price_movement_in_month using (year_full,month_number)
 left join daily_price_movement_in_year using (year_full)
