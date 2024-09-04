@@ -24057,3 +24057,860 @@ left join symbols_meta using (symbol)
 [0m16:44:28.836482 [debug] [MainThread]: Command `dbt run` succeeded at 16:44:28.836431 after 8.35 seconds
 [0m16:44:28.836728 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102934a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1541155b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c095b0>]}
 [0m16:44:28.836938 [debug] [MainThread]: Flushing usage events
+[0m09:31:33.225747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049c0b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106346e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106346280>]}
+
+
+============================== 09:31:33.228553 | 8d9c39ef-8540-4945-b487-52f1f8d4cfb1 ==============================
+[0m09:31:33.228553 [info ] [MainThread]: Running with dbt=1.8.2
+[0m09:31:33.228883 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:31:33.944380 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8d9c39ef-8540-4945-b487-52f1f8d4cfb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fcce670>]}
+[0m09:31:33.970209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8d9c39ef-8540-4945-b487-52f1f8d4cfb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fcdf3d0>]}
+[0m09:31:33.970491 [info ] [MainThread]: Registered adapter: bigquery=1.8.1
+[0m09:31:33.982561 [debug] [MainThread]: checksum: f0a141b9de567cb7f131613ba2682f40b3a1c6a157f81c6e5435862eff68f109, vars: {}, profile: , target: , version: 1.8.2
+[0m09:31:34.074876 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:31:34.075089 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:31:34.131792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8d9c39ef-8540-4945-b487-52f1f8d4cfb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13c950910>]}
+[0m09:31:34.147858 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8d9c39ef-8540-4945-b487-52f1f8d4cfb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fdfcee0>]}
+[0m09:31:34.148103 [info ] [MainThread]: Found 76 models, 37 sources, 469 macros
+[0m09:31:34.148293 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8d9c39ef-8540-4945-b487-52f1f8d4cfb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13c9318b0>]}
+[0m09:31:34.150586 [info ] [MainThread]: 
+[0m09:31:34.150874 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m09:31:34.155828 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_first-project-262802_stock_analysis'
+[0m09:31:34.156087 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:31:34.775973 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8d9c39ef-8540-4945-b487-52f1f8d4cfb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13c93a5e0>]}
+[0m09:31:34.776652 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m09:31:34.776953 [info ] [MainThread]: 
+[0m09:31:34.780723 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_aapl_1993_2024
+[0m09:31:34.781057 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_first-project-262802_stock_analysis, now model.stock_analysis.base_aapl_1993_2024)
+[0m09:31:34.781339 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_aapl_1993_2024
+[0m09:31:34.790140 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_aapl_1993_2024"
+[0m09:31:34.791999 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_aapl_1993_2024
+[0m09:31:34.792645 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_aapl_1993_2024
+[0m09:31:34.792971 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_abbv_2013_2024
+[0m09:31:34.793312 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_aapl_1993_2024, now model.stock_analysis.base_abbv_2013_2024)
+[0m09:31:34.793571 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_abbv_2013_2024
+[0m09:31:34.797175 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_abbv_2013_2024"
+[0m09:31:34.798059 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_abbv_2013_2024
+[0m09:31:34.798562 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_abbv_2013_2024
+[0m09:31:34.798829 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_adbe_1993_2024
+[0m09:31:34.799124 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_abbv_2013_2024, now model.stock_analysis.base_adbe_1993_2024)
+[0m09:31:34.799347 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_adbe_1993_2024
+[0m09:31:34.801498 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_adbe_1993_2024"
+[0m09:31:34.801907 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_adbe_1993_2024
+[0m09:31:34.802321 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_adbe_1993_2024
+[0m09:31:34.802585 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_amd_1993_2024
+[0m09:31:34.802844 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_adbe_1993_2024, now model.stock_analysis.base_amd_1993_2024)
+[0m09:31:34.803058 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_amd_1993_2024
+[0m09:31:34.804957 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_amd_1993_2024"
+[0m09:31:34.805727 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_amd_1993_2024
+[0m09:31:34.806111 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_amd_1993_2024
+[0m09:31:34.806342 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_amzn_1997_2024
+[0m09:31:34.806583 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_amd_1993_2024, now model.stock_analysis.base_amzn_1997_2024)
+[0m09:31:34.806786 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_amzn_1997_2024
+[0m09:31:34.808595 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_amzn_1997_2024"
+[0m09:31:34.808946 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_amzn_1997_2024
+[0m09:31:34.809321 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_amzn_1997_2024
+[0m09:31:34.809556 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_avgo_2009_2024
+[0m09:31:34.809794 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_amzn_1997_2024, now model.stock_analysis.base_avgo_2009_2024)
+[0m09:31:34.809999 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_avgo_2009_2024
+[0m09:31:34.811814 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_avgo_2009_2024"
+[0m09:31:34.812467 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_avgo_2009_2024
+[0m09:31:34.812839 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_avgo_2009_2024
+[0m09:31:34.813062 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_bac_1993_2024
+[0m09:31:34.813297 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_avgo_2009_2024, now model.stock_analysis.base_bac_1993_2024)
+[0m09:31:34.813488 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_bac_1993_2024
+[0m09:31:34.815277 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_bac_1993_2024"
+[0m09:31:34.815768 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_bac_1993_2024
+[0m09:31:34.816182 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_bac_1993_2024
+[0m09:31:34.816409 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_brk-b_1996_2024
+[0m09:31:34.816655 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_bac_1993_2024, now model.stock_analysis.base_brk-b_1996_2024)
+[0m09:31:34.816864 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_brk-b_1996_2024
+[0m09:31:34.818616 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_brk-b_1996_2024"
+[0m09:31:34.820229 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_brk-b_1996_2024
+[0m09:31:34.820593 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_brk-b_1996_2024
+[0m09:31:34.820812 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_calendar
+[0m09:31:34.821038 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_brk-b_1996_2024, now model.stock_analysis.base_calendar)
+[0m09:31:34.821226 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_calendar
+[0m09:31:34.823675 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_calendar"
+[0m09:31:34.824425 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_calendar
+[0m09:31:34.824783 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_calendar
+[0m09:31:34.824999 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_cost_1993_2024
+[0m09:31:34.825260 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_calendar, now model.stock_analysis.base_cost_1993_2024)
+[0m09:31:34.825462 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_cost_1993_2024
+[0m09:31:34.827110 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_cost_1993_2024"
+[0m09:31:34.827652 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_cost_1993_2024
+[0m09:31:34.827991 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_cost_1993_2024
+[0m09:31:34.828202 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_crm_2004_2024
+[0m09:31:34.828473 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_cost_1993_2024, now model.stock_analysis.base_crm_2004_2024)
+[0m09:31:34.828658 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_crm_2004_2024
+[0m09:31:34.830203 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_crm_2004_2024"
+[0m09:31:34.830766 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_crm_2004_2024
+[0m09:31:34.831109 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_crm_2004_2024
+[0m09:31:34.831313 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_cvx_1993_2024
+[0m09:31:34.831528 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_crm_2004_2024, now model.stock_analysis.base_cvx_1993_2024)
+[0m09:31:34.831706 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_cvx_1993_2024
+[0m09:31:34.833330 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_cvx_1993_2024"
+[0m09:31:34.833895 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_cvx_1993_2024
+[0m09:31:34.834235 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_cvx_1993_2024
+[0m09:31:34.834445 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_goog_2004_2024
+[0m09:31:34.834663 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_cvx_1993_2024, now model.stock_analysis.base_goog_2004_2024)
+[0m09:31:34.834838 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_goog_2004_2024
+[0m09:31:34.836403 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_goog_2004_2024"
+[0m09:31:34.836953 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_goog_2004_2024
+[0m09:31:34.837287 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_goog_2004_2024
+[0m09:31:34.837496 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_googl_2004_2024
+[0m09:31:34.837706 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_goog_2004_2024, now model.stock_analysis.base_googl_2004_2024)
+[0m09:31:34.837884 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_googl_2004_2024
+[0m09:31:34.839442 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_googl_2004_2024"
+[0m09:31:34.839920 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_googl_2004_2024
+[0m09:31:34.840232 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_googl_2004_2024
+[0m09:31:34.840425 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_hd_1993_2024
+[0m09:31:34.840625 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_googl_2004_2024, now model.stock_analysis.base_hd_1993_2024)
+[0m09:31:34.840796 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_hd_1993_2024
+[0m09:31:34.842322 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_hd_1993_2024"
+[0m09:31:34.842792 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_hd_1993_2024
+[0m09:31:34.843109 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_hd_1993_2024
+[0m09:31:34.843300 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_jnj_1993_2024
+[0m09:31:34.843497 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_hd_1993_2024, now model.stock_analysis.base_jnj_1993_2024)
+[0m09:31:34.843668 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_jnj_1993_2024
+[0m09:31:34.845184 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_jnj_1993_2024"
+[0m09:31:34.845484 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_jnj_1993_2024
+[0m09:31:34.845802 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_jnj_1993_2024
+[0m09:31:34.845997 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_jpm_1993_2024
+[0m09:31:34.846197 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_jnj_1993_2024, now model.stock_analysis.base_jpm_1993_2024)
+[0m09:31:34.846368 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_jpm_1993_2024
+[0m09:31:34.848583 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_jpm_1993_2024"
+[0m09:31:34.849569 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_jpm_1993_2024
+[0m09:31:34.849884 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_jpm_1993_2024
+[0m09:31:34.850071 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_ko_1993_2024
+[0m09:31:34.850270 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_jpm_1993_2024, now model.stock_analysis.base_ko_1993_2024)
+[0m09:31:34.850439 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_ko_1993_2024
+[0m09:31:34.851948 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_ko_1993_2024"
+[0m09:31:34.852556 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_ko_1993_2024
+[0m09:31:34.852863 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_ko_1993_2024
+[0m09:31:34.853053 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_lly_1993_2024
+[0m09:31:34.853245 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_ko_1993_2024, now model.stock_analysis.base_lly_1993_2024)
+[0m09:31:34.853408 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_lly_1993_2024
+[0m09:31:34.854841 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_lly_1993_2024"
+[0m09:31:34.855102 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_lly_1993_2024
+[0m09:31:34.855402 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_lly_1993_2024
+[0m09:31:34.855587 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_ma_2006_2024
+[0m09:31:34.855776 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_lly_1993_2024, now model.stock_analysis.base_ma_2006_2024)
+[0m09:31:34.855939 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_ma_2006_2024
+[0m09:31:34.857420 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_ma_2006_2024"
+[0m09:31:34.857860 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_ma_2006_2024
+[0m09:31:34.858167 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_ma_2006_2024
+[0m09:31:34.858356 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_meta_2012_2024
+[0m09:31:34.858549 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_ma_2006_2024, now model.stock_analysis.base_meta_2012_2024)
+[0m09:31:34.858714 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_meta_2012_2024
+[0m09:31:34.860207 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_meta_2012_2024"
+[0m09:31:34.860514 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_meta_2012_2024
+[0m09:31:34.860824 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_meta_2012_2024
+[0m09:31:34.861016 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_mrk_1993_2024
+[0m09:31:34.861208 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_meta_2012_2024, now model.stock_analysis.base_mrk_1993_2024)
+[0m09:31:34.861373 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_mrk_1993_2024
+[0m09:31:34.862794 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_mrk_1993_2024"
+[0m09:31:34.863049 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_mrk_1993_2024
+[0m09:31:34.863369 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_mrk_1993_2024
+[0m09:31:34.863561 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_msft_1993_2024
+[0m09:31:34.863754 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_mrk_1993_2024, now model.stock_analysis.base_msft_1993_2024)
+[0m09:31:34.863920 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_msft_1993_2024
+[0m09:31:34.865404 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_msft_1993_2024"
+[0m09:31:34.865809 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_msft_1993_2024
+[0m09:31:34.866119 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_msft_1993_2024
+[0m09:31:34.866304 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_nflx_1993_2024
+[0m09:31:34.866495 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_msft_1993_2024, now model.stock_analysis.base_nflx_1993_2024)
+[0m09:31:34.866663 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_nflx_1993_2024
+[0m09:31:34.868739 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_nflx_1993_2024"
+[0m09:31:34.869017 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_nflx_1993_2024
+[0m09:31:34.869323 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_nflx_1993_2024
+[0m09:31:34.869521 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_nvda_1999_2024
+[0m09:31:34.869744 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_nflx_1993_2024, now model.stock_analysis.base_nvda_1999_2024)
+[0m09:31:34.869938 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_nvda_1999_2024
+[0m09:31:34.871429 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_nvda_1999_2024"
+[0m09:31:34.871739 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_nvda_1999_2024
+[0m09:31:34.872048 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_nvda_1999_2024
+[0m09:31:34.872236 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_pep_1993_2024
+[0m09:31:34.872436 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_nvda_1999_2024, now model.stock_analysis.base_pep_1993_2024)
+[0m09:31:34.872608 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_pep_1993_2024
+[0m09:31:34.874105 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_pep_1993_2024"
+[0m09:31:34.874527 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_pep_1993_2024
+[0m09:31:34.874841 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_pep_1993_2024
+[0m09:31:34.875029 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_pg_1993_2024
+[0m09:31:34.875231 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_pep_1993_2024, now model.stock_analysis.base_pg_1993_2024)
+[0m09:31:34.875399 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_pg_1993_2024
+[0m09:31:34.876863 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_pg_1993_2024"
+[0m09:31:34.877137 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_pg_1993_2024
+[0m09:31:34.877443 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_pg_1993_2024
+[0m09:31:34.877631 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_spus_2019_2024
+[0m09:31:34.877827 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_pg_1993_2024, now model.stock_analysis.base_spus_2019_2024)
+[0m09:31:34.877993 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_spus_2019_2024
+[0m09:31:34.879440 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_spus_2019_2024"
+[0m09:31:34.879833 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_spus_2019_2024
+[0m09:31:34.880144 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_spus_2019_2024
+[0m09:31:34.880328 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_spy_1993_2024
+[0m09:31:34.880525 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_spus_2019_2024, now model.stock_analysis.base_spy_1993_2024)
+[0m09:31:34.880704 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_spy_1993_2024
+[0m09:31:34.882244 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_spy_1993_2024"
+[0m09:31:34.882658 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_spy_1993_2024
+[0m09:31:34.882971 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_spy_1993_2024
+[0m09:31:34.883156 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_spy_2014_2024
+[0m09:31:34.883356 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_spy_1993_2024, now model.stock_analysis.base_spy_2014_2024)
+[0m09:31:34.883521 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_spy_2014_2024
+[0m09:31:34.884912 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_spy_2014_2024"
+[0m09:31:34.885175 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_spy_2014_2024
+[0m09:31:34.885476 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_spy_2014_2024
+[0m09:31:34.885662 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_symbols_meta
+[0m09:31:34.885858 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_spy_2014_2024, now model.stock_analysis.base_symbols_meta)
+[0m09:31:34.886023 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_symbols_meta
+[0m09:31:34.888143 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_symbols_meta"
+[0m09:31:34.888716 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_symbols_meta
+[0m09:31:34.889021 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_symbols_meta
+[0m09:31:34.889205 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_tmo_1993_2024
+[0m09:31:34.889429 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_symbols_meta, now model.stock_analysis.base_tmo_1993_2024)
+[0m09:31:34.889606 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_tmo_1993_2024
+[0m09:31:34.891029 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_tmo_1993_2024"
+[0m09:31:34.891433 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_tmo_1993_2024
+[0m09:31:34.891742 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_tmo_1993_2024
+[0m09:31:34.891929 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_tsla_2010_2024
+[0m09:31:34.892176 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_tmo_1993_2024, now model.stock_analysis.base_tsla_2010_2024)
+[0m09:31:34.892344 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_tsla_2010_2024
+[0m09:31:34.893743 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_tsla_2010_2024"
+[0m09:31:34.894026 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_tsla_2010_2024
+[0m09:31:34.894333 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_tsla_2010_2024
+[0m09:31:34.894524 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_unh_1993_2024
+[0m09:31:34.894723 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_tsla_2010_2024, now model.stock_analysis.base_unh_1993_2024)
+[0m09:31:34.894889 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_unh_1993_2024
+[0m09:31:34.896348 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_unh_1993_2024"
+[0m09:31:34.896622 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_unh_1993_2024
+[0m09:31:34.896933 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_unh_1993_2024
+[0m09:31:34.897124 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_v_1993_2024
+[0m09:31:34.897327 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_unh_1993_2024, now model.stock_analysis.base_v_1993_2024)
+[0m09:31:34.897494 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_v_1993_2024
+[0m09:31:34.898888 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_v_1993_2024"
+[0m09:31:34.899284 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_v_1993_2024
+[0m09:31:34.899601 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_v_1993_2024
+[0m09:31:34.899786 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_wmt_1993_2024
+[0m09:31:34.899978 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_v_1993_2024, now model.stock_analysis.base_wmt_1993_2024)
+[0m09:31:34.900142 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_wmt_1993_2024
+[0m09:31:34.901599 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_wmt_1993_2024"
+[0m09:31:34.901869 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_wmt_1993_2024
+[0m09:31:34.902180 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_wmt_1993_2024
+[0m09:31:34.902370 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_xom_1993_2024
+[0m09:31:34.902561 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_wmt_1993_2024, now model.stock_analysis.base_xom_1993_2024)
+[0m09:31:34.902726 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_xom_1993_2024
+[0m09:31:34.904183 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_xom_1993_2024"
+[0m09:31:34.904438 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_xom_1993_2024
+[0m09:31:34.904744 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_xom_1993_2024
+[0m09:31:34.904941 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_calendar
+[0m09:31:34.905145 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.base_xom_1993_2024, now model.stock_analysis.stg_calendar)
+[0m09:31:34.905322 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_calendar
+[0m09:31:34.907204 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_calendar"
+[0m09:31:34.907871 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_calendar
+[0m09:31:34.908183 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_calendar
+[0m09:31:34.908367 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_symbols_meta
+[0m09:31:34.908631 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_calendar, now model.stock_analysis.stg_symbols_meta)
+[0m09:31:34.909861 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_symbols_meta
+[0m09:31:34.911336 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_symbols_meta"
+[0m09:31:34.911889 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_symbols_meta
+[0m09:31:34.912197 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_symbols_meta
+[0m09:31:34.912391 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_aapl_1993_2024
+[0m09:31:34.912590 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_symbols_meta, now model.stock_analysis.stg_aapl_1993_2024)
+[0m09:31:34.912752 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_aapl_1993_2024
+[0m09:31:34.914765 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_aapl_1993_2024"
+[0m09:31:34.915286 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_aapl_1993_2024
+[0m09:31:34.915613 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_aapl_1993_2024
+[0m09:31:34.915803 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_abbv_2013_2024
+[0m09:31:34.916003 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_aapl_1993_2024, now model.stock_analysis.stg_abbv_2013_2024)
+[0m09:31:34.916171 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_abbv_2013_2024
+[0m09:31:34.917988 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_abbv_2013_2024"
+[0m09:31:34.918552 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_abbv_2013_2024
+[0m09:31:34.918859 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_abbv_2013_2024
+[0m09:31:34.919042 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_adbe_1993_2024
+[0m09:31:34.919237 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_abbv_2013_2024, now model.stock_analysis.stg_adbe_1993_2024)
+[0m09:31:34.919399 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_adbe_1993_2024
+[0m09:31:34.921309 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_adbe_1993_2024"
+[0m09:31:34.921769 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_adbe_1993_2024
+[0m09:31:34.922089 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_adbe_1993_2024
+[0m09:31:34.922280 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_amd_1993_2024
+[0m09:31:34.922486 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_adbe_1993_2024, now model.stock_analysis.stg_amd_1993_2024)
+[0m09:31:34.922656 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_amd_1993_2024
+[0m09:31:34.924482 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_amd_1993_2024"
+[0m09:31:34.925155 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_amd_1993_2024
+[0m09:31:34.925466 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_amd_1993_2024
+[0m09:31:34.925657 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_amzn_1997_2024
+[0m09:31:34.925851 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_amd_1993_2024, now model.stock_analysis.stg_amzn_1997_2024)
+[0m09:31:34.926016 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_amzn_1997_2024
+[0m09:31:34.927832 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_amzn_1997_2024"
+[0m09:31:34.928369 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_amzn_1997_2024
+[0m09:31:34.928675 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_amzn_1997_2024
+[0m09:31:34.928862 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_avgo_2009_2024
+[0m09:31:34.929056 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_amzn_1997_2024, now model.stock_analysis.stg_avgo_2009_2024)
+[0m09:31:34.929227 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_avgo_2009_2024
+[0m09:31:34.931861 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_avgo_2009_2024"
+[0m09:31:34.932487 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_avgo_2009_2024
+[0m09:31:34.932800 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_avgo_2009_2024
+[0m09:31:34.932989 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_bac_1993_2024
+[0m09:31:34.933183 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_avgo_2009_2024, now model.stock_analysis.stg_bac_1993_2024)
+[0m09:31:34.933351 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_bac_1993_2024
+[0m09:31:34.935178 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_bac_1993_2024"
+[0m09:31:34.935957 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_bac_1993_2024
+[0m09:31:34.936266 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_bac_1993_2024
+[0m09:31:34.936451 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_brk-b_1996_2024
+[0m09:31:34.936645 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_bac_1993_2024, now model.stock_analysis.stg_brk-b_1996_2024)
+[0m09:31:34.936813 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_brk-b_1996_2024
+[0m09:31:34.938703 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_brk-b_1996_2024"
+[0m09:31:34.939219 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_brk-b_1996_2024
+[0m09:31:34.939538 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_brk-b_1996_2024
+[0m09:31:34.939728 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_cost_1993_2024
+[0m09:31:34.939927 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_brk-b_1996_2024, now model.stock_analysis.stg_cost_1993_2024)
+[0m09:31:34.940093 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_cost_1993_2024
+[0m09:31:34.941908 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_cost_1993_2024"
+[0m09:31:34.942345 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_cost_1993_2024
+[0m09:31:34.942655 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_cost_1993_2024
+[0m09:31:34.942839 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_crm_2004_2024
+[0m09:31:34.943036 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_cost_1993_2024, now model.stock_analysis.stg_crm_2004_2024)
+[0m09:31:34.943202 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_crm_2004_2024
+[0m09:31:34.945019 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_crm_2004_2024"
+[0m09:31:34.945552 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_crm_2004_2024
+[0m09:31:34.945879 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_crm_2004_2024
+[0m09:31:34.946073 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_cvx_1993_2024
+[0m09:31:34.946273 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_crm_2004_2024, now model.stock_analysis.stg_cvx_1993_2024)
+[0m09:31:34.946444 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_cvx_1993_2024
+[0m09:31:34.948326 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_cvx_1993_2024"
+[0m09:31:34.948764 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_cvx_1993_2024
+[0m09:31:34.949072 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_cvx_1993_2024
+[0m09:31:34.949259 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_goog_2004_2024
+[0m09:31:34.949452 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_cvx_1993_2024, now model.stock_analysis.stg_goog_2004_2024)
+[0m09:31:34.949615 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_goog_2004_2024
+[0m09:31:34.951397 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_goog_2004_2024"
+[0m09:31:34.951907 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_goog_2004_2024
+[0m09:31:34.952223 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_goog_2004_2024
+[0m09:31:34.952409 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_googl_2004_2024
+[0m09:31:34.952610 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_goog_2004_2024, now model.stock_analysis.stg_googl_2004_2024)
+[0m09:31:34.952775 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_googl_2004_2024
+[0m09:31:34.954603 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_googl_2004_2024"
+[0m09:31:34.955256 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_googl_2004_2024
+[0m09:31:34.955569 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_googl_2004_2024
+[0m09:31:34.955755 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_hd_1993_2024
+[0m09:31:34.955949 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_googl_2004_2024, now model.stock_analysis.stg_hd_1993_2024)
+[0m09:31:34.956117 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_hd_1993_2024
+[0m09:31:34.958663 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_hd_1993_2024"
+[0m09:31:34.959148 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_hd_1993_2024
+[0m09:31:34.959458 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_hd_1993_2024
+[0m09:31:34.959643 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_jnj_1993_2024
+[0m09:31:34.959839 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_hd_1993_2024, now model.stock_analysis.stg_jnj_1993_2024)
+[0m09:31:34.960006 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_jnj_1993_2024
+[0m09:31:34.961810 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_jnj_1993_2024"
+[0m09:31:34.962524 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_jnj_1993_2024
+[0m09:31:34.962831 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_jnj_1993_2024
+[0m09:31:34.963016 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_jpm_1993_2024
+[0m09:31:34.963235 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_jnj_1993_2024, now model.stock_analysis.stg_jpm_1993_2024)
+[0m09:31:34.963419 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_jpm_1993_2024
+[0m09:31:34.965214 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_jpm_1993_2024"
+[0m09:31:34.965847 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_jpm_1993_2024
+[0m09:31:34.966152 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_jpm_1993_2024
+[0m09:31:34.966338 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_ko_1993_2024
+[0m09:31:34.966534 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_jpm_1993_2024, now model.stock_analysis.stg_ko_1993_2024)
+[0m09:31:34.966699 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_ko_1993_2024
+[0m09:31:34.968538 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_ko_1993_2024"
+[0m09:31:34.969149 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_ko_1993_2024
+[0m09:31:34.969459 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_ko_1993_2024
+[0m09:31:34.969659 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_lly_1993_2024
+[0m09:31:34.969869 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_ko_1993_2024, now model.stock_analysis.stg_lly_1993_2024)
+[0m09:31:34.970041 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_lly_1993_2024
+[0m09:31:34.971886 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_lly_1993_2024"
+[0m09:31:34.972561 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_lly_1993_2024
+[0m09:31:34.972872 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_lly_1993_2024
+[0m09:31:34.973058 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_ma_2006_2024
+[0m09:31:34.973252 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_lly_1993_2024, now model.stock_analysis.stg_ma_2006_2024)
+[0m09:31:34.973419 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_ma_2006_2024
+[0m09:31:34.975268 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_ma_2006_2024"
+[0m09:31:34.975572 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_ma_2006_2024
+[0m09:31:34.975887 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_ma_2006_2024
+[0m09:31:34.976079 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_meta_2012_2024
+[0m09:31:34.976274 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_ma_2006_2024, now model.stock_analysis.stg_meta_2012_2024)
+[0m09:31:34.976439 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_meta_2012_2024
+[0m09:31:34.978275 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_meta_2012_2024"
+[0m09:31:34.978837 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_meta_2012_2024
+[0m09:31:34.979150 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_meta_2012_2024
+[0m09:31:34.979336 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_mrk_1993_2024
+[0m09:31:34.979528 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_meta_2012_2024, now model.stock_analysis.stg_mrk_1993_2024)
+[0m09:31:34.979693 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_mrk_1993_2024
+[0m09:31:34.982163 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_mrk_1993_2024"
+[0m09:31:34.982671 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_mrk_1993_2024
+[0m09:31:34.982979 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_mrk_1993_2024
+[0m09:31:34.983165 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_msft_1993_2024
+[0m09:31:34.983359 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_mrk_1993_2024, now model.stock_analysis.stg_msft_1993_2024)
+[0m09:31:34.983537 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_msft_1993_2024
+[0m09:31:34.985367 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_msft_1993_2024"
+[0m09:31:34.985830 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_msft_1993_2024
+[0m09:31:34.986135 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_msft_1993_2024
+[0m09:31:34.986320 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_nflx_1993_2024
+[0m09:31:34.986515 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_msft_1993_2024, now model.stock_analysis.stg_nflx_1993_2024)
+[0m09:31:34.986682 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_nflx_1993_2024
+[0m09:31:34.988470 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_nflx_1993_2024"
+[0m09:31:34.989017 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_nflx_1993_2024
+[0m09:31:34.989322 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_nflx_1993_2024
+[0m09:31:34.989507 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_nvda_1999_2024
+[0m09:31:34.989698 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_nflx_1993_2024, now model.stock_analysis.stg_nvda_1999_2024)
+[0m09:31:34.989865 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_nvda_1999_2024
+[0m09:31:34.991654 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_nvda_1999_2024"
+[0m09:31:34.992229 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_nvda_1999_2024
+[0m09:31:34.992535 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_nvda_1999_2024
+[0m09:31:34.992720 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_pep_1993_2024
+[0m09:31:34.992911 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_nvda_1999_2024, now model.stock_analysis.stg_pep_1993_2024)
+[0m09:31:34.993073 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_pep_1993_2024
+[0m09:31:34.994873 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_pep_1993_2024"
+[0m09:31:34.995555 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_pep_1993_2024
+[0m09:31:34.995862 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_pep_1993_2024
+[0m09:31:34.996051 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_pg_1993_2024
+[0m09:31:34.996251 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_pep_1993_2024, now model.stock_analysis.stg_pg_1993_2024)
+[0m09:31:34.996420 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_pg_1993_2024
+[0m09:31:34.998261 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_pg_1993_2024"
+[0m09:31:34.998885 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_pg_1993_2024
+[0m09:31:34.999196 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_pg_1993_2024
+[0m09:31:34.999382 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_spus_2019_2024
+[0m09:31:34.999582 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_pg_1993_2024, now model.stock_analysis.stg_spus_2019_2024)
+[0m09:31:34.999748 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_spus_2019_2024
+[0m09:31:35.001589 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_spus_2019_2024"
+[0m09:31:35.002003 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_spus_2019_2024
+[0m09:31:35.002312 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_spus_2019_2024
+[0m09:31:35.002497 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_spy_1993_2024
+[0m09:31:35.002690 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_spus_2019_2024, now model.stock_analysis.stg_spy_1993_2024)
+[0m09:31:35.002854 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_spy_1993_2024
+[0m09:31:35.005367 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_spy_1993_2024"
+[0m09:31:35.006476 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_spy_1993_2024
+[0m09:31:35.006806 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_spy_1993_2024
+[0m09:31:35.006998 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_spy_2014_2024
+[0m09:31:35.007217 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_spy_1993_2024, now model.stock_analysis.stg_spy_2014_2024)
+[0m09:31:35.007383 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_spy_2014_2024
+[0m09:31:35.009252 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_spy_2014_2024"
+[0m09:31:35.009824 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_spy_2014_2024
+[0m09:31:35.010155 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_spy_2014_2024
+[0m09:31:35.010352 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_tmo_1993_2024
+[0m09:31:35.010560 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_spy_2014_2024, now model.stock_analysis.stg_tmo_1993_2024)
+[0m09:31:35.010729 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_tmo_1993_2024
+[0m09:31:35.012608 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_tmo_1993_2024"
+[0m09:31:35.013178 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_tmo_1993_2024
+[0m09:31:35.013494 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_tmo_1993_2024
+[0m09:31:35.013682 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_tsla_2010_2024
+[0m09:31:35.013874 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_tmo_1993_2024, now model.stock_analysis.stg_tsla_2010_2024)
+[0m09:31:35.014040 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_tsla_2010_2024
+[0m09:31:35.015804 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_tsla_2010_2024"
+[0m09:31:35.016456 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_tsla_2010_2024
+[0m09:31:35.016762 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_tsla_2010_2024
+[0m09:31:35.016952 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_unh_1993_2024
+[0m09:31:35.017145 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_tsla_2010_2024, now model.stock_analysis.stg_unh_1993_2024)
+[0m09:31:35.017310 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_unh_1993_2024
+[0m09:31:35.019162 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_unh_1993_2024"
+[0m09:31:35.019632 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_unh_1993_2024
+[0m09:31:35.019953 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_unh_1993_2024
+[0m09:31:35.020146 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_v_1993_2024
+[0m09:31:35.020388 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_unh_1993_2024, now model.stock_analysis.stg_v_1993_2024)
+[0m09:31:35.020599 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_v_1993_2024
+[0m09:31:35.022641 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_v_1993_2024"
+[0m09:31:35.023173 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_v_1993_2024
+[0m09:31:35.023508 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_v_1993_2024
+[0m09:31:35.023698 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_wmt_1993_2024
+[0m09:31:35.023906 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_v_1993_2024, now model.stock_analysis.stg_wmt_1993_2024)
+[0m09:31:35.024075 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_wmt_1993_2024
+[0m09:31:35.025879 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_wmt_1993_2024"
+[0m09:31:35.026329 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_wmt_1993_2024
+[0m09:31:35.026653 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_wmt_1993_2024
+[0m09:31:35.026848 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_xom_1993_2024
+[0m09:31:35.027057 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_wmt_1993_2024, now model.stock_analysis.stg_xom_1993_2024)
+[0m09:31:35.027230 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_xom_1993_2024
+[0m09:31:35.029155 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_xom_1993_2024"
+[0m09:31:35.029692 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_xom_1993_2024
+[0m09:31:35.030017 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_xom_1993_2024
+[0m09:31:35.030386 [debug] [Thread-1  ]: Began running node model.stock_analysis.int_stock_analysis
+[0m09:31:35.030608 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_xom_1993_2024, now model.stock_analysis.int_stock_analysis)
+[0m09:31:35.030779 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.int_stock_analysis
+[0m09:31:35.037022 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.int_stock_analysis"
+[0m09:31:35.037709 [debug] [Thread-1  ]: Began executing node model.stock_analysis.int_stock_analysis
+[0m09:31:35.038025 [debug] [Thread-1  ]: Finished running node model.stock_analysis.int_stock_analysis
+[0m09:31:35.038322 [debug] [Thread-1  ]: Began running node model.stock_analysis.stock_analysis
+[0m09:31:35.038555 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.stock_analysis.int_stock_analysis, now model.stock_analysis.stock_analysis)
+[0m09:31:35.038751 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stock_analysis
+[0m09:31:35.040388 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stock_analysis"
+[0m09:31:35.041429 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stock_analysis
+[0m09:31:35.041891 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stock_analysis
+[0m09:31:35.042382 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:31:35.042560 [debug] [MainThread]: Connection 'model.stock_analysis.stock_analysis' was properly closed.
+[0m09:31:35.047155 [debug] [MainThread]: Command end result
+[0m09:31:35.114057 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m09:31:35.114262 [info ] [MainThread]: Building catalog
+[0m09:31:35.125183 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:31:36.173196 [debug] [ThreadPool]: Acquiring new bigquery connection 'first-project-262802.information_schema'
+[0m09:31:36.194704 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:31:36.267495 [debug] [ThreadPool]: On first-project-262802.information_schema: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "connection_name": "first-project-262802.information_schema"} */
+
+    with
+                table_shards as (
+                    
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `first-project-262802`.`stock_analysis`.__TABLES__ tables
+    left join `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+
+                    where (upper(tables.dataset_id) = upper('stock_analysis'))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.COLUMNS columns
+    join `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        columns.column_name,
+        columns.column_index,
+        columns.column_type,
+        columns.column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m09:31:37.098393 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:d26753e7-3b67-45f2-9de9-728885460c8d&page=queryresults
+[0m09:31:40.872326 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:31:40.930173 [debug] [ThreadPool]: On first-project-262802.information_schema: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "connection_name": "first-project-262802.information_schema"} */
+
+    with
+                table_shards as (
+                    
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `first-project-262802`.`stock`.__TABLES__ tables
+    left join `first-project-262802`.`stock`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `first-project-262802`.`stock`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+
+                    where (upper(tables.dataset_id) = upper('stock'))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `first-project-262802`.`stock`.INFORMATION_SCHEMA.COLUMNS columns
+    join `first-project-262802`.`stock`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        columns.column_name,
+        columns.column_index,
+        columns.column_type,
+        columns.column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m09:31:41.943034 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:9edd7728-c1af-418e-9ad3-92c9528ea73b&page=queryresults
+[0m09:31:44.506712 [info ] [MainThread]: Catalog written to /Users/ahmed/Desktop/dbt/stock_analysis/target/catalog.json
+[0m09:31:44.511175 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 11.335528, "process_user_time": 3.506383, "process_kernel_time": 2.707747, "process_mem_max_rss": "243892224", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m09:31:44.511664 [debug] [MainThread]: Command `dbt docs generate` succeeded at 09:31:44.511605 after 11.34 seconds
+[0m09:31:44.511867 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m09:31:44.512008 [debug] [MainThread]: Connection 'first-project-262802.information_schema' was properly closed.
+[0m09:31:44.512185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049c0b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f4fceb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13c93a3a0>]}
+[0m09:31:44.512389 [debug] [MainThread]: Flushing usage events
+[0m09:32:08.962140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103eccac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105850cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105850eb0>]}
+
+
+============================== 09:32:08.964610 | 94b0ed6b-8f4a-47e5-b897-886988e06ce0 ==============================
+[0m09:32:08.964610 [info ] [MainThread]: Running with dbt=1.8.2
+[0m09:32:08.964944 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt docs serve', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m09:32:09.486188 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '94b0ed6b-8f4a-47e5-b897-886988e06ce0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1041040a0>]}
+[0m09:32:09.514447 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '94b0ed6b-8f4a-47e5-b897-886988e06ce0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14cbdacd0>]}
