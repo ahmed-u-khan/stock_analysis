@@ -16,5 +16,9 @@ Please see the models section of this repo
 
 ### BI Insights
 
-Link to tableau workbook/bi_tool: 
+#### Annualized Returns: https://3422086f.us2a.app.preset.io/superset/dashboard/8/
+
+#### Average Returns by Month: https://3422086f.us2a.app.preset.io/superset/dashboard/9/
+
+#### Average Returns by Week: https://3422086f.us2a.app.preset.io/superset/dashboard/10/
 

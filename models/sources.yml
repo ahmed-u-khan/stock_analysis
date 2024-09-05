@@ -8,9 +8,12 @@ sources:
     tables:
       - name: 400_years_of_generated_dates_and_holidays
       - name: symbols_valid_meta
+      
       - name: spy_2014_2024
       - name: spy_1993_2024
       - name: spus_2019_2024
+      - name: hlal
+
       - name: aapl
       - name:	abbv
       - name:	adbe

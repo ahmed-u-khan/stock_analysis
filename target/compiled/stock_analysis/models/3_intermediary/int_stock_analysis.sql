@@ -1,8 +1,8 @@
 with
 
 spy as ( select * from `first-project-262802`.`stock_analysis`.`stg_spy_1993_2024` )
-
 , spus as ( select * from `first-project-262802`.`stock_analysis`.`stg_spus_2019_2024` )
+, hlal as ( select * from `first-project-262802`.`stock_analysis`.`stg_hlal_2019_2024` )
 
 , aapl as ( select * from `first-project-262802`.`stock_analysis`.`stg_aapl_1993_2024` )
 , abbv as ( select * from `first-project-262802`.`stock_analysis`.`stg_abbv_2013_2024` )
@@ -42,6 +42,9 @@ select * , 'SPY' as symbol from spy
 union all
 select * , 'SPUS' as symbol from spus
 union all
+select * , 'HLAL' as symbol from hlal
+union all
+
 select * , 'AAPL' as symbol from aapl
 union all
 select * , 'ABBV' as symbol from abbv
