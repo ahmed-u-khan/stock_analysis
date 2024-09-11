@@ -120,6 +120,10 @@ base_calendar as (select * from {{ ref('base_calendar') }} )
 select 
     base.*
 
+    , concat(base.year_full,'-',base.week_number) as year_week
+    , concat(base.year_full,'-',base.month_abbrev,'-',base.week_number) as year_month_week
+    , concat(base.year_full,'-',base.month_abbrev) as year_month
+
     , case when adding_first_working_day_of_year.is_first_working_day_of_year = TRUE then TRUE else FALSE end as is_first_working_day_of_year
     , case when adding_last_working_day_of_year.is_last_working_day_of_year = TRUE then TRUE else FALSE end as is_last_working_day_of_year 
     
