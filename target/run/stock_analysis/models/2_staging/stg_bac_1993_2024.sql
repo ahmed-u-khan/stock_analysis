@@ -30,6 +30,7 @@ stock as ( select * from `first-project-262802`.`stock_analysis`.`base_bac_1993_
         year_full
         , week_number
         , round(avg(avg_daily_price),2) as avg_weekly_price
+        , round(sum(volume)/7) as avg_weekly_volume
     from base
     group by 1,2
 )
