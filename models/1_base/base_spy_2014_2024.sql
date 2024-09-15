@@ -1,6 +1,7 @@
 select 
   date
   , close_last
+  -- , adj_close
   , volume
   , open
   , high
