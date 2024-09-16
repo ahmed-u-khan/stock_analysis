@@ -20,6 +20,9 @@ stock as ( select * from {{ ref('base_aapl_1993_2024') }} )
         , week_number
         , round(avg(avg_daily_price),2) as avg_weekly_price
         , round(sum(volume)/7) as avg_weekly_volume
+        -- , sum(volume) as total_weekly_volume
+        -- , max(volume) as max_weekly_volume
+        -- , min(volume) as min_weekly_volume
     from base
     group by 1,2
 )
