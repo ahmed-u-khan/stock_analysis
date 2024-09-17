@@ -55,7 +55,28 @@ select
     , dateShortInterest
     , heldPercentInsiders
     , heldPercentInstitutions
-    , shortRatio	
+    , shortRatio
+    , shortPercentOfFloat
+    , impliedSharesOutstanding
+    , bookValue
+    , priceToBook
+    , lastFiscalYearEnd
+    , nextFiscalYearEnd
+    , mostRecentQuarter
+    , netIncomeToCommon
+    , trailingEps
+    , forwardEps
+    , enterpriseToRevenue
+    , enterpriseToEbitda
+    -- , 52WeekChange
+    -- , SandP52WeekChange
+    , lastDividendValue
+    , lastDividendDate
+    , exchange
+    , quoteType
+    , symbol
+    , underlyingSymbol
+    , shortName
     , longName
     , firstTradeDateEpochUtc
     , timeZoneFullName
