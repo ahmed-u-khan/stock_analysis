@@ -34,7 +34,7 @@
     , maxAge
     , priceHint
     , previousClose
-    , open
+    , open as open_price_from_stock_info
     , dayLow
     , dayHigh
     , regularMarketPreviousClose
@@ -44,7 +44,7 @@
     , exDividendDate
     , beta
     , forwardPE
-    , volume
+    , volume as volume_from_stock_info
     , regularMarketVolume
     , averageVolume
     , averageVolume10days
