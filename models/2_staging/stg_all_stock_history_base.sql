@@ -1,6 +1,6 @@
 with 
 
-stock as ( select * from {{ ref('base_all_nasdaq_stock_history') }} )
+stock as ( select * from {{ ref('stg_all_stock_history') }} )
 
 , calendar as ( select * from {{ ref('stg_calendar') }} )
 

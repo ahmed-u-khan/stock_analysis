@@ -1,6 +1,6 @@
 with 
 
-base as ( select * from {{ ref('stg_nasdaq_history_base') }} )
+base as ( select * from {{ ref('stg_all_stock_history_base') }} )
 
 , first_avg_daily_price_per_month as 
 (

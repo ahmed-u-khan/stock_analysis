@@ -19,7 +19,7 @@
     , 'Adj Close' as adj_close
     , Volume as volume
     , Symbol as symbol
-    , ETL_Date as etl_date
+    , date(ETL_Date) as etl_date
 from `first-project-262802`.`stock`.`all_others_stock_history`
     );
   
