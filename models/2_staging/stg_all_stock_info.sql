@@ -1,5 +1,5 @@
-select * from {{ ref('stg_all_nasdaq_stock_info') }}
+{{ dbt_utils.union_relations(
 
-union all
+    relations=[ref('stg_all_nasdaq_stock_info'), ref('stg_all_others_stock_info')]
 
-select * from {{ ref('stg_all_others_stock_info') }}
+) }}

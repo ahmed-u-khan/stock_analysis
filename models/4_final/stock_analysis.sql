@@ -1,10 +1,10 @@
 with
 
-stock_analysis as ( select * from {{ ref('int_all_stock_history') }} )
+stock_analysis as ( select * except (ETL_Date) from {{ ref('int_all_stock_history') }} )
 
 -- , symbols_meta as ( select * from {{ ref('stg_symbols_meta') }} )
 
-, symbols_meta as ( select * from {{ ref('stg_all_stock_info') }} )
+, symbols_meta as ( select * except (ETL_Date) from {{ ref('stg_all_stock_info') }} )
 
 select
     *
