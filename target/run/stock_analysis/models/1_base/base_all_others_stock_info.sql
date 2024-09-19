@@ -1,4 +1,15 @@
-select
+
+  
+    
+
+    create or replace table `first-project-262802`.`stock_analysis`.`base_all_others_stock_info`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      select
     -- int64_field_0
     index
     , address1
@@ -138,4 +149,6 @@ select
     , industrySymbol
     , grossProfits
     , ETL_Date
-from {{ source('stock',  'all_others_stock_info') }}
+from `first-project-262802`.`stock`.`all_others_stock_info`
+    );
+  

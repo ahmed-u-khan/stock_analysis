@@ -138,4 +138,4 @@ select
     , industrySymbol
     , grossProfits
     , ETL_Date
-from {{ source('stock',  'all_others_stock_info') }}
+from `first-project-262802`.`stock`.`all_others_stock_info`
