@@ -8,9 +8,9 @@ Please see the models section of this repo
 
 ### Lineage
 
-![lineage created using dbt docs](https://i.postimg.cc/FKP10Wgj/Screenshot-2024-09-04-at-9-32-48-AM.png)
+![lineage created using dbt docs](https://i.postimg.cc/fWxLRsYt/Screenshot-2024-09-19-at-10-42-09-AM.png)
 
-[Link to Lineage](https://postimg.cc/1gq9QKdt)
+[Link to Lineage](https://i.postimg.cc/fWxLRsYt/Screenshot-2024-09-19-at-10-42-09-AM.png)
 
 ## Insights
 

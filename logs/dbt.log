@@ -60806,3 +60806,1702 @@ left join symbols_meta using (symbol)
 [0m10:26:46.399595 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt docs serve', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
 [0m10:26:46.871174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '762c17dd-2664-464e-b697-c208ac9eb86d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x139b37fa0>]}
 [0m10:26:46.897046 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '762c17dd-2664-464e-b697-c208ac9eb86d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b7f0d0>]}
+[0m10:32:05.217437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102af6b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105052d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105052f70>]}
+
+
+============================== 10:32:05.219896 | c0c7b147-07b6-4386-a730-fde744297900 ==============================
+[0m10:32:05.219896 [info ] [MainThread]: Running with dbt=1.8.2
+[0m10:32:05.220227 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt docs serve', 'send_anonymous_usage_stats': 'True'}
+[0m10:32:05.717600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c0c7b147-07b6-4386-a730-fde744297900', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102e2e130>]}
+[0m10:32:05.743297 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c0c7b147-07b6-4386-a730-fde744297900', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16aef8f40>]}
+[0m10:32:05.870152 [error] [MainThread]: Encountered an error:
+[Errno 48] Address already in use
+[0m10:32:05.884041 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/main.py", line 303, in docs_serve
+    results = task.run()
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/task/docs/serve.py", line 24, in run
+    with socketserver.TCPServer((host, port), SimpleHTTPRequestHandler) as httpd:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+
+[0m10:32:05.885564 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_wall_clock_time": 0.7152432, "process_user_time": 3.816285, "process_kernel_time": 0.167526, "process_mem_max_rss": "185253888", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m10:32:05.886176 [debug] [MainThread]: Command `dbt docs serve` failed at 10:32:05.886045 after 0.72 seconds
+[0m10:32:05.886490 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102af6b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1760eaa90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1760f2490>]}
+[0m10:32:05.886750 [debug] [MainThread]: Flushing usage events
+[0m10:32:16.475815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049b6b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e50e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e50280>]}
+
+
+============================== 10:32:16.477929 | 906d4c92-4ebb-4196-9289-d09af17460c5 ==============================
+[0m10:32:16.477929 [info ] [MainThread]: Running with dbt=1.8.2
+[0m10:32:16.478254 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/ahmed/.dbt', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt docs generate', 'send_anonymous_usage_stats': 'True'}
+[0m10:32:16.920695 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '906d4c92-4ebb-4196-9289-d09af17460c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e0e8b0>]}
+[0m10:32:16.946795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '906d4c92-4ebb-4196-9289-d09af17460c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x164ec2e20>]}
+[0m10:32:16.947094 [info ] [MainThread]: Registered adapter: bigquery=1.8.1
+[0m10:32:16.959187 [debug] [MainThread]: checksum: f0a141b9de567cb7f131613ba2682f40b3a1c6a157f81c6e5435862eff68f109, vars: {}, profile: , target: , version: 1.8.2
+[0m10:32:17.076214 [debug] [MainThread]: Partial parsing enabled: 64 files deleted, 0 files added, 0 files changed.
+[0m10:32:17.076646 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_lly_1993_2024.sql
+[0m10:32:17.076810 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_amd_1993_2024.sql
+[0m10:32:17.076952 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_jnj_1993_2024.sql
+[0m10:32:17.077082 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_brk-b_1996_2024.sql
+[0m10:32:17.077208 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_pep_1993_2024.sql
+[0m10:32:17.077331 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_bac_1993_2024.sql
+[0m10:32:17.077453 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_wmt_1993_2024.sql
+[0m10:32:17.077573 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_meta_2012_2024.sql
+[0m10:32:17.077691 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_v_1993_2024.sql
+[0m10:32:17.077810 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_nflx_1993_2024.sql
+[0m10:32:17.077927 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_ma_2006_2024.sql
+[0m10:32:17.078045 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_nflx_1993_2024.sql
+[0m10:32:17.078161 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_crm_2004_2024.sql
+[0m10:32:17.078276 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_crm_2004_2024.sql
+[0m10:32:17.078392 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_nvda_1999_2024.sql
+[0m10:32:17.078523 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_aapl_1993_2024.sql
+[0m10:32:17.078652 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_cvx_1993_2024.sql
+[0m10:32:17.078780 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_ko_1993_2024.sql
+[0m10:32:17.078899 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_mrk_1993_2024.sql
+[0m10:32:17.079017 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_amd_1993_2024.sql
+[0m10:32:17.079134 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_jpm_1993_2024.sql
+[0m10:32:17.079252 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_tsla_2010_2024.sql
+[0m10:32:17.079372 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_hd_1993_2024.sql
+[0m10:32:17.079489 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_cvx_1993_2024.sql
+[0m10:32:17.079606 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_pg_1993_2024.sql
+[0m10:32:17.079722 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_xom_1993_2024.sql
+[0m10:32:17.079837 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_goog_2004_2024.sql
+[0m10:32:17.079952 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_unh_1993_2024.sql
+[0m10:32:17.080067 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_wmt_1993_2024.sql
+[0m10:32:17.080180 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_adbe_1993_2024.sql
+[0m10:32:17.080296 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_xom_1993_2024.sql
+[0m10:32:17.080412 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_cost_1993_2024.sql
+[0m10:32:17.080528 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_abbv_2013_2024.sql
+[0m10:32:17.080644 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_goog_2004_2024.sql
+[0m10:32:17.080759 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_unh_1993_2024.sql
+[0m10:32:17.080875 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_avgo_2009_2024.sql
+[0m10:32:17.080990 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_meta_2012_2024.sql
+[0m10:32:17.081108 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_amzn_1997_2024.sql
+[0m10:32:17.081224 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_ko_1993_2024.sql
+[0m10:32:17.081345 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_pg_1993_2024.sql
+[0m10:32:17.081460 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_brk-b_1996_2024.sql
+[0m10:32:17.081579 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_hd_1993_2024.sql
+[0m10:32:17.081698 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_amzn_1997_2024.sql
+[0m10:32:17.081812 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_tmo_1993_2024.sql
+[0m10:32:17.081930 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_jpm_1993_2024.sql
+[0m10:32:17.082048 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_bac_1993_2024.sql
+[0m10:32:17.082164 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_nvda_1999_2024.sql
+[0m10:32:17.082280 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_ma_2006_2024.sql
+[0m10:32:17.082397 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_cost_1993_2024.sql
+[0m10:32:17.082510 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_googl_2004_2024.sql
+[0m10:32:17.082625 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_v_1993_2024.sql
+[0m10:32:17.082742 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_tsla_2010_2024.sql
+[0m10:32:17.082856 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_adbe_1993_2024.sql
+[0m10:32:17.082973 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_lly_1993_2024.sql
+[0m10:32:17.083087 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_mrk_1993_2024.sql
+[0m10:32:17.083200 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_aapl_1993_2024.sql
+[0m10:32:17.083315 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_jnj_1993_2024.sql
+[0m10:32:17.083427 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_tmo_1993_2024.sql
+[0m10:32:17.083540 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_msft_1993_2024.sql
+[0m10:32:17.083654 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_abbv_2013_2024.sql
+[0m10:32:17.083772 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_avgo_2009_2024.sql
+[0m10:32:17.083888 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_googl_2004_2024.sql
+[0m10:32:17.084002 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/2_staging/stg_pep_1993_2024.sql
+[0m10:32:17.084114 [debug] [MainThread]: Partial parsing: deleted file: stock_analysis://models/1_base/base_msft_1993_2024.sql
+[0m10:32:17.130311 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '906d4c92-4ebb-4196-9289-d09af17460c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x164efeb50>]}
+[0m10:32:17.138866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '906d4c92-4ebb-4196-9289-d09af17460c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x164e994c0>]}
+[0m10:32:17.139111 [info ] [MainThread]: Found 23 models, 40 sources, 469 macros
+[0m10:32:17.139298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '906d4c92-4ebb-4196-9289-d09af17460c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x164dddaf0>]}
+[0m10:32:17.140535 [info ] [MainThread]: 
+[0m10:32:17.140806 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m10:32:17.143646 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_first-project-262802_stock_analysis'
+[0m10:32:17.143831 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:32:17.654302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '906d4c92-4ebb-4196-9289-d09af17460c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x164f978e0>]}
+[0m10:32:17.655087 [info ] [MainThread]: Concurrency: 32 threads (target='prod')
+[0m10:32:17.655435 [info ] [MainThread]: 
+[0m10:32:17.660918 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_all_nasdaq_stock_history
+[0m10:32:17.661375 [debug] [Thread-2  ]: Began running node model.stock_analysis.base_all_nasdaq_stock_info
+[0m10:32:17.661735 [debug] [Thread-3  ]: Began running node model.stock_analysis.base_calendar
+[0m10:32:17.662108 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_first-project-262802_stock_analysis, now model.stock_analysis.base_all_nasdaq_stock_history)
+[0m10:32:17.662535 [debug] [Thread-4  ]: Began running node model.stock_analysis.base_hlal_2019_2024
+[0m10:32:17.662890 [debug] [Thread-5  ]: Began running node model.stock_analysis.base_spus_2019_2024
+[0m10:32:17.663216 [debug] [Thread-6  ]: Began running node model.stock_analysis.base_spy_1993_2024
+[0m10:32:17.663680 [debug] [Thread-2  ]: Acquiring new bigquery connection 'model.stock_analysis.base_all_nasdaq_stock_info'
+[0m10:32:17.664192 [debug] [Thread-7  ]: Began running node model.stock_analysis.base_symbols_meta
+[0m10:32:17.664911 [debug] [Thread-3  ]: Acquiring new bigquery connection 'model.stock_analysis.base_calendar'
+[0m10:32:17.665249 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_all_nasdaq_stock_history
+[0m10:32:17.665787 [debug] [Thread-4  ]: Acquiring new bigquery connection 'model.stock_analysis.base_hlal_2019_2024'
+[0m10:32:17.666239 [debug] [Thread-5  ]: Acquiring new bigquery connection 'model.stock_analysis.base_spus_2019_2024'
+[0m10:32:17.666723 [debug] [Thread-6  ]: Acquiring new bigquery connection 'model.stock_analysis.base_spy_1993_2024'
+[0m10:32:17.667064 [debug] [Thread-2  ]: Began compiling node model.stock_analysis.base_all_nasdaq_stock_info
+[0m10:32:17.667450 [debug] [Thread-7  ]: Acquiring new bigquery connection 'model.stock_analysis.base_symbols_meta'
+[0m10:32:17.667767 [debug] [Thread-3  ]: Began compiling node model.stock_analysis.base_calendar
+[0m10:32:17.674014 [debug] [Thread-4  ]: Began compiling node model.stock_analysis.base_hlal_2019_2024
+[0m10:32:17.676048 [debug] [Thread-5  ]: Began compiling node model.stock_analysis.base_spus_2019_2024
+[0m10:32:17.678774 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_all_nasdaq_stock_history"
+[0m10:32:17.679142 [debug] [Thread-6  ]: Began compiling node model.stock_analysis.base_spy_1993_2024
+[0m10:32:17.681883 [debug] [Thread-2  ]: Writing injected SQL for node "model.stock_analysis.base_all_nasdaq_stock_info"
+[0m10:32:17.682217 [debug] [Thread-7  ]: Began compiling node model.stock_analysis.base_symbols_meta
+[0m10:32:17.684520 [debug] [Thread-3  ]: Writing injected SQL for node "model.stock_analysis.base_calendar"
+[0m10:32:17.686635 [debug] [Thread-4  ]: Writing injected SQL for node "model.stock_analysis.base_hlal_2019_2024"
+[0m10:32:17.688620 [debug] [Thread-5  ]: Writing injected SQL for node "model.stock_analysis.base_spus_2019_2024"
+[0m10:32:17.690722 [debug] [Thread-6  ]: Writing injected SQL for node "model.stock_analysis.base_spy_1993_2024"
+[0m10:32:17.692999 [debug] [Thread-7  ]: Writing injected SQL for node "model.stock_analysis.base_symbols_meta"
+[0m10:32:17.693484 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_all_nasdaq_stock_history
+[0m10:32:17.693735 [debug] [Thread-2  ]: Began executing node model.stock_analysis.base_all_nasdaq_stock_info
+[0m10:32:17.694044 [debug] [Thread-3  ]: Began executing node model.stock_analysis.base_calendar
+[0m10:32:17.694416 [debug] [Thread-5  ]: Began executing node model.stock_analysis.base_spus_2019_2024
+[0m10:32:17.694914 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_all_nasdaq_stock_history
+[0m10:32:17.695129 [debug] [Thread-4  ]: Began executing node model.stock_analysis.base_hlal_2019_2024
+[0m10:32:17.695589 [debug] [Thread-2  ]: Finished running node model.stock_analysis.base_all_nasdaq_stock_info
+[0m10:32:17.695804 [debug] [Thread-6  ]: Began executing node model.stock_analysis.base_spy_1993_2024
+[0m10:32:17.695994 [debug] [Thread-7  ]: Began executing node model.stock_analysis.base_symbols_meta
+[0m10:32:17.696356 [debug] [Thread-3  ]: Finished running node model.stock_analysis.base_calendar
+[0m10:32:17.696734 [debug] [Thread-5  ]: Finished running node model.stock_analysis.base_spus_2019_2024
+[0m10:32:17.697203 [debug] [Thread-4  ]: Finished running node model.stock_analysis.base_hlal_2019_2024
+[0m10:32:17.697673 [debug] [Thread-6  ]: Finished running node model.stock_analysis.base_spy_1993_2024
+[0m10:32:17.697906 [debug] [Thread-9  ]: Began running node model.stock_analysis.stg_all_nasdaq_stock_info
+[0m10:32:17.698314 [debug] [Thread-7  ]: Finished running node model.stock_analysis.base_symbols_meta
+[0m10:32:17.698650 [debug] [Thread-11 ]: Began running node model.stock_analysis.stg_calendar
+[0m10:32:17.699080 [debug] [Thread-9  ]: Acquiring new bigquery connection 'model.stock_analysis.stg_all_nasdaq_stock_info'
+[0m10:32:17.699441 [debug] [Thread-11 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_calendar'
+[0m10:32:17.699657 [debug] [Thread-13 ]: Began running node model.stock_analysis.stg_symbols_meta
+[0m10:32:17.699874 [debug] [Thread-9  ]: Began compiling node model.stock_analysis.stg_all_nasdaq_stock_info
+[0m10:32:17.700081 [debug] [Thread-11 ]: Began compiling node model.stock_analysis.stg_calendar
+[0m10:32:17.700348 [debug] [Thread-13 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_symbols_meta'
+[0m10:32:17.702927 [debug] [Thread-9  ]: Writing injected SQL for node "model.stock_analysis.stg_all_nasdaq_stock_info"
+[0m10:32:17.705101 [debug] [Thread-11 ]: Writing injected SQL for node "model.stock_analysis.stg_calendar"
+[0m10:32:17.705343 [debug] [Thread-13 ]: Began compiling node model.stock_analysis.stg_symbols_meta
+[0m10:32:17.707184 [debug] [Thread-13 ]: Writing injected SQL for node "model.stock_analysis.stg_symbols_meta"
+[0m10:32:17.707531 [debug] [Thread-9  ]: Began executing node model.stock_analysis.stg_all_nasdaq_stock_info
+[0m10:32:17.707728 [debug] [Thread-11 ]: Began executing node model.stock_analysis.stg_calendar
+[0m10:32:17.708113 [debug] [Thread-9  ]: Finished running node model.stock_analysis.stg_all_nasdaq_stock_info
+[0m10:32:17.708498 [debug] [Thread-11 ]: Finished running node model.stock_analysis.stg_calendar
+[0m10:32:17.708693 [debug] [Thread-13 ]: Began executing node model.stock_analysis.stg_symbols_meta
+[0m10:32:17.709221 [debug] [Thread-13 ]: Finished running node model.stock_analysis.stg_symbols_meta
+[0m10:32:17.709434 [debug] [Thread-15 ]: Began running node model.stock_analysis.stg_hlal_2019_2024
+[0m10:32:17.709652 [debug] [Thread-16 ]: Began running node model.stock_analysis.stg_nasdaq_history_base
+[0m10:32:17.709848 [debug] [Thread-17 ]: Began running node model.stock_analysis.stg_spus_2019_2024
+[0m10:32:17.710054 [debug] [Thread-13 ]: Began running node model.stock_analysis.stg_spy_1993_2024
+[0m10:32:17.710328 [debug] [Thread-15 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_hlal_2019_2024'
+[0m10:32:17.710587 [debug] [Thread-16 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_nasdaq_history_base'
+[0m10:32:17.710842 [debug] [Thread-17 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_spus_2019_2024'
+[0m10:32:17.711061 [debug] [Thread-13 ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_symbols_meta, now model.stock_analysis.stg_spy_1993_2024)
+[0m10:32:17.711253 [debug] [Thread-15 ]: Began compiling node model.stock_analysis.stg_hlal_2019_2024
+[0m10:32:17.711433 [debug] [Thread-16 ]: Began compiling node model.stock_analysis.stg_nasdaq_history_base
+[0m10:32:17.711628 [debug] [Thread-17 ]: Began compiling node model.stock_analysis.stg_spus_2019_2024
+[0m10:32:17.711810 [debug] [Thread-13 ]: Began compiling node model.stock_analysis.stg_spy_1993_2024
+[0m10:32:17.713981 [debug] [Thread-15 ]: Writing injected SQL for node "model.stock_analysis.stg_hlal_2019_2024"
+[0m10:32:17.715808 [debug] [Thread-16 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_history_base"
+[0m10:32:17.717982 [debug] [Thread-17 ]: Writing injected SQL for node "model.stock_analysis.stg_spus_2019_2024"
+[0m10:32:17.720007 [debug] [Thread-13 ]: Writing injected SQL for node "model.stock_analysis.stg_spy_1993_2024"
+[0m10:32:17.720446 [debug] [Thread-15 ]: Began executing node model.stock_analysis.stg_hlal_2019_2024
+[0m10:32:17.720647 [debug] [Thread-16 ]: Began executing node model.stock_analysis.stg_nasdaq_history_base
+[0m10:32:17.721001 [debug] [Thread-15 ]: Finished running node model.stock_analysis.stg_hlal_2019_2024
+[0m10:32:17.721171 [debug] [Thread-13 ]: Began executing node model.stock_analysis.stg_spy_1993_2024
+[0m10:32:17.721357 [debug] [Thread-17 ]: Began executing node model.stock_analysis.stg_spus_2019_2024
+[0m10:32:17.721714 [debug] [Thread-16 ]: Finished running node model.stock_analysis.stg_nasdaq_history_base
+[0m10:32:17.722093 [debug] [Thread-13 ]: Finished running node model.stock_analysis.stg_spy_1993_2024
+[0m10:32:17.722430 [debug] [Thread-17 ]: Finished running node model.stock_analysis.stg_spus_2019_2024
+[0m10:32:17.722797 [debug] [Thread-19 ]: Began running node model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price
+[0m10:32:17.723012 [debug] [Thread-20 ]: Began running node model.stock_analysis.stg_nasdaq_monthly_price_movement
+[0m10:32:17.723205 [debug] [Thread-21 ]: Began running node model.stock_analysis.stg_nasdaq_weekly_price_movement
+[0m10:32:17.723402 [debug] [Thread-17 ]: Began running node model.stock_analysis.stg_nasdaq_yearly_price_movement
+[0m10:32:17.723666 [debug] [Thread-19 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price'
+[0m10:32:17.723916 [debug] [Thread-20 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_nasdaq_monthly_price_movement'
+[0m10:32:17.724150 [debug] [Thread-21 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_nasdaq_weekly_price_movement'
+[0m10:32:17.724345 [debug] [Thread-17 ]: Re-using an available connection from the pool (formerly model.stock_analysis.stg_spus_2019_2024, now model.stock_analysis.stg_nasdaq_yearly_price_movement)
+[0m10:32:17.724528 [debug] [Thread-19 ]: Began compiling node model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price
+[0m10:32:17.724708 [debug] [Thread-20 ]: Began compiling node model.stock_analysis.stg_nasdaq_monthly_price_movement
+[0m10:32:17.724881 [debug] [Thread-21 ]: Began compiling node model.stock_analysis.stg_nasdaq_weekly_price_movement
+[0m10:32:17.725053 [debug] [Thread-17 ]: Began compiling node model.stock_analysis.stg_nasdaq_yearly_price_movement
+[0m10:32:17.727400 [debug] [Thread-19 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price"
+[0m10:32:17.729085 [debug] [Thread-20 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_monthly_price_movement"
+[0m10:32:17.730702 [debug] [Thread-21 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_weekly_price_movement"
+[0m10:32:17.732231 [debug] [Thread-17 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_yearly_price_movement"
+[0m10:32:17.732649 [debug] [Thread-19 ]: Began executing node model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price
+[0m10:32:17.732834 [debug] [Thread-21 ]: Began executing node model.stock_analysis.stg_nasdaq_weekly_price_movement
+[0m10:32:17.733180 [debug] [Thread-19 ]: Finished running node model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price
+[0m10:32:17.733536 [debug] [Thread-21 ]: Finished running node model.stock_analysis.stg_nasdaq_weekly_price_movement
+[0m10:32:17.733712 [debug] [Thread-20 ]: Began executing node model.stock_analysis.stg_nasdaq_monthly_price_movement
+[0m10:32:17.733883 [debug] [Thread-17 ]: Began executing node model.stock_analysis.stg_nasdaq_yearly_price_movement
+[0m10:32:17.734269 [debug] [Thread-20 ]: Finished running node model.stock_analysis.stg_nasdaq_monthly_price_movement
+[0m10:32:17.734582 [debug] [Thread-17 ]: Finished running node model.stock_analysis.stg_nasdaq_yearly_price_movement
+[0m10:32:17.734934 [debug] [Thread-23 ]: Began running node model.stock_analysis.stg_all_nasdaq_stock_history
+[0m10:32:17.735209 [debug] [Thread-23 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_all_nasdaq_stock_history'
+[0m10:32:17.735416 [debug] [Thread-23 ]: Began compiling node model.stock_analysis.stg_all_nasdaq_stock_history
+[0m10:32:17.737396 [debug] [Thread-23 ]: Writing injected SQL for node "model.stock_analysis.stg_all_nasdaq_stock_history"
+[0m10:32:17.737706 [debug] [Thread-23 ]: Began executing node model.stock_analysis.stg_all_nasdaq_stock_history
+[0m10:32:17.738025 [debug] [Thread-23 ]: Finished running node model.stock_analysis.stg_all_nasdaq_stock_history
+[0m10:32:17.738330 [debug] [Thread-25 ]: Began running node model.stock_analysis.int_nasdaq
+[0m10:32:17.738550 [debug] [Thread-26 ]: Began running node model.stock_analysis.int_stock_analysis
+[0m10:32:17.738783 [debug] [Thread-25 ]: Acquiring new bigquery connection 'model.stock_analysis.int_nasdaq'
+[0m10:32:17.738958 [debug] [Thread-27 ]: Began running node model.stock_analysis.nasdaq
+[0m10:32:17.739215 [debug] [Thread-26 ]: Acquiring new bigquery connection 'model.stock_analysis.int_stock_analysis'
+[0m10:32:17.739378 [debug] [Thread-25 ]: Began compiling node model.stock_analysis.int_nasdaq
+[0m10:32:17.739597 [debug] [Thread-27 ]: Acquiring new bigquery connection 'model.stock_analysis.nasdaq'
+[0m10:32:17.739762 [debug] [Thread-26 ]: Began compiling node model.stock_analysis.int_stock_analysis
+[0m10:32:17.741425 [debug] [Thread-25 ]: Writing injected SQL for node "model.stock_analysis.int_nasdaq"
+[0m10:32:17.741609 [debug] [Thread-27 ]: Began compiling node model.stock_analysis.nasdaq
+[0m10:32:17.743459 [debug] [Thread-26 ]: Writing injected SQL for node "model.stock_analysis.int_stock_analysis"
+[0m10:32:17.745795 [debug] [Thread-27 ]: Writing injected SQL for node "model.stock_analysis.nasdaq"
+[0m10:32:17.746049 [debug] [Thread-25 ]: Began executing node model.stock_analysis.int_nasdaq
+[0m10:32:17.746386 [debug] [Thread-25 ]: Finished running node model.stock_analysis.int_nasdaq
+[0m10:32:17.746592 [debug] [Thread-26 ]: Began executing node model.stock_analysis.int_stock_analysis
+[0m10:32:17.746902 [debug] [Thread-26 ]: Finished running node model.stock_analysis.int_stock_analysis
+[0m10:32:17.747107 [debug] [Thread-27 ]: Began executing node model.stock_analysis.nasdaq
+[0m10:32:17.747443 [debug] [Thread-27 ]: Finished running node model.stock_analysis.nasdaq
+[0m10:32:17.747632 [debug] [Thread-29 ]: Began running node model.stock_analysis.stock_analysis
+[0m10:32:17.747897 [debug] [Thread-29 ]: Acquiring new bigquery connection 'model.stock_analysis.stock_analysis'
+[0m10:32:17.748060 [debug] [Thread-29 ]: Began compiling node model.stock_analysis.stock_analysis
+[0m10:32:17.749768 [debug] [Thread-29 ]: Writing injected SQL for node "model.stock_analysis.stock_analysis"
+[0m10:32:17.750061 [debug] [Thread-29 ]: Began executing node model.stock_analysis.stock_analysis
+[0m10:32:17.750379 [debug] [Thread-29 ]: Finished running node model.stock_analysis.stock_analysis
+[0m10:32:17.751095 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:32:17.751251 [debug] [MainThread]: Connection 'model.stock_analysis.base_all_nasdaq_stock_history' was properly closed.
+[0m10:32:17.751379 [debug] [MainThread]: Connection 'model.stock_analysis.base_all_nasdaq_stock_info' was properly closed.
+[0m10:32:17.751499 [debug] [MainThread]: Connection 'model.stock_analysis.base_calendar' was properly closed.
+[0m10:32:17.751617 [debug] [MainThread]: Connection 'model.stock_analysis.base_hlal_2019_2024' was properly closed.
+[0m10:32:17.751732 [debug] [MainThread]: Connection 'model.stock_analysis.base_spus_2019_2024' was properly closed.
+[0m10:32:17.751847 [debug] [MainThread]: Connection 'model.stock_analysis.base_spy_1993_2024' was properly closed.
+[0m10:32:17.751960 [debug] [MainThread]: Connection 'model.stock_analysis.base_symbols_meta' was properly closed.
+[0m10:32:17.752075 [debug] [MainThread]: Connection 'model.stock_analysis.stg_all_nasdaq_stock_info' was properly closed.
+[0m10:32:17.752188 [debug] [MainThread]: Connection 'model.stock_analysis.stg_calendar' was properly closed.
+[0m10:32:17.752301 [debug] [MainThread]: Connection 'model.stock_analysis.stg_spy_1993_2024' was properly closed.
+[0m10:32:17.752415 [debug] [MainThread]: Connection 'model.stock_analysis.stg_hlal_2019_2024' was properly closed.
+[0m10:32:17.752527 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_history_base' was properly closed.
+[0m10:32:17.752643 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_yearly_price_movement' was properly closed.
+[0m10:32:17.752755 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price' was properly closed.
+[0m10:32:17.752869 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_monthly_price_movement' was properly closed.
+[0m10:32:17.752981 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_weekly_price_movement' was properly closed.
+[0m10:32:17.753092 [debug] [MainThread]: Connection 'model.stock_analysis.stg_all_nasdaq_stock_history' was properly closed.
+[0m10:32:17.753203 [debug] [MainThread]: Connection 'model.stock_analysis.int_nasdaq' was properly closed.
+[0m10:32:17.753317 [debug] [MainThread]: Connection 'model.stock_analysis.int_stock_analysis' was properly closed.
+[0m10:32:17.753428 [debug] [MainThread]: Connection 'model.stock_analysis.nasdaq' was properly closed.
+[0m10:32:17.753546 [debug] [MainThread]: Connection 'model.stock_analysis.stock_analysis' was properly closed.
+[0m10:32:17.755092 [debug] [MainThread]: Command end result
+[0m10:32:17.810964 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m10:32:17.811146 [info ] [MainThread]: Building catalog
+[0m10:32:17.817809 [debug] [ThreadPool]: Acquiring new bigquery connection 'first-project-262802.information_schema'
+[0m10:32:17.829005 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:32:17.829307 [debug] [ThreadPool]: Acquiring new bigquery connection 'first-project-262802.information_schema'
+[0m10:32:17.889017 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:32:17.889579 [debug] [ThreadPool]: On first-project-262802.information_schema: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "connection_name": "first-project-262802.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `first-project-262802`.`stock_analysis`.__TABLES__ tables
+    left join `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('int_nasdaq')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_all_nasdaq_stock_history')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_spy_1993_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_monthly_price_movement')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_weekly_price_movement')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_spus_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_history_weekly_monthly_yearly_price')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_yearly_price_movement')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('nasdaq')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_all_nasdaq_stock_history')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_symbols_meta')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_all_nasdaq_stock_info')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('int_stock_analysis')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_history_base')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_spy_1993_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_spus_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_hlal_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_symbols_meta')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_calendar')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_hlal_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stock_analysis')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_calendar')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_all_nasdaq_stock_info')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.COLUMNS columns
+    join `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        columns.column_name,
+        columns.column_index,
+        columns.column_type,
+        columns.column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m10:32:17.950744 [debug] [ThreadPool]: On first-project-262802.information_schema: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "connection_name": "first-project-262802.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `first-project-262802`.`stock`.__TABLES__ tables
+    left join `first-project-262802`.`stock`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `first-project-262802`.`stock`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('crm')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('wmt')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('adbe')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('amzn')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('meta')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('brk-b')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('msft')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('cvx')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('mrk')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('400_years_of_generated_dates_and_holidays')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('ma')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('lly')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('symbols_valid_meta')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('all_nasdaq_stock_info')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('jnj')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('hlal')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('amd')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('aapl')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('nvda')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('spus_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('xom')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('abbv')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('nflx')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('tmo')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('bac')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('goog')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('googl')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('spy_2014_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('ko')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('all_nasdaq_stock_history')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('jpm')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('tsla')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('spy_1993_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('pg')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('unh')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('hd')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('avgo')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('pep')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('v')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('cost')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `first-project-262802`.`stock`.INFORMATION_SCHEMA.COLUMNS columns
+    join `first-project-262802`.`stock`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        columns.column_name,
+        columns.column_index,
+        columns.column_type,
+        columns.column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m10:32:18.707792 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:d15a56ff-7f22-4420-a720-bad71954409f&page=queryresults
+[0m10:32:18.778149 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:6ead32dc-326b-49ba-bd08-58ae661c3f5e&page=queryresults
+[0m10:32:23.240812 [info ] [MainThread]: Catalog written to /Users/ahmed/Desktop/dbt/stock_analysis/target/catalog.json
+[0m10:32:23.243253 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 6.8130164, "process_user_time": 5.23013, "process_kernel_time": 0.191836, "process_mem_max_rss": "221855744", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m10:32:23.243663 [debug] [MainThread]: Command `dbt docs generate` succeeded at 10:32:23.243610 after 6.81 seconds
+[0m10:32:23.243872 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m10:32:23.244010 [debug] [MainThread]: Connection 'first-project-262802.information_schema' was properly closed.
+[0m10:32:23.244134 [debug] [MainThread]: Connection 'first-project-262802.information_schema' was properly closed.
+[0m10:32:23.244301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049b6b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x164ec2e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x168619eb0>]}
+[0m10:32:23.244507 [debug] [MainThread]: Flushing usage events
+[0m10:32:32.684665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1020f6af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a7ad00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a7aee0>]}
+
+
+============================== 10:32:32.687119 | 2ce35a71-1683-4ed9-b51e-4206ddfe7a6b ==============================
+[0m10:32:32.687119 [info ] [MainThread]: Running with dbt=1.8.2
+[0m10:32:32.687436 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs serve', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m10:32:33.168711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2ce35a71-1683-4ed9-b51e-4206ddfe7a6b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10232b0d0>]}
+[0m10:32:33.194595 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2ce35a71-1683-4ed9-b51e-4206ddfe7a6b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a3bd30>]}
+[0m10:32:33.318156 [error] [MainThread]: Encountered an error:
+[Errno 48] Address already in use
+[0m10:32:33.330928 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/main.py", line 303, in docs_serve
+    results = task.run()
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/task/docs/serve.py", line 24, in run
+    with socketserver.TCPServer((host, port), SimpleHTTPRequestHandler) as httpd:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+
+[0m10:32:33.332534 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_wall_clock_time": 0.6948689, "process_user_time": 1.67345, "process_kernel_time": 2.442077, "process_mem_max_rss": "185171968", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m10:32:33.333063 [debug] [MainThread]: Command `dbt docs serve` failed at 10:32:33.332999 after 0.70 seconds
+[0m10:32:33.333320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1020f6af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138c5ea60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138c66460>]}
+[0m10:32:33.333561 [debug] [MainThread]: Flushing usage events
+[0m10:38:03.273512 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108536ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a992cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a992eb0>]}
+
+
+============================== 10:38:03.276234 | 49af3bef-29eb-4f23-abe0-d374e12f740a ==============================
+[0m10:38:03.276234 [info ] [MainThread]: Running with dbt=1.8.2
+[0m10:38:03.276595 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/ahmed/.dbt', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs serve', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:38:03.809621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '49af3bef-29eb-4f23-abe0-d374e12f740a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10886e0a0>]}
+[0m10:38:03.835361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '49af3bef-29eb-4f23-abe0-d374e12f740a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1627a45b0>]}
+[0m10:38:03.970435 [error] [MainThread]: Encountered an error:
+[Errno 48] Address already in use
+[0m10:38:03.982996 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/main.py", line 303, in docs_serve
+    results = task.run()
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/task/docs/serve.py", line 24, in run
+    with socketserver.TCPServer((host, port), SimpleHTTPRequestHandler) as httpd:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+
+[0m10:38:03.984528 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_wall_clock_time": 0.75889367, "process_user_time": 3.807035, "process_kernel_time": 0.16559, "process_mem_max_rss": "182042624", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m10:38:03.985035 [debug] [MainThread]: Command `dbt docs serve` failed at 10:38:03.984970 after 0.76 seconds
+[0m10:38:03.985290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108536ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x168a5ea30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x168a66430>]}
+[0m10:38:03.985511 [debug] [MainThread]: Flushing usage events
+[0m10:39:30.472185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1028f6af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10468ed00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10468eee0>]}
+
+
+============================== 10:39:30.474599 | bd68c335-e6a7-48cd-a733-3b6ae8e7e346 ==============================
+[0m10:39:30.474599 [info ] [MainThread]: Running with dbt=1.8.2
+[0m10:39:30.474917 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'debug': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt docs serve', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:39:30.970621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bd68c335-e6a7-48cd-a733-3b6ae8e7e346', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102c2e0d0>]}
+[0m10:39:30.996438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bd68c335-e6a7-48cd-a733-3b6ae8e7e346', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10464fd30>]}
+[0m10:39:31.132033 [error] [MainThread]: Encountered an error:
+[Errno 48] Address already in use
+[0m10:39:31.144281 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/cli/main.py", line 303, in docs_serve
+    results = task.run()
+  File "/Users/ahmed/Library/Python/3.9/lib/python/site-packages/dbt/task/docs/serve.py", line 24, in run
+    with socketserver.TCPServer((host, port), SimpleHTTPRequestHandler) as httpd:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
+
+[0m10:39:31.145829 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_wall_clock_time": 0.7201244, "process_user_time": 1.31537, "process_kernel_time": 2.686304, "process_mem_max_rss": "183189504", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m10:39:31.146280 [debug] [MainThread]: Command `dbt docs serve` failed at 10:39:31.146218 after 0.72 seconds
+[0m10:39:31.146539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1028f6af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x159e1ea60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x159e26460>]}
+[0m10:39:31.146773 [debug] [MainThread]: Flushing usage events
+[0m10:40:18.032407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10687ab20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108200e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108200280>]}
+
+
+============================== 10:40:18.034837 | 0851f17f-a1e3-459e-896c-be29392ccff2 ==============================
+[0m10:40:18.034837 [info ] [MainThread]: Running with dbt=1.8.2
+[0m10:40:18.035149 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:40:18.542836 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0851f17f-a1e3-459e-896c-be29392ccff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081bf8b0>]}
+[0m10:40:18.568998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0851f17f-a1e3-459e-896c-be29392ccff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x135402e20>]}
+[0m10:40:18.569292 [info ] [MainThread]: Registered adapter: bigquery=1.8.1
+[0m10:40:18.581447 [debug] [MainThread]: checksum: f0a141b9de567cb7f131613ba2682f40b3a1c6a157f81c6e5435862eff68f109, vars: {}, profile: , target: , version: 1.8.2
+[0m10:40:18.665661 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:40:18.665931 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:40:18.687268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0851f17f-a1e3-459e-896c-be29392ccff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x136c77130>]}
+[0m10:40:18.733033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0851f17f-a1e3-459e-896c-be29392ccff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13545bfa0>]}
+[0m10:40:18.733353 [info ] [MainThread]: Found 23 models, 40 sources, 469 macros
+[0m10:40:18.733558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0851f17f-a1e3-459e-896c-be29392ccff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13543fb50>]}
+[0m10:40:18.734883 [info ] [MainThread]: 
+[0m10:40:18.735187 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m10:40:18.738168 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_first-project-262802_stock_analysis'
+[0m10:40:18.738370 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:40:19.268086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0851f17f-a1e3-459e-896c-be29392ccff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13695af70>]}
+[0m10:40:19.268794 [info ] [MainThread]: Concurrency: 32 threads (target='prod')
+[0m10:40:19.269068 [info ] [MainThread]: 
+[0m10:40:19.274062 [debug] [Thread-1  ]: Began running node model.stock_analysis.base_all_nasdaq_stock_history
+[0m10:40:19.274427 [debug] [Thread-2  ]: Began running node model.stock_analysis.base_all_nasdaq_stock_info
+[0m10:40:19.274718 [debug] [Thread-3  ]: Began running node model.stock_analysis.base_calendar
+[0m10:40:19.275045 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_first-project-262802_stock_analysis, now model.stock_analysis.base_all_nasdaq_stock_history)
+[0m10:40:19.275467 [debug] [Thread-4  ]: Began running node model.stock_analysis.base_hlal_2019_2024
+[0m10:40:19.275799 [debug] [Thread-5  ]: Began running node model.stock_analysis.base_spus_2019_2024
+[0m10:40:19.276307 [debug] [Thread-2  ]: Acquiring new bigquery connection 'model.stock_analysis.base_all_nasdaq_stock_info'
+[0m10:40:19.276633 [debug] [Thread-6  ]: Began running node model.stock_analysis.base_spy_1993_2024
+[0m10:40:19.276944 [debug] [Thread-7  ]: Began running node model.stock_analysis.base_symbols_meta
+[0m10:40:19.277310 [debug] [Thread-3  ]: Acquiring new bigquery connection 'model.stock_analysis.base_calendar'
+[0m10:40:19.277605 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.base_all_nasdaq_stock_history
+[0m10:40:19.277934 [debug] [Thread-4  ]: Acquiring new bigquery connection 'model.stock_analysis.base_hlal_2019_2024'
+[0m10:40:19.278334 [debug] [Thread-5  ]: Acquiring new bigquery connection 'model.stock_analysis.base_spus_2019_2024'
+[0m10:40:19.278723 [debug] [Thread-2  ]: Began compiling node model.stock_analysis.base_all_nasdaq_stock_info
+[0m10:40:19.279124 [debug] [Thread-6  ]: Acquiring new bigquery connection 'model.stock_analysis.base_spy_1993_2024'
+[0m10:40:19.279463 [debug] [Thread-7  ]: Acquiring new bigquery connection 'model.stock_analysis.base_symbols_meta'
+[0m10:40:19.279739 [debug] [Thread-3  ]: Began compiling node model.stock_analysis.base_calendar
+[0m10:40:19.285714 [debug] [Thread-4  ]: Began compiling node model.stock_analysis.base_hlal_2019_2024
+[0m10:40:19.288283 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.base_all_nasdaq_stock_history"
+[0m10:40:19.288594 [debug] [Thread-5  ]: Began compiling node model.stock_analysis.base_spus_2019_2024
+[0m10:40:19.289799 [debug] [Thread-6  ]: Began compiling node model.stock_analysis.base_spy_1993_2024
+[0m10:40:19.290180 [debug] [Thread-7  ]: Began compiling node model.stock_analysis.base_symbols_meta
+[0m10:40:19.292756 [debug] [Thread-2  ]: Writing injected SQL for node "model.stock_analysis.base_all_nasdaq_stock_info"
+[0m10:40:19.294787 [debug] [Thread-3  ]: Writing injected SQL for node "model.stock_analysis.base_calendar"
+[0m10:40:19.296725 [debug] [Thread-4  ]: Writing injected SQL for node "model.stock_analysis.base_hlal_2019_2024"
+[0m10:40:19.298782 [debug] [Thread-5  ]: Writing injected SQL for node "model.stock_analysis.base_spus_2019_2024"
+[0m10:40:19.300660 [debug] [Thread-6  ]: Writing injected SQL for node "model.stock_analysis.base_spy_1993_2024"
+[0m10:40:19.302504 [debug] [Thread-7  ]: Writing injected SQL for node "model.stock_analysis.base_symbols_meta"
+[0m10:40:19.303190 [debug] [Thread-1  ]: Began executing node model.stock_analysis.base_all_nasdaq_stock_history
+[0m10:40:19.303669 [debug] [Thread-5  ]: Began executing node model.stock_analysis.base_spus_2019_2024
+[0m10:40:19.303896 [debug] [Thread-2  ]: Began executing node model.stock_analysis.base_all_nasdaq_stock_info
+[0m10:40:19.304164 [debug] [Thread-6  ]: Began executing node model.stock_analysis.base_spy_1993_2024
+[0m10:40:19.304635 [debug] [Thread-1  ]: Finished running node model.stock_analysis.base_all_nasdaq_stock_history
+[0m10:40:19.304851 [debug] [Thread-4  ]: Began executing node model.stock_analysis.base_hlal_2019_2024
+[0m10:40:19.305051 [debug] [Thread-3  ]: Began executing node model.stock_analysis.base_calendar
+[0m10:40:19.305416 [debug] [Thread-5  ]: Finished running node model.stock_analysis.base_spus_2019_2024
+[0m10:40:19.305593 [debug] [Thread-7  ]: Began executing node model.stock_analysis.base_symbols_meta
+[0m10:40:19.305954 [debug] [Thread-2  ]: Finished running node model.stock_analysis.base_all_nasdaq_stock_info
+[0m10:40:19.306336 [debug] [Thread-6  ]: Finished running node model.stock_analysis.base_spy_1993_2024
+[0m10:40:19.306775 [debug] [Thread-4  ]: Finished running node model.stock_analysis.base_hlal_2019_2024
+[0m10:40:19.307131 [debug] [Thread-3  ]: Finished running node model.stock_analysis.base_calendar
+[0m10:40:19.307539 [debug] [Thread-7  ]: Finished running node model.stock_analysis.base_symbols_meta
+[0m10:40:19.307902 [debug] [Thread-9  ]: Began running node model.stock_analysis.stg_all_nasdaq_stock_info
+[0m10:40:19.308363 [debug] [Thread-9  ]: Acquiring new bigquery connection 'model.stock_analysis.stg_all_nasdaq_stock_info'
+[0m10:40:19.308563 [debug] [Thread-9  ]: Began compiling node model.stock_analysis.stg_all_nasdaq_stock_info
+[0m10:40:19.308756 [debug] [Thread-11 ]: Began running node model.stock_analysis.stg_calendar
+[0m10:40:19.308953 [debug] [Thread-12 ]: Began running node model.stock_analysis.stg_symbols_meta
+[0m10:40:19.310713 [debug] [Thread-9  ]: Writing injected SQL for node "model.stock_analysis.stg_all_nasdaq_stock_info"
+[0m10:40:19.310997 [debug] [Thread-11 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_calendar'
+[0m10:40:19.311308 [debug] [Thread-12 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_symbols_meta'
+[0m10:40:19.311539 [debug] [Thread-11 ]: Began compiling node model.stock_analysis.stg_calendar
+[0m10:40:19.311733 [debug] [Thread-12 ]: Began compiling node model.stock_analysis.stg_symbols_meta
+[0m10:40:19.314421 [debug] [Thread-11 ]: Writing injected SQL for node "model.stock_analysis.stg_calendar"
+[0m10:40:19.316163 [debug] [Thread-12 ]: Writing injected SQL for node "model.stock_analysis.stg_symbols_meta"
+[0m10:40:19.316367 [debug] [Thread-9  ]: Began executing node model.stock_analysis.stg_all_nasdaq_stock_info
+[0m10:40:19.316774 [debug] [Thread-9  ]: Finished running node model.stock_analysis.stg_all_nasdaq_stock_info
+[0m10:40:19.317089 [debug] [Thread-12 ]: Began executing node model.stock_analysis.stg_symbols_meta
+[0m10:40:19.317274 [debug] [Thread-11 ]: Began executing node model.stock_analysis.stg_calendar
+[0m10:40:19.317607 [debug] [Thread-12 ]: Finished running node model.stock_analysis.stg_symbols_meta
+[0m10:40:19.317939 [debug] [Thread-11 ]: Finished running node model.stock_analysis.stg_calendar
+[0m10:40:19.318334 [debug] [Thread-14 ]: Began running node model.stock_analysis.stg_hlal_2019_2024
+[0m10:40:19.318530 [debug] [Thread-15 ]: Began running node model.stock_analysis.stg_nasdaq_history_base
+[0m10:40:19.318753 [debug] [Thread-16 ]: Began running node model.stock_analysis.stg_spus_2019_2024
+[0m10:40:19.318991 [debug] [Thread-14 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_hlal_2019_2024'
+[0m10:40:19.319169 [debug] [Thread-17 ]: Began running node model.stock_analysis.stg_spy_1993_2024
+[0m10:40:19.319456 [debug] [Thread-15 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_nasdaq_history_base'
+[0m10:40:19.319692 [debug] [Thread-16 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_spus_2019_2024'
+[0m10:40:19.319880 [debug] [Thread-14 ]: Began compiling node model.stock_analysis.stg_hlal_2019_2024
+[0m10:40:19.320107 [debug] [Thread-17 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_spy_1993_2024'
+[0m10:40:19.320280 [debug] [Thread-15 ]: Began compiling node model.stock_analysis.stg_nasdaq_history_base
+[0m10:40:19.320451 [debug] [Thread-16 ]: Began compiling node model.stock_analysis.stg_spus_2019_2024
+[0m10:40:19.322531 [debug] [Thread-14 ]: Writing injected SQL for node "model.stock_analysis.stg_hlal_2019_2024"
+[0m10:40:19.322739 [debug] [Thread-17 ]: Began compiling node model.stock_analysis.stg_spy_1993_2024
+[0m10:40:19.324479 [debug] [Thread-15 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_history_base"
+[0m10:40:19.326585 [debug] [Thread-16 ]: Writing injected SQL for node "model.stock_analysis.stg_spus_2019_2024"
+[0m10:40:19.328617 [debug] [Thread-17 ]: Writing injected SQL for node "model.stock_analysis.stg_spy_1993_2024"
+[0m10:40:19.329037 [debug] [Thread-14 ]: Began executing node model.stock_analysis.stg_hlal_2019_2024
+[0m10:40:19.329396 [debug] [Thread-14 ]: Finished running node model.stock_analysis.stg_hlal_2019_2024
+[0m10:40:19.329703 [debug] [Thread-16 ]: Began executing node model.stock_analysis.stg_spus_2019_2024
+[0m10:40:19.329890 [debug] [Thread-17 ]: Began executing node model.stock_analysis.stg_spy_1993_2024
+[0m10:40:19.330055 [debug] [Thread-15 ]: Began executing node model.stock_analysis.stg_nasdaq_history_base
+[0m10:40:19.330364 [debug] [Thread-16 ]: Finished running node model.stock_analysis.stg_spus_2019_2024
+[0m10:40:19.330737 [debug] [Thread-17 ]: Finished running node model.stock_analysis.stg_spy_1993_2024
+[0m10:40:19.331048 [debug] [Thread-15 ]: Finished running node model.stock_analysis.stg_nasdaq_history_base
+[0m10:40:19.331421 [debug] [Thread-19 ]: Began running node model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price
+[0m10:40:19.331645 [debug] [Thread-20 ]: Began running node model.stock_analysis.stg_nasdaq_monthly_price_movement
+[0m10:40:19.331883 [debug] [Thread-19 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price'
+[0m10:40:19.332068 [debug] [Thread-21 ]: Began running node model.stock_analysis.stg_nasdaq_weekly_price_movement
+[0m10:40:19.332294 [debug] [Thread-22 ]: Began running node model.stock_analysis.stg_nasdaq_yearly_price_movement
+[0m10:40:19.332520 [debug] [Thread-20 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_nasdaq_monthly_price_movement'
+[0m10:40:19.332696 [debug] [Thread-19 ]: Began compiling node model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price
+[0m10:40:19.332920 [debug] [Thread-21 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_nasdaq_weekly_price_movement'
+[0m10:40:19.333146 [debug] [Thread-22 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_nasdaq_yearly_price_movement'
+[0m10:40:19.333320 [debug] [Thread-20 ]: Began compiling node model.stock_analysis.stg_nasdaq_monthly_price_movement
+[0m10:40:19.334942 [debug] [Thread-19 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price"
+[0m10:40:19.335135 [debug] [Thread-21 ]: Began compiling node model.stock_analysis.stg_nasdaq_weekly_price_movement
+[0m10:40:19.335307 [debug] [Thread-22 ]: Began compiling node model.stock_analysis.stg_nasdaq_yearly_price_movement
+[0m10:40:19.337539 [debug] [Thread-20 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_monthly_price_movement"
+[0m10:40:19.339179 [debug] [Thread-21 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_weekly_price_movement"
+[0m10:40:19.340731 [debug] [Thread-22 ]: Writing injected SQL for node "model.stock_analysis.stg_nasdaq_yearly_price_movement"
+[0m10:40:19.340965 [debug] [Thread-19 ]: Began executing node model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price
+[0m10:40:19.341382 [debug] [Thread-19 ]: Finished running node model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price
+[0m10:40:19.341653 [debug] [Thread-20 ]: Began executing node model.stock_analysis.stg_nasdaq_monthly_price_movement
+[0m10:40:19.341830 [debug] [Thread-22 ]: Began executing node model.stock_analysis.stg_nasdaq_yearly_price_movement
+[0m10:40:19.342001 [debug] [Thread-21 ]: Began executing node model.stock_analysis.stg_nasdaq_weekly_price_movement
+[0m10:40:19.342305 [debug] [Thread-20 ]: Finished running node model.stock_analysis.stg_nasdaq_monthly_price_movement
+[0m10:40:19.342626 [debug] [Thread-22 ]: Finished running node model.stock_analysis.stg_nasdaq_yearly_price_movement
+[0m10:40:19.342933 [debug] [Thread-21 ]: Finished running node model.stock_analysis.stg_nasdaq_weekly_price_movement
+[0m10:40:19.343273 [debug] [Thread-24 ]: Began running node model.stock_analysis.stg_all_nasdaq_stock_history
+[0m10:40:19.343538 [debug] [Thread-24 ]: Acquiring new bigquery connection 'model.stock_analysis.stg_all_nasdaq_stock_history'
+[0m10:40:19.343747 [debug] [Thread-24 ]: Began compiling node model.stock_analysis.stg_all_nasdaq_stock_history
+[0m10:40:19.345681 [debug] [Thread-24 ]: Writing injected SQL for node "model.stock_analysis.stg_all_nasdaq_stock_history"
+[0m10:40:19.346298 [debug] [Thread-24 ]: Began executing node model.stock_analysis.stg_all_nasdaq_stock_history
+[0m10:40:19.346610 [debug] [Thread-24 ]: Finished running node model.stock_analysis.stg_all_nasdaq_stock_history
+[0m10:40:19.346901 [debug] [Thread-26 ]: Began running node model.stock_analysis.int_nasdaq
+[0m10:40:19.347108 [debug] [Thread-27 ]: Began running node model.stock_analysis.int_stock_analysis
+[0m10:40:19.347321 [debug] [Thread-26 ]: Acquiring new bigquery connection 'model.stock_analysis.int_nasdaq'
+[0m10:40:19.347484 [debug] [Thread-28 ]: Began running node model.stock_analysis.nasdaq
+[0m10:40:19.347763 [debug] [Thread-27 ]: Acquiring new bigquery connection 'model.stock_analysis.int_stock_analysis'
+[0m10:40:19.347938 [debug] [Thread-26 ]: Began compiling node model.stock_analysis.int_nasdaq
+[0m10:40:19.348156 [debug] [Thread-28 ]: Acquiring new bigquery connection 'model.stock_analysis.nasdaq'
+[0m10:40:19.348319 [debug] [Thread-27 ]: Began compiling node model.stock_analysis.int_stock_analysis
+[0m10:40:19.349944 [debug] [Thread-26 ]: Writing injected SQL for node "model.stock_analysis.int_nasdaq"
+[0m10:40:19.350136 [debug] [Thread-28 ]: Began compiling node model.stock_analysis.nasdaq
+[0m10:40:19.351945 [debug] [Thread-27 ]: Writing injected SQL for node "model.stock_analysis.int_stock_analysis"
+[0m10:40:19.353612 [debug] [Thread-28 ]: Writing injected SQL for node "model.stock_analysis.nasdaq"
+[0m10:40:19.353866 [debug] [Thread-26 ]: Began executing node model.stock_analysis.int_nasdaq
+[0m10:40:19.354201 [debug] [Thread-26 ]: Finished running node model.stock_analysis.int_nasdaq
+[0m10:40:19.354418 [debug] [Thread-28 ]: Began executing node model.stock_analysis.nasdaq
+[0m10:40:19.354591 [debug] [Thread-27 ]: Began executing node model.stock_analysis.int_stock_analysis
+[0m10:40:19.354904 [debug] [Thread-28 ]: Finished running node model.stock_analysis.nasdaq
+[0m10:40:19.355206 [debug] [Thread-27 ]: Finished running node model.stock_analysis.int_stock_analysis
+[0m10:40:19.355528 [debug] [Thread-30 ]: Began running node model.stock_analysis.stock_analysis
+[0m10:40:19.355793 [debug] [Thread-30 ]: Acquiring new bigquery connection 'model.stock_analysis.stock_analysis'
+[0m10:40:19.355961 [debug] [Thread-30 ]: Began compiling node model.stock_analysis.stock_analysis
+[0m10:40:19.358354 [debug] [Thread-30 ]: Writing injected SQL for node "model.stock_analysis.stock_analysis"
+[0m10:40:19.358838 [debug] [Thread-30 ]: Began executing node model.stock_analysis.stock_analysis
+[0m10:40:19.359141 [debug] [Thread-30 ]: Finished running node model.stock_analysis.stock_analysis
+[0m10:40:19.359837 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:40:19.359977 [debug] [MainThread]: Connection 'model.stock_analysis.base_all_nasdaq_stock_history' was properly closed.
+[0m10:40:19.360104 [debug] [MainThread]: Connection 'model.stock_analysis.base_all_nasdaq_stock_info' was properly closed.
+[0m10:40:19.360225 [debug] [MainThread]: Connection 'model.stock_analysis.base_calendar' was properly closed.
+[0m10:40:19.360338 [debug] [MainThread]: Connection 'model.stock_analysis.base_hlal_2019_2024' was properly closed.
+[0m10:40:19.360450 [debug] [MainThread]: Connection 'model.stock_analysis.base_spus_2019_2024' was properly closed.
+[0m10:40:19.360560 [debug] [MainThread]: Connection 'model.stock_analysis.base_spy_1993_2024' was properly closed.
+[0m10:40:19.360669 [debug] [MainThread]: Connection 'model.stock_analysis.base_symbols_meta' was properly closed.
+[0m10:40:19.360779 [debug] [MainThread]: Connection 'model.stock_analysis.stg_all_nasdaq_stock_info' was properly closed.
+[0m10:40:19.360889 [debug] [MainThread]: Connection 'model.stock_analysis.stg_calendar' was properly closed.
+[0m10:40:19.360998 [debug] [MainThread]: Connection 'model.stock_analysis.stg_symbols_meta' was properly closed.
+[0m10:40:19.361109 [debug] [MainThread]: Connection 'model.stock_analysis.stg_hlal_2019_2024' was properly closed.
+[0m10:40:19.361219 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_history_base' was properly closed.
+[0m10:40:19.361330 [debug] [MainThread]: Connection 'model.stock_analysis.stg_spus_2019_2024' was properly closed.
+[0m10:40:19.361439 [debug] [MainThread]: Connection 'model.stock_analysis.stg_spy_1993_2024' was properly closed.
+[0m10:40:19.361549 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_history_weekly_monthly_yearly_price' was properly closed.
+[0m10:40:19.361658 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_monthly_price_movement' was properly closed.
+[0m10:40:19.361768 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_weekly_price_movement' was properly closed.
+[0m10:40:19.361877 [debug] [MainThread]: Connection 'model.stock_analysis.stg_nasdaq_yearly_price_movement' was properly closed.
+[0m10:40:19.361986 [debug] [MainThread]: Connection 'model.stock_analysis.stg_all_nasdaq_stock_history' was properly closed.
+[0m10:40:19.362095 [debug] [MainThread]: Connection 'model.stock_analysis.int_nasdaq' was properly closed.
+[0m10:40:19.362204 [debug] [MainThread]: Connection 'model.stock_analysis.int_stock_analysis' was properly closed.
+[0m10:40:19.362313 [debug] [MainThread]: Connection 'model.stock_analysis.nasdaq' was properly closed.
+[0m10:40:19.362427 [debug] [MainThread]: Connection 'model.stock_analysis.stock_analysis' was properly closed.
+[0m10:40:19.363975 [debug] [MainThread]: Command end result
+[0m10:40:19.420765 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m10:40:19.420959 [info ] [MainThread]: Building catalog
+[0m10:40:19.427670 [debug] [ThreadPool]: Acquiring new bigquery connection 'first-project-262802.information_schema'
+[0m10:40:19.428065 [debug] [ThreadPool]: Acquiring new bigquery connection 'first-project-262802.information_schema'
+[0m10:40:19.439537 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:40:19.441116 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:40:19.500297 [debug] [ThreadPool]: On first-project-262802.information_schema: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "connection_name": "first-project-262802.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `first-project-262802`.`stock`.__TABLES__ tables
+    left join `first-project-262802`.`stock`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `first-project-262802`.`stock`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('tsla')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('lly')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('goog')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('msft')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('avgo')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('crm')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('unh')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('spy_1993_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('spy_2014_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('ko')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('bac')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('all_nasdaq_stock_info')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('adbe')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('pep')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('hlal')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('nvda')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('hd')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('ma')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('mrk')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('jnj')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('meta')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('all_nasdaq_stock_history')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('amzn')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('symbols_valid_meta')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('amd')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('abbv')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('brk-b')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('tmo')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('cvx')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('400_years_of_generated_dates_and_holidays')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('nflx')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('aapl')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('wmt')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('pg')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('cost')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('jpm')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('xom')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('googl')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('spus_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock')
+                            and upper(table_name) = upper('v')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `first-project-262802`.`stock`.INFORMATION_SCHEMA.COLUMNS columns
+    join `first-project-262802`.`stock`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        columns.column_name,
+        columns.column_index,
+        columns.column_type,
+        columns.column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m10:40:19.561491 [debug] [ThreadPool]: On first-project-262802.information_schema: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "connection_name": "first-project-262802.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `first-project-262802`.`stock_analysis`.__TABLES__ tables
+    left join `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_spus_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_history_base')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_spy_1993_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_spus_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_monthly_price_movement')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_all_nasdaq_stock_info')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_hlal_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_yearly_price_movement')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_calendar')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_all_nasdaq_stock_history')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stock_analysis')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_symbols_meta')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_weekly_price_movement')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_hlal_2019_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_all_nasdaq_stock_info')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_symbols_meta')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('nasdaq')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('int_nasdaq')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('stg_nasdaq_history_weekly_monthly_yearly_price')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('int_stock_analysis')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_calendar')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_spy_1993_2024')
+                            ) or (
+                                upper(table_schema) = upper('stock_analysis')
+                            and upper(table_name) = upper('base_all_nasdaq_stock_history')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.COLUMNS columns
+    join `first-project-262802`.`stock_analysis`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        columns.column_name,
+        columns.column_index,
+        columns.column_type,
+        columns.column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m10:40:20.189896 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:b13aa8fe-d7da-499e-a717-3a037694d142&page=queryresults
+[0m10:40:20.321229 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:b134237d-7209-4569-b4e3-c0932d4a3f53&page=queryresults
+[0m10:40:24.163726 [info ] [MainThread]: Catalog written to /Users/ahmed/Desktop/dbt/stock_analysis/target/catalog.json
+[0m10:40:24.166242 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 6.1824894, "process_user_time": 2.979531, "process_kernel_time": 2.252733, "process_mem_max_rss": "217153536", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m10:40:24.166577 [debug] [MainThread]: Command `dbt docs generate` succeeded at 10:40:24.166530 after 6.18 seconds
+[0m10:40:24.166747 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m10:40:24.166872 [debug] [MainThread]: Connection 'first-project-262802.information_schema' was properly closed.
+[0m10:40:24.166989 [debug] [MainThread]: Connection 'first-project-262802.information_schema' was properly closed.
+[0m10:40:24.167136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10687ab20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x136d450d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x136f075b0>]}
+[0m10:40:24.167311 [debug] [MainThread]: Flushing usage events
+[0m10:40:30.077407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105376b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107112d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107112f70>]}
+
+
+============================== 10:40:30.079537 | cddcf65b-9c1b-458e-8a6a-41641419f187 ==============================
+[0m10:40:30.079537 [info ] [MainThread]: Running with dbt=1.8.2
+[0m10:40:30.079872 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs serve', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:40:30.538518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cddcf65b-9c1b-458e-8a6a-41641419f187', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1055ae130>]}
+[0m10:40:30.564823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cddcf65b-9c1b-458e-8a6a-41641419f187', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12fe3cf40>]}
