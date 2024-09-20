@@ -66791,3 +66791,318 @@ left join symbols_meta using (symbol)
 [0m19:48:50.538754 [debug] [MainThread]: Command `dbt run` succeeded at 19:48:50.538706 after 16.12 seconds
 [0m19:48:50.538941 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061c98e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107537f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12733d130>]}
 [0m19:48:50.539117 [debug] [MainThread]: Flushing usage events
+[0m20:21:02.811898 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10245d910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103dd8430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103dd8250>]}
+
+
+============================== 20:21:02.814482 | 78398c2c-64ba-4a8b-ab5f-50c125c8da09 ==============================
+[0m20:21:02.814482 [info ] [MainThread]: Running with dbt=1.8.2
+[0m20:21:02.814784 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'version_check': 'True', 'profiles_dir': '/Users/ahmed/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --select stg_all_stock_weekly_price_movement stg_all_stock_monthly_price_movement stg_all_stock_yearly_price_movement int_all_stock_history', 'send_anonymous_usage_stats': 'True'}
+[0m20:21:03.344319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f4494c0>]}
+[0m20:21:03.371509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103d9e7f0>]}
+[0m20:21:03.371793 [info ] [MainThread]: Registered adapter: bigquery=1.8.1
+[0m20:21:03.385671 [debug] [MainThread]: checksum: f0a141b9de567cb7f131613ba2682f40b3a1c6a157f81c6e5435862eff68f109, vars: {}, profile: , target: , version: 1.8.2
+[0m20:21:03.469261 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 3 files changed.
+[0m20:21:03.469606 [debug] [MainThread]: Partial parsing: updated file: stock_analysis://models/2_staging/stg_all_stock_monthly_price_movement.sql
+[0m20:21:03.469799 [debug] [MainThread]: Partial parsing: updated file: stock_analysis://models/2_staging/stg_all_stock_weekly_price_movement.sql
+[0m20:21:03.469976 [debug] [MainThread]: Partial parsing: updated file: stock_analysis://models/2_staging/stg_all_stock_yearly_price_movement.sql
+[0m20:21:03.625836 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12832b130>]}
+[0m20:21:03.688332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x128313070>]}
+[0m20:21:03.688591 [info ] [MainThread]: Found 19 models, 42 sources, 585 macros
+[0m20:21:03.688766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12832c5e0>]}
+[0m20:21:03.689684 [info ] [MainThread]: 
+[0m20:21:03.689954 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m20:21:03.692160 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_first-project-262802'
+[0m20:21:03.692360 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:21:04.125090 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_first-project-262802, now list_first-project-262802_stock_analysis)
+[0m20:21:04.126275 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:21:04.621372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1026da640>]}
+[0m20:21:04.622233 [info ] [MainThread]: Concurrency: 32 threads (target='prod')
+[0m20:21:04.622516 [info ] [MainThread]: 
+[0m20:21:04.627359 [debug] [Thread-1  ]: Began running node model.stock_analysis.stg_all_stock_monthly_price_movement
+[0m20:21:04.627691 [debug] [Thread-2  ]: Began running node model.stock_analysis.stg_all_stock_weekly_price_movement
+[0m20:21:04.628101 [info ] [Thread-1  ]: 1 of 4 START sql table model stock_analysis.stg_all_stock_monthly_price_movement  [RUN]
+[0m20:21:04.628434 [debug] [Thread-3  ]: Began running node model.stock_analysis.stg_all_stock_yearly_price_movement
+[0m20:21:04.628785 [info ] [Thread-2  ]: 2 of 4 START sql table model stock_analysis.stg_all_stock_weekly_price_movement  [RUN]
+[0m20:21:04.629125 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_first-project-262802_stock_analysis, now model.stock_analysis.stg_all_stock_monthly_price_movement)
+[0m20:21:04.629431 [info ] [Thread-3  ]: 3 of 4 START sql table model stock_analysis.stg_all_stock_yearly_price_movement  [RUN]
+[0m20:21:04.629762 [debug] [Thread-2  ]: Acquiring new bigquery connection 'model.stock_analysis.stg_all_stock_weekly_price_movement'
+[0m20:21:04.629988 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stg_all_stock_monthly_price_movement
+[0m20:21:04.630272 [debug] [Thread-3  ]: Acquiring new bigquery connection 'model.stock_analysis.stg_all_stock_yearly_price_movement'
+[0m20:21:04.630493 [debug] [Thread-2  ]: Began compiling node model.stock_analysis.stg_all_stock_weekly_price_movement
+[0m20:21:04.637333 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stg_all_stock_monthly_price_movement"
+[0m20:21:04.637549 [debug] [Thread-3  ]: Began compiling node model.stock_analysis.stg_all_stock_yearly_price_movement
+[0m20:21:04.639772 [debug] [Thread-2  ]: Writing injected SQL for node "model.stock_analysis.stg_all_stock_weekly_price_movement"
+[0m20:21:04.641118 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stg_all_stock_monthly_price_movement
+[0m20:21:04.641422 [debug] [Thread-2  ]: Began executing node model.stock_analysis.stg_all_stock_weekly_price_movement
+[0m20:21:04.649878 [debug] [Thread-3  ]: Writing injected SQL for node "model.stock_analysis.stg_all_stock_yearly_price_movement"
+[0m20:21:04.654188 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m20:21:04.656107 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m20:21:04.778279 [debug] [Thread-3  ]: Began executing node model.stock_analysis.stg_all_stock_yearly_price_movement
+[0m20:21:04.783160 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m20:21:05.276534 [debug] [Thread-2  ]: Writing runtime sql for node "model.stock_analysis.stg_all_stock_weekly_price_movement"
+[0m20:21:05.278327 [debug] [Thread-1  ]: Writing runtime sql for node "model.stock_analysis.stg_all_stock_monthly_price_movement"
+[0m20:21:05.279231 [debug] [Thread-1  ]: On model.stock_analysis.stg_all_stock_monthly_price_movement: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "node_id": "model.stock_analysis.stg_all_stock_monthly_price_movement"} */
+
+  
+    
+
+    create or replace table `first-project-262802`.`stock_analysis`.`stg_all_stock_monthly_price_movement`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with 
+
+base as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_history_base` )
+
+, first_avg_daily_price_per_month as 
+(
+    select 
+        year_full
+        , month_number
+        , symbol
+        , avg_daily_price as avg_daily_price_month_start
+    from base
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY year_of_date, month_number, symbol ORDER BY date asc) = 1
+)
+
+, last_avg_daily_price_per_month as 
+(
+    select 
+        year_full
+        , month_number
+        , symbol
+        , avg_daily_price as avg_daily_price_month_end
+    from base
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY year_of_date, month_number, symbol ORDER BY date desc) = 1
+)
+
+, daily_price_movement_in_month as 
+(
+    select
+        year_full
+        , month_number
+        , symbol
+        , round(avg_daily_price_month_end - avg_daily_price_month_start,2) as avg_daily_price_movement_in_month
+        , round(((nullif(avg_daily_price_month_end,0)/nullif(avg_daily_price_month_start,0))-1)*100.00,2) as avg_daily_price_movement_in_month_pct
+    from base
+    left join first_avg_daily_price_per_month using (year_full, month_number, symbol)
+    left join last_avg_daily_price_per_month using (year_full, month_number, symbol)
+)
+
+
+
+
+
+
+-- select
+--     distinct *
+-- from base
+-- left join daily_price_movement_in_month using (year_full, month_number, symbol)
+
+select distinct * from daily_price_movement_in_month
+    );
+  
+[0m20:21:05.279685 [debug] [Thread-2  ]: On model.stock_analysis.stg_all_stock_weekly_price_movement: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "node_id": "model.stock_analysis.stg_all_stock_weekly_price_movement"} */
+
+  
+    
+
+    create or replace table `first-project-262802`.`stock_analysis`.`stg_all_stock_weekly_price_movement`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with 
+
+base as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_history_base` )
+
+, first_avg_daily_price_per_week as 
+(
+    select 
+        year_full
+        , week_number
+        , symbol
+        , avg_daily_price as avg_daily_price_week_start
+    from base
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY year_of_date, week_number, symbol ORDER BY date asc) = 1
+)
+
+, last_avg_daily_price_per_week as 
+(
+    select 
+        year_full
+        , week_number
+        , symbol
+        , avg_daily_price as avg_daily_price_week_end
+    from base
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY year_of_date, week_number, symbol ORDER BY date desc) = 1
+)
+
+, daily_price_movement_in_week as 
+(
+    select
+        year_full
+        , week_number
+        , symbol
+        , round(avg_daily_price_week_end - avg_daily_price_week_start,2) as avg_daily_price_movement_in_week
+        , round(((nullif(avg_daily_price_week_end,0)/nullif(avg_daily_price_week_start,0))-1)*100.00,2) as avg_daily_price_movement_in_week_pct
+    from base
+    left join first_avg_daily_price_per_week using (year_full, week_number, symbol)
+    left join last_avg_daily_price_per_week using (year_full, week_number, symbol)
+)
+
+
+
+
+
+
+-- select
+--     distinct *
+-- from base
+-- left join daily_price_movement_in_week using (year_full, week_number, symbol)
+
+select distinct * from daily_price_movement_in_week
+    );
+  
+[0m20:21:05.359185 [debug] [Thread-3  ]: Writing runtime sql for node "model.stock_analysis.stg_all_stock_yearly_price_movement"
+[0m20:21:05.360023 [debug] [Thread-3  ]: On model.stock_analysis.stg_all_stock_yearly_price_movement: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "node_id": "model.stock_analysis.stg_all_stock_yearly_price_movement"} */
+
+  
+    
+
+    create or replace table `first-project-262802`.`stock_analysis`.`stg_all_stock_yearly_price_movement`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with 
+
+base as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_history_base` )
+
+, first_avg_daily_price_per_year as 
+(
+    select 
+        year_full
+        , symbol
+        , avg_daily_price as avg_daily_price_year_start
+    from base
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY year_of_date, symbol ORDER BY date asc) = 1
+)
+
+, last_avg_daily_price_per_year as 
+(
+    select 
+        year_full
+        , symbol
+        , avg_daily_price as avg_daily_price_year_end
+    from base
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY year_of_date, symbol ORDER BY date desc) = 1
+)
+
+, daily_price_movement_in_year as 
+(
+    select
+        year_full
+        , symbol
+        , round(avg_daily_price_year_end - avg_daily_price_year_start,2) as avg_daily_price_movement_in_year
+        , round(((nullif(avg_daily_price_year_end,0)/nullif(avg_daily_price_year_start,0))-1)*100.00,2) as avg_daily_price_movement_in_year_pct
+    from base
+    left join first_avg_daily_price_per_year using (year_full, symbol)
+    left join last_avg_daily_price_per_year using (year_full, symbol)
+)
+
+
+
+
+
+
+
+
+
+-- select
+--     distinct *
+-- from base
+-- left join daily_price_movement_in_year using (year_full, symbol)
+
+select distinct * from daily_price_movement_in_year
+    );
+  
+[0m20:21:05.687404 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:1af9d267-26db-4d4f-b0f6-cdab7568e3be&page=queryresults
+[0m20:21:05.698564 [debug] [Thread-2  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:403193de-cda3-4ff2-b7a7-60e56a329a5d&page=queryresults
+[0m20:21:05.792806 [debug] [Thread-3  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:de74070e-dbf0-4472-b436-8033be036299&page=queryresults
+[0m20:21:12.558074 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1284886d0>]}
+[0m20:21:12.558837 [info ] [Thread-3  ]: 3 of 4 OK created sql table model stock_analysis.stg_all_stock_yearly_price_movement  [[32mCREATE TABLE (128.5k rows, 1.1 GiB processed)[0m in 7.93s]
+[0m20:21:12.559370 [debug] [Thread-3  ]: Finished running node model.stock_analysis.stg_all_stock_yearly_price_movement
+[0m20:21:13.538216 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12847cd00>]}
+[0m20:21:13.540528 [info ] [Thread-2  ]: 2 of 4 OK created sql table model stock_analysis.stg_all_stock_weekly_price_movement  [[32mCREATE TABLE (6.4m rows, 1.2 GiB processed)[0m in 8.91s]
+[0m20:21:13.541752 [debug] [Thread-2  ]: Finished running node model.stock_analysis.stg_all_stock_weekly_price_movement
+[0m20:21:16.236034 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12847ce20>]}
+[0m20:21:16.237904 [info ] [Thread-1  ]: 1 of 4 OK created sql table model stock_analysis.stg_all_stock_monthly_price_movement  [[32mCREATE TABLE (1.5m rows, 1.3 GiB processed)[0m in 11.61s]
+[0m20:21:16.239064 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stg_all_stock_monthly_price_movement
+[0m20:21:16.240277 [debug] [Thread-5  ]: Began running node model.stock_analysis.int_all_stock_history
+[0m20:21:16.240987 [info ] [Thread-5  ]: 4 of 4 START sql table model stock_analysis.int_all_stock_history .............. [RUN]
+[0m20:21:16.241573 [debug] [Thread-5  ]: Acquiring new bigquery connection 'model.stock_analysis.int_all_stock_history'
+[0m20:21:16.241903 [debug] [Thread-5  ]: Began compiling node model.stock_analysis.int_all_stock_history
+[0m20:21:16.247879 [debug] [Thread-5  ]: Writing injected SQL for node "model.stock_analysis.int_all_stock_history"
+[0m20:21:16.249926 [debug] [Thread-5  ]: Began executing node model.stock_analysis.int_all_stock_history
+[0m20:21:16.252839 [debug] [Thread-5  ]: Opening a new connection, currently in state init
+[0m20:21:16.626936 [debug] [Thread-5  ]: Writing runtime sql for node "model.stock_analysis.int_all_stock_history"
+[0m20:21:16.630286 [debug] [Thread-5  ]: On model.stock_analysis.int_all_stock_history: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "node_id": "model.stock_analysis.int_all_stock_history"} */
+
+  
+    
+
+    create or replace table `first-project-262802`.`stock_analysis`.`int_all_stock_history`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with 
+
+all_stock_history_weekly_monthly_yearly_price as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_history_weekly_monthly_yearly_price` )
+
+, all_stock_weekly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_weekly_price_movement` )
+
+, all_stock_monthly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_monthly_price_movement` )
+
+, all_stock_yearly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_yearly_price_movement` )
+
+
+
+select
+    distinct *
+from all_stock_history_weekly_monthly_yearly_price
+left join all_stock_weekly_price_movement using (year_full, week_number, symbol)
+left join all_stock_monthly_price_movement using (year_full, month_number, symbol)
+left join all_stock_yearly_price_movement using (year_full, symbol)
+    );
+  
+[0m20:21:17.051652 [debug] [Thread-5  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:32857c68-6c3d-4f09-b3c2-ccde9bd8d3c8&page=queryresults
+[0m20:21:37.098236 [debug] [Thread-5  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '78398c2c-64ba-4a8b-ab5f-50c125c8da09', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12847cb50>]}
+[0m20:21:37.099700 [info ] [Thread-5  ]: 4 of 4 OK created sql table model stock_analysis.int_all_stock_history ......... [[32mCREATE TABLE (30.4m rows, 11.7 GiB processed)[0m in 20.86s]
+[0m20:21:37.100627 [debug] [Thread-5  ]: Finished running node model.stock_analysis.int_all_stock_history
+[0m20:21:37.103185 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:21:37.103582 [debug] [MainThread]: Connection 'model.stock_analysis.stg_all_stock_monthly_price_movement' was properly closed.
+[0m20:21:37.103871 [debug] [MainThread]: Connection 'model.stock_analysis.stg_all_stock_weekly_price_movement' was properly closed.
+[0m20:21:37.104132 [debug] [MainThread]: Connection 'model.stock_analysis.stg_all_stock_yearly_price_movement' was properly closed.
+[0m20:21:37.104389 [debug] [MainThread]: Connection 'model.stock_analysis.int_all_stock_history' was properly closed.
+[0m20:21:37.104789 [info ] [MainThread]: 
+[0m20:21:37.105156 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 33.41 seconds (33.41s).
+[0m20:21:37.106399 [debug] [MainThread]: Command end result
+[0m20:21:37.146124 [info ] [MainThread]: 
+[0m20:21:37.146439 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:21:37.146631 [info ] [MainThread]: 
+[0m20:21:37.146821 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m20:21:37.148568 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 34.387344, "process_user_time": 3.664809, "process_kernel_time": 1.394868, "process_mem_max_rss": "205504512", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m20:21:37.148906 [debug] [MainThread]: Command `dbt run` succeeded at 20:21:37.148850 after 34.39 seconds
+[0m20:21:37.149128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10245d910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1284477c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103d9e7f0>]}
+[0m20:21:37.149344 [debug] [MainThread]: Flushing usage events

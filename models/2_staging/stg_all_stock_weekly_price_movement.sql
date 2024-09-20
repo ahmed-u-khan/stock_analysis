@@ -47,4 +47,4 @@ base as ( select * from {{ ref('stg_all_stock_history_base') }} )
 -- from base
 -- left join daily_price_movement_in_week using (year_full, week_number, symbol)
 
-select * from daily_price_movement_in_week
+select distinct * from daily_price_movement_in_week

@@ -58,6 +58,6 @@ base as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_h
 -- from base
 -- left join daily_price_movement_in_month using (year_full, month_number, symbol)
 
-select * from daily_price_movement_in_month
+select distinct * from daily_price_movement_in_month
     );
   
