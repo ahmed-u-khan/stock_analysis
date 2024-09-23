@@ -7,48 +7,8 @@ sources:
     schema: stock
     tables:
       - name: 400_years_of_generated_dates_and_holidays
-      - name: symbols_valid_meta
 
-      - name: all_nasdaq_stock_info
       - name: all_nasdaq_stock_history
 
-      - name: all_others_stock_info
       - name: all_others_stock_history
       
-      - name: spy_2014_2024
-      - name: spy_1993_2024
-      - name: spus_2019_2024
-      - name: hlal
-
-      - name: aapl
-      - name:	abbv
-      - name:	adbe
-      - name:	amd
-      - name:	amzn
-      - name:	avgo
-      - name:	bac
-      - name:	brk-b
-      - name:	cost
-      - name:	crm
-      - name:	cvx
-      - name:	goog
-      - name:	googl
-      - name:	hd
-      - name:	jnj
-      - name:	jpm
-      - name:	ko
-      - name:	lly
-      - name:	ma
-      - name:	meta
-      - name:	mrk
-      - name:	msft
-      - name:	nflx
-      - name:	nvda
-      - name:	pep
-      - name:	pg
-      - name:	tmo
-      - name:	tsla
-      - name:	unh
-      - name:	v
-      - name:	wmt
-      - name:	xom

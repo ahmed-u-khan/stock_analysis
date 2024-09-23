@@ -7,6 +7,7 @@ import pandas as pd
 import yfinance as yf
 import yahoo_fin.stock_info as si
 from datetime import date
+import time
 
 
 
@@ -24,6 +25,7 @@ def YfinanceData(Symbols):
 
 		print('for loop started')
 		print(Symbol)
+		time.sleep(5)
 
 		try:
 
