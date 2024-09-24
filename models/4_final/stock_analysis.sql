@@ -1,19 +1,19 @@
--- with
+-- -- with
 
--- stock_analysis as ( select * except (ETL_Date) from {{ ref('int_all_stock_history') }} )
+-- -- stock_analysis as ( select * except (ETL_Date) from {{ ref('int_all_stock_history') }} )
 
--- select
---     *
--- from stock_analysis
-
-
+-- -- select
+-- --     *
+-- -- from stock_analysis
 
 
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
--- -- -- -- -- from int_all_stock_history -- -- -- -- --
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- from int_all_stock_history -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 
 with 
 
@@ -34,3 +34,12 @@ left join all_stock_weekly_price_movement using (year_full, week_number, symbol)
 left join all_stock_monthly_price_movement using (year_full, month_number, symbol)
 left join all_stock_yearly_price_movement using (year_full, symbol)
 
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- --   used for adhoc creation  -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+-- select * from stock_analysis.stock_analysis
+-- left join stock.symbols_meta_data using (symbol)
