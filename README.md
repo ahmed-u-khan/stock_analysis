@@ -23,3 +23,5 @@ Please see the models section of this repo
 #### Average Returns by Week: https://3422086f.us2a.app.preset.io/superset/dashboard/10/
 
 #### Price Movement Dashboard: https://3422086f.us2a.app.preset.io/superset/dashboard/12/
+
+#### Avg. Daily Pirce: https://3422086f.us2a.app.preset.io/superset/dashboard/11/
