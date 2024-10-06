@@ -46,7 +46,17 @@
 -- left join all_stock_yearly_price_movement using (year_full, symbol)
 
 
-select * from stock_analysis.stock_analysis
-left join stock.symbols_meta_data using (symbol)
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- --   used for adhoc creation  -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+select 
+    * 
+    except (year_month)
+    , left(cast(date as string),7) as year_month
+from stock_analysis.stock_analysis
+-- left join stock.symbols_meta_data using (symbol)
     );
   
