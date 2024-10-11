@@ -42,8 +42,7 @@
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 
 select 
-    * 
-    except (year_month)
-    , left(cast(date as string),7) as year_month
+    *
+    , concat(day_of_week, ' - ', day_abbrev) as day_of_week_and_name
 from stock_analysis.stock_analysis
 -- left join stock.symbols_meta_data using (symbol)
