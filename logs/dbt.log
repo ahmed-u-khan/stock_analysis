@@ -68618,3 +68618,459 @@ from stock_analysis.stock_analysis
 [0m11:20:23.739276 [debug] [MainThread]: Command `dbt run` succeeded at 11:20:23.739220 after 10.88 seconds
 [0m11:20:23.739507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106716b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a87130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1101b3940>]}
 [0m11:20:23.739728 [debug] [MainThread]: Flushing usage events
+[0m08:29:14.552217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104744a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1060bed30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1060bef10>]}
+
+
+============================== 08:29:14.555242 | 2f8f1562-e2fd-49d9-ab7a-2f4219a61783 ==============================
+[0m08:29:14.555242 [info ] [MainThread]: Running with dbt=1.8.2
+[0m08:29:14.555547 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'debug': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --select stock_analysis.sql', 'send_anonymous_usage_stats': 'True'}
+[0m08:29:16.299274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2f8f1562-e2fd-49d9-ab7a-2f4219a61783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104979640>]}
+[0m08:29:16.326094 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2f8f1562-e2fd-49d9-ab7a-2f4219a61783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ab9a90>]}
+[0m08:29:16.326376 [info ] [MainThread]: Registered adapter: bigquery=1.8.1
+[0m08:29:16.342238 [debug] [MainThread]: checksum: f0a141b9de567cb7f131613ba2682f40b3a1c6a157f81c6e5435862eff68f109, vars: {}, profile: , target: , version: 1.8.2
+[0m08:29:16.431163 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m08:29:16.431515 [debug] [MainThread]: Partial parsing: updated file: stock_analysis://models/4_final/stock_analysis.sql
+[0m08:29:16.586196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2f8f1562-e2fd-49d9-ab7a-2f4219a61783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14201f130>]}
+[0m08:29:16.647050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2f8f1562-e2fd-49d9-ab7a-2f4219a61783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x137f9ca90>]}
+[0m08:29:16.647315 [info ] [MainThread]: Found 12 models, 3 sources, 585 macros
+[0m08:29:16.647503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2f8f1562-e2fd-49d9-ab7a-2f4219a61783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x14201fac0>]}
+[0m08:29:16.648249 [info ] [MainThread]: 
+[0m08:29:16.648542 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m08:29:16.648975 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_first-project-262802'
+[0m08:29:16.649177 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:29:17.292867 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_first-project-262802, now list_first-project-262802_stock_analysis)
+[0m08:29:17.293655 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:29:17.743764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2f8f1562-e2fd-49d9-ab7a-2f4219a61783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f46760>]}
+[0m08:29:17.744918 [info ] [MainThread]: Concurrency: 32 threads (target='prod')
+[0m08:29:17.745501 [info ] [MainThread]: 
+[0m08:29:17.754837 [debug] [Thread-1  ]: Began running node model.stock_analysis.stock_analysis
+[0m08:29:17.755727 [info ] [Thread-1  ]: 1 of 1 START sql table model stock_analysis.stock_analysis ..................... [RUN]
+[0m08:29:17.756339 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_first-project-262802_stock_analysis, now model.stock_analysis.stock_analysis)
+[0m08:29:17.756770 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stock_analysis
+[0m08:29:17.768633 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stock_analysis"
+[0m08:29:17.769959 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stock_analysis
+[0m08:29:17.786609 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m08:29:18.263839 [debug] [Thread-1  ]: Writing runtime sql for node "model.stock_analysis.stock_analysis"
+[0m08:29:18.265087 [debug] [Thread-1  ]: On model.stock_analysis.stock_analysis: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "node_id": "model.stock_analysis.stock_analysis"} */
+
+  
+    
+
+    create or replace table `first-project-262802`.`stock_analysis`.`stock_analysis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      -- -- with
+
+-- -- stock_analysis as ( select * except (ETL_Date) from `first-project-262802`.`stock_analysis`.`int_all_stock_history` )
+
+-- -- select
+-- --     *
+-- -- from stock_analysis
+
+
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- from int_all_stock_history -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+-- with 
+
+-- all_stock_history_weekly_monthly_yearly_price as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_history_weekly_monthly_yearly_price` )
+
+-- , all_stock_weekly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_weekly_price_movement` )
+
+-- , all_stock_monthly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_monthly_price_movement` )
+
+-- , all_stock_yearly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_yearly_price_movement` )
+
+
+
+-- select
+--     distinct *
+-- from all_stock_history_weekly_monthly_yearly_price
+-- left join all_stock_weekly_price_movement using (year_full, week_number, symbol)
+-- left join all_stock_monthly_price_movement using (year_full, month_number, symbol)
+-- left join all_stock_yearly_price_movement using (year_full, symbol)
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- --   used for adhoc creation  -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+select 
+    *
+    , round( ( ( avg_daily_price / LAG(avg_daily_price) OVER (PARTITION BY symbol ORDER BY date ASC) ) - 1 ) * 100.00 ,2) as avg_daily_price_movement_day_over_day
+from stock_analysis.stock_analysis
+    );
+  
+[0m08:29:18.764962 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:fb08b12a-5019-4227-ac18-4f76bf02859d&page=queryresults
+[0m08:29:23.461445 [debug] [Thread-1  ]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest('GET https://bigquery.googleapis.com/bigquery/v2/projects/first-project-262802/queries/fb08b12a-5019-4227-ac18-4f76bf02859d?maxResults=0&location=US&prettyPrint=false: division by zero: 0.01 / 0')
+[0m08:29:24.485753 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:e8796baf-9531-4dce-bb9d-b8567999ae77&page=queryresults
+[0m08:29:32.083432 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:e8796baf-9531-4dce-bb9d-b8567999ae77&page=queryresults
+[0m08:29:32.133625 [debug] [Thread-1  ]: Database Error in model stock_analysis (models/4_final/stock_analysis.sql)
+  division by zero: 0.01 / 0
+  compiled Code at target/run/stock_analysis/models/4_final/stock_analysis.sql
+[0m08:29:32.135031 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2f8f1562-e2fd-49d9-ab7a-2f4219a61783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054ddf10>]}
+[0m08:29:32.135529 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model stock_analysis.stock_analysis ............ [[31mERROR[0m in 14.38s]
+[0m08:29:32.135941 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stock_analysis
+[0m08:29:32.137275 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:29:32.137506 [debug] [MainThread]: Connection 'model.stock_analysis.stock_analysis' was properly closed.
+[0m08:29:32.137718 [info ] [MainThread]: 
+[0m08:29:32.137929 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 15.49 seconds (15.49s).
+[0m08:29:32.138335 [debug] [MainThread]: Command end result
+[0m08:29:32.165232 [info ] [MainThread]: 
+[0m08:29:32.165552 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m08:29:32.165718 [info ] [MainThread]: 
+[0m08:29:32.165930 [error] [MainThread]:   Database Error in model stock_analysis (models/4_final/stock_analysis.sql)
+  division by zero: 0.01 / 0
+  compiled Code at target/run/stock_analysis/models/4_final/stock_analysis.sql
+[0m08:29:32.166089 [info ] [MainThread]: 
+[0m08:29:32.166255 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m08:29:32.168070 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 17.670952, "process_user_time": 2.208975, "process_kernel_time": 2.882412, "process_mem_max_rss": "198967296", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m08:29:32.168379 [debug] [MainThread]: Command `dbt run` failed at 08:29:32.168330 after 17.67 seconds
+[0m08:29:32.168588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104744a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054ddf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ab9a90>]}
+[0m08:29:32.168778 [debug] [MainThread]: Flushing usage events
+[0m08:32:08.038137 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102cf8ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10518fd30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10518ff10>]}
+
+
+============================== 08:32:08.041058 | e1efc674-4715-4290-90c0-1d2c8ea80664 ==============================
+[0m08:32:08.041058 [info ] [MainThread]: Running with dbt=1.8.2
+[0m08:32:08.041399 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'profiles_dir': '/Users/ahmed/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --select stock_analysis.sql', 'send_anonymous_usage_stats': 'True'}
+[0m08:32:08.833147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e1efc674-4715-4290-90c0-1d2c8ea80664', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102f2d0a0>]}
+[0m08:32:08.861036 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e1efc674-4715-4290-90c0-1d2c8ea80664', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1035d0f70>]}
+[0m08:32:08.861364 [info ] [MainThread]: Registered adapter: bigquery=1.8.1
+[0m08:32:08.876169 [debug] [MainThread]: checksum: f0a141b9de567cb7f131613ba2682f40b3a1c6a157f81c6e5435862eff68f109, vars: {}, profile: , target: , version: 1.8.2
+[0m08:32:08.961681 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m08:32:08.962088 [debug] [MainThread]: Partial parsing: updated file: stock_analysis://models/4_final/stock_analysis.sql
+[0m08:32:09.119212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e1efc674-4715-4290-90c0-1d2c8ea80664', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f69d130>]}
+[0m08:32:09.177238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e1efc674-4715-4290-90c0-1d2c8ea80664', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f61cb80>]}
+[0m08:32:09.177506 [info ] [MainThread]: Found 12 models, 3 sources, 585 macros
+[0m08:32:09.177692 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e1efc674-4715-4290-90c0-1d2c8ea80664', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f69d280>]}
+[0m08:32:09.178407 [info ] [MainThread]: 
+[0m08:32:09.178687 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m08:32:09.179103 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_first-project-262802'
+[0m08:32:09.179332 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:32:09.690541 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_first-project-262802, now list_first-project-262802_stock_analysis)
+[0m08:32:09.691383 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:32:10.140597 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e1efc674-4715-4290-90c0-1d2c8ea80664', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f204b50>]}
+[0m08:32:10.141711 [info ] [MainThread]: Concurrency: 32 threads (target='prod')
+[0m08:32:10.142237 [info ] [MainThread]: 
+[0m08:32:10.148547 [debug] [Thread-1  ]: Began running node model.stock_analysis.stock_analysis
+[0m08:32:10.149225 [info ] [Thread-1  ]: 1 of 1 START sql table model stock_analysis.stock_analysis ..................... [RUN]
+[0m08:32:10.149852 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_first-project-262802_stock_analysis, now model.stock_analysis.stock_analysis)
+[0m08:32:10.150254 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stock_analysis
+[0m08:32:10.161574 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stock_analysis"
+[0m08:32:10.162335 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stock_analysis
+[0m08:32:10.177850 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m08:32:10.668534 [debug] [Thread-1  ]: Writing runtime sql for node "model.stock_analysis.stock_analysis"
+[0m08:32:10.669653 [debug] [Thread-1  ]: On model.stock_analysis.stock_analysis: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "node_id": "model.stock_analysis.stock_analysis"} */
+
+  
+    
+
+    create or replace table `first-project-262802`.`stock_analysis`.`stock_analysis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      -- -- with
+
+-- -- stock_analysis as ( select * except (ETL_Date) from `first-project-262802`.`stock_analysis`.`int_all_stock_history` )
+
+-- -- select
+-- --     *
+-- -- from stock_analysis
+
+
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- from int_all_stock_history -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+-- with 
+
+-- all_stock_history_weekly_monthly_yearly_price as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_history_weekly_monthly_yearly_price` )
+
+-- , all_stock_weekly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_weekly_price_movement` )
+
+-- , all_stock_monthly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_monthly_price_movement` )
+
+-- , all_stock_yearly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_yearly_price_movement` )
+
+
+
+-- select
+--     distinct *
+-- from all_stock_history_weekly_monthly_yearly_price
+-- left join all_stock_weekly_price_movement using (year_full, week_number, symbol)
+-- left join all_stock_monthly_price_movement using (year_full, month_number, symbol)
+-- left join all_stock_yearly_price_movement using (year_full, symbol)
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- --   used for adhoc creation  -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+select 
+    *
+    , round( ( safe_divide( avg_daily_price , LAG(avg_daily_price) OVER (PARTITION BY symbol ORDER BY date ASC) ) - 1 ) * 100.00 ,2) as avg_daily_price_movement_day_over_day
+from stock_analysis.stock_analysis
+    );
+  
+[0m08:32:11.192072 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:68cf52fe-ef8e-4e6d-bae4-4ce8824d6d1d&page=queryresults
+[0m08:32:23.845540 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e1efc674-4715-4290-90c0-1d2c8ea80664', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12f7895b0>]}
+[0m08:32:23.846156 [info ] [Thread-1  ]: 1 of 1 OK created sql table model stock_analysis.stock_analysis ................ [[32mCREATE TABLE (30.4m rows, 13.9 GiB processed)[0m in 13.70s]
+[0m08:32:23.846664 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stock_analysis
+[0m08:32:23.848051 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:32:23.848313 [debug] [MainThread]: Connection 'model.stock_analysis.stock_analysis' was properly closed.
+[0m08:32:23.848550 [info ] [MainThread]: 
+[0m08:32:23.848799 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 14.67 seconds (14.67s).
+[0m08:32:23.849294 [debug] [MainThread]: Command end result
+[0m08:32:23.878272 [info ] [MainThread]: 
+[0m08:32:23.878632 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:32:23.878819 [info ] [MainThread]: 
+[0m08:32:23.879104 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m08:32:23.880477 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 15.897184, "process_user_time": 2.481046, "process_kernel_time": 2.429901, "process_mem_max_rss": "200065024", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m08:32:23.880816 [debug] [MainThread]: Command `dbt run` succeeded at 08:32:23.880765 after 15.90 seconds
+[0m08:32:23.881038 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102cf8ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1035d0f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1043737c0>]}
+[0m08:32:23.881256 [debug] [MainThread]: Flushing usage events
+[0m17:22:28.784248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1044d8af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e522e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e52100>]}
+
+
+============================== 17:22:28.786932 | d052ec06-bc89-495a-ae52-5cb17ae60cf4 ==============================
+[0m17:22:28.786932 [info ] [MainThread]: Running with dbt=1.8.2
+[0m17:22:28.787245 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'profiles_dir': '/Users/ahmed/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --select stock_analysis.sql', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:22:31.962238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd052ec06-bc89-495a-ae52-5cb17ae60cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e28040>]}
+[0m17:22:31.989183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd052ec06-bc89-495a-ae52-5cb17ae60cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x140842e20>]}
+[0m17:22:31.989466 [info ] [MainThread]: Registered adapter: bigquery=1.8.1
+[0m17:22:32.028528 [debug] [MainThread]: checksum: f0a141b9de567cb7f131613ba2682f40b3a1c6a157f81c6e5435862eff68f109, vars: {}, profile: , target: , version: 1.8.2
+[0m17:22:32.114032 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:22:32.114350 [debug] [MainThread]: Partial parsing: updated file: stock_analysis://models/4_final/stock_analysis.sql
+[0m17:22:32.265780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd052ec06-bc89-495a-ae52-5cb17ae60cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1416dd130>]}
+[0m17:22:32.324327 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd052ec06-bc89-495a-ae52-5cb17ae60cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1411ec5b0>]}
+[0m17:22:32.324591 [info ] [MainThread]: Found 12 models, 3 sources, 585 macros
+[0m17:22:32.324772 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd052ec06-bc89-495a-ae52-5cb17ae60cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1047d6c40>]}
+[0m17:22:32.325481 [info ] [MainThread]: 
+[0m17:22:32.325748 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m17:22:32.326165 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_first-project-262802'
+[0m17:22:32.326363 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:22:33.080880 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_first-project-262802, now list_first-project-262802_stock_analysis)
+[0m17:22:33.081721 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:22:33.703665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd052ec06-bc89-495a-ae52-5cb17ae60cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x140e1c550>]}
+[0m17:22:33.705009 [info ] [MainThread]: Concurrency: 32 threads (target='prod')
+[0m17:22:33.705553 [info ] [MainThread]: 
+[0m17:22:33.712736 [debug] [Thread-1  ]: Began running node model.stock_analysis.stock_analysis
+[0m17:22:33.713675 [info ] [Thread-1  ]: 1 of 1 START sql table model stock_analysis.stock_analysis ..................... [RUN]
+[0m17:22:33.714376 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_first-project-262802_stock_analysis, now model.stock_analysis.stock_analysis)
+[0m17:22:33.714812 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stock_analysis
+[0m17:22:33.727090 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stock_analysis"
+[0m17:22:33.728267 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stock_analysis
+[0m17:22:33.744104 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:22:34.360858 [debug] [Thread-1  ]: Writing runtime sql for node "model.stock_analysis.stock_analysis"
+[0m17:22:34.363183 [debug] [Thread-1  ]: On model.stock_analysis.stock_analysis: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "node_id": "model.stock_analysis.stock_analysis"} */
+
+  
+    
+
+    create or replace table `first-project-262802`.`stock_analysis`.`stock_analysis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      -- -- with
+
+-- -- stock_analysis as ( select * except (ETL_Date) from `first-project-262802`.`stock_analysis`.`int_all_stock_history` )
+
+-- -- select
+-- --     *
+-- -- from stock_analysis
+
+
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- from int_all_stock_history -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+-- with 
+
+-- all_stock_history_weekly_monthly_yearly_price as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_history_weekly_monthly_yearly_price` )
+
+-- , all_stock_weekly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_weekly_price_movement` )
+
+-- , all_stock_monthly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_monthly_price_movement` )
+
+-- , all_stock_yearly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_yearly_price_movement` )
+
+
+
+-- select
+--     distinct *
+-- from all_stock_history_weekly_monthly_yearly_price
+-- left join all_stock_weekly_price_movement using (year_full, week_number, symbol)
+-- left join all_stock_monthly_price_movement using (year_full, month_number, symbol)
+-- left join all_stock_yearly_price_movement using (year_full, symbol)
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- --   used for adhoc creation  -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+select 
+    *
+    , volume as volume_per_day
+    , round(volume/390.0) as volume_per_minute
+from stock_analysis.stock_analysis
+    );
+  
+[0m17:22:34.960221 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:a895c77c-b1a5-45cd-ad6f-612b57e20ef1&page=queryresults
+[0m17:22:41.728669 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd052ec06-bc89-495a-ae52-5cb17ae60cf4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1417c8640>]}
+[0m17:22:41.730544 [info ] [Thread-1  ]: 1 of 1 OK created sql table model stock_analysis.stock_analysis ................ [[32mCREATE TABLE (30.4m rows, 14.1 GiB processed)[0m in 8.01s]
+[0m17:22:41.731156 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stock_analysis
+[0m17:22:41.732735 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:22:41.733011 [debug] [MainThread]: Connection 'model.stock_analysis.stock_analysis' was properly closed.
+[0m17:22:41.733279 [info ] [MainThread]: 
+[0m17:22:41.733558 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 9.41 seconds (9.41s).
+[0m17:22:41.734133 [debug] [MainThread]: Command end result
+[0m17:22:41.766114 [info ] [MainThread]: 
+[0m17:22:41.766484 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:22:41.766687 [info ] [MainThread]: 
+[0m17:22:41.766893 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:22:41.788583 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 13.064343, "process_user_time": 2.513479, "process_kernel_time": 2.739948, "process_mem_max_rss": "201523200", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:22:41.789124 [debug] [MainThread]: Command `dbt run` succeeded at 17:22:41.789048 after 13.06 seconds
+[0m17:22:41.789426 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1044d8af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x140842e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1417f91f0>]}
+[0m17:22:41.789686 [debug] [MainThread]: Flushing usage events
+[0m17:29:36.855138 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102734a60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1040ae2e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1040ae100>]}
+
+
+============================== 17:29:36.857856 | 2f6d51c0-4f91-4b5e-9feb-020044a829cd ==============================
+[0m17:29:36.857856 [info ] [MainThread]: Running with dbt=1.8.2
+[0m17:29:36.858201 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/ahmed/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/ahmed/Desktop/dbt/stock_analysis/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --select stock_analysis.sql', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:29:37.605629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2f6d51c0-4f91-4b5e-9feb-020044a829cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124391310>]}
+[0m17:29:37.632414 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2f6d51c0-4f91-4b5e-9feb-020044a829cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104031b50>]}
+[0m17:29:37.632698 [info ] [MainThread]: Registered adapter: bigquery=1.8.1
+[0m17:29:37.647495 [debug] [MainThread]: checksum: f0a141b9de567cb7f131613ba2682f40b3a1c6a157f81c6e5435862eff68f109, vars: {}, profile: , target: , version: 1.8.2
+[0m17:29:37.733552 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:29:37.733958 [debug] [MainThread]: Partial parsing: updated file: stock_analysis://models/4_final/stock_analysis.sql
+[0m17:29:37.893288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2f6d51c0-4f91-4b5e-9feb-020044a829cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12559e130>]}
+[0m17:29:37.965703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2f6d51c0-4f91-4b5e-9feb-020044a829cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x125041e20>]}
+[0m17:29:37.966028 [info ] [MainThread]: Found 12 models, 3 sources, 585 macros
+[0m17:29:37.966221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2f6d51c0-4f91-4b5e-9feb-020044a829cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12559e940>]}
+[0m17:29:37.966988 [info ] [MainThread]: 
+[0m17:29:37.967294 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m17:29:37.967735 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_first-project-262802'
+[0m17:29:37.967956 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:29:38.590052 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_first-project-262802, now list_first-project-262802_stock_analysis)
+[0m17:29:38.590570 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:29:39.116576 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2f6d51c0-4f91-4b5e-9feb-020044a829cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123d3c670>]}
+[0m17:29:39.118517 [info ] [MainThread]: Concurrency: 32 threads (target='prod')
+[0m17:29:39.119296 [info ] [MainThread]: 
+[0m17:29:39.126507 [debug] [Thread-1  ]: Began running node model.stock_analysis.stock_analysis
+[0m17:29:39.127424 [info ] [Thread-1  ]: 1 of 1 START sql table model stock_analysis.stock_analysis ..................... [RUN]
+[0m17:29:39.128178 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_first-project-262802_stock_analysis, now model.stock_analysis.stock_analysis)
+[0m17:29:39.128727 [debug] [Thread-1  ]: Began compiling node model.stock_analysis.stock_analysis
+[0m17:29:39.140754 [debug] [Thread-1  ]: Writing injected SQL for node "model.stock_analysis.stock_analysis"
+[0m17:29:39.142322 [debug] [Thread-1  ]: Began executing node model.stock_analysis.stock_analysis
+[0m17:29:39.157476 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:29:39.810619 [debug] [Thread-1  ]: Writing runtime sql for node "model.stock_analysis.stock_analysis"
+[0m17:29:39.812330 [debug] [Thread-1  ]: On model.stock_analysis.stock_analysis: /* {"app": "dbt", "dbt_version": "1.8.2", "profile_name": "stock_analysis", "target_name": "prod", "node_id": "model.stock_analysis.stock_analysis"} */
+
+  
+    
+
+    create or replace table `first-project-262802`.`stock_analysis`.`stock_analysis`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      -- -- with
+
+-- -- stock_analysis as ( select * except (ETL_Date) from `first-project-262802`.`stock_analysis`.`int_all_stock_history` )
+
+-- -- select
+-- --     *
+-- -- from stock_analysis
+
+
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- from int_all_stock_history -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+-- with 
+
+-- all_stock_history_weekly_monthly_yearly_price as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_history_weekly_monthly_yearly_price` )
+
+-- , all_stock_weekly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_weekly_price_movement` )
+
+-- , all_stock_monthly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_monthly_price_movement` )
+
+-- , all_stock_yearly_price_movement as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_yearly_price_movement` )
+
+
+
+-- select
+--     distinct *
+-- from all_stock_history_weekly_monthly_yearly_price
+-- left join all_stock_weekly_price_movement using (year_full, week_number, symbol)
+-- left join all_stock_monthly_price_movement using (year_full, month_number, symbol)
+-- left join all_stock_yearly_price_movement using (year_full, symbol)
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- --   used for adhoc creation  -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+select 
+    *
+    , close_last as close
+    , close_last as last
+from stock_analysis.stock_analysis
+    );
+  
+[0m17:29:40.308779 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=first-project-262802&j=bq:US:2f0af72e-e2d9-4bd5-b135-b504d90ddeea&page=queryresults
+[0m17:29:46.912482 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2f6d51c0-4f91-4b5e-9feb-020044a829cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x125687670>]}
+[0m17:29:46.913168 [info ] [Thread-1  ]: 1 of 1 OK created sql table model stock_analysis.stock_analysis ................ [[32mCREATE TABLE (30.4m rows, 14.6 GiB processed)[0m in 7.78s]
+[0m17:29:46.913701 [debug] [Thread-1  ]: Finished running node model.stock_analysis.stock_analysis
+[0m17:29:46.915082 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:29:46.915349 [debug] [MainThread]: Connection 'model.stock_analysis.stock_analysis' was properly closed.
+[0m17:29:46.915592 [info ] [MainThread]: 
+[0m17:29:46.915852 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 8.95 seconds (8.95s).
+[0m17:29:46.916345 [debug] [MainThread]: Command end result
+[0m17:29:46.944312 [info ] [MainThread]: 
+[0m17:29:46.944611 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:29:46.944792 [info ] [MainThread]: 
+[0m17:29:46.944981 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:29:46.946217 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 10.141067, "process_user_time": 2.299735, "process_kernel_time": 2.561262, "process_mem_max_rss": "199311360", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:29:46.946539 [debug] [MainThread]: Command `dbt run` succeeded at 17:29:46.946486 after 10.14 seconds
+[0m17:29:46.946750 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102734a60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1250412b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x125041a00>]}
+[0m17:29:46.946953 [debug] [MainThread]: Flushing usage events

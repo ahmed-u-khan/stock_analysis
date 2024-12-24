@@ -43,5 +43,6 @@
 
 select 
     *
-    , concat(day_of_week, ' - ', day_abbrev) as day_of_week_and_name
+    , close_last as close
+    , close_last as last
 from stock_analysis.stock_analysis
