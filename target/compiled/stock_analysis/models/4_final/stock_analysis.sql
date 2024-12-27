@@ -43,6 +43,6 @@
 
 select 
     *
-    , close_last as close
-    , close_last as last
+    , close - open as daily_price_movement
+    , round( SAFE_DIVIDE( abs( close - open ) , ( LAG(avg_daily_price) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) *100.0,2) as daily_price_movement_as_pct_of_previous_day_avg_daily_price
 from stock_analysis.stock_analysis
