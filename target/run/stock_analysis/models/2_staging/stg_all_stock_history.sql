@@ -9,7 +9,9 @@
 
     OPTIONS()
     as (
-      select * from `first-project-262802`.`stock_analysis`.`base_all_nasdaq_stock_history`
+      
+
+select * from `first-project-262802`.`stock_analysis`.`base_all_nasdaq_stock_history`
 
 union all
 

@@ -1,3 +1,7 @@
+{{ config(
+    tags="1_base" 
+) }}
+
 select	
     -- int64_field_0
     Date as date

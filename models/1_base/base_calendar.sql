@@ -1,3 +1,7 @@
+{{ config(
+    tags="1_base" 
+) }}
+
 select 
     is_workday
     , is_holiday

@@ -1,3 +1,7 @@
+{{ config(
+    tags="2_staging" 
+) }}
+
 with 
 
 base as ( select * from {{ ref('stg_all_stock_history_base') }} )

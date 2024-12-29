@@ -1,3 +1,7 @@
+{{ config(
+    tags="2_staging" 
+) }}
+
 with 
 
 base_calendar as (select * from {{ ref('base_calendar') }} )

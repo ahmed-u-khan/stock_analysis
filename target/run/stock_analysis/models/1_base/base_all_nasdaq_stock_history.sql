@@ -19,7 +19,7 @@
     , 'Adj Close' as adj_close
     , Volume as volume
     , Symbol as symbol
-    , date('2024-09-16') as etl_date
+    , date(ETL_Date) as etl_date
 from `first-project-262802`.`stock`.`all_nasdaq_stock_history`
     );
   

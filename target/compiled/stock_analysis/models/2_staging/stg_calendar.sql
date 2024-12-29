@@ -1,3 +1,5 @@
+
+
 with 
 
 base_calendar as (select * from `first-project-262802`.`stock_analysis`.`base_calendar` )

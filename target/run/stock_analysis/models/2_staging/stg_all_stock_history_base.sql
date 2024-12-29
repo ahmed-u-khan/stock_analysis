@@ -9,7 +9,9 @@
 
     OPTIONS()
     as (
-      with 
+      
+
+with 
 
 stock as ( select * from `first-project-262802`.`stock_analysis`.`stg_all_stock_history` )
 
