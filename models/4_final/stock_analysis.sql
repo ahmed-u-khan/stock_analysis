@@ -47,16 +47,36 @@
 select 
     *
 
-    -- , (high - low) as daily_price_high_low_range
+    -- -- -- , (high - low) as daily_price_high_low_range
     
-    -- , (open - close_last) as daily_price_open_close_range
+    -- -- -- , (open - close_last) as daily_price_open_close_range
     
-    -- , avg_daily_price - lag (avg_daily_price) over (partition by symbol order by date asc) as avg_daily_price_diff_day_over_day -- -- how much does the avg daily price change day over day
+    -- -- -- , avg_daily_price - lag (avg_daily_price) over (partition by symbol order by date asc) as avg_daily_price_diff_day_over_day -- -- how much does the avg daily price change day over day
 
-    -- , round( ( SAFE_DIVIDE( (avg_daily_price) , ( LAG(avg_daily_price) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) -1 ) *100.0,2) as avg_daily_price_diff_pct_day_over_day  -- -- avg daily price change as pct of previous avg daily price 
+    -- -- -- , round( ( SAFE_DIVIDE( (avg_daily_price) , ( LAG(avg_daily_price) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) -1 ) *100.0,2) as avg_daily_price_diff_pct_day_over_day  -- -- avg daily price change as pct of previous avg daily price 
     
-    , round( SAFE_DIVIDE( abs( close - open ) , ( LAG(avg_daily_price) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) *100.0,2) as daily_price_movement_as_pct_of_previous_day_avg_daily_price
     
-    , round( SAFE_DIVIDE( abs( high - low ) , ( LAG(avg_daily_price) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) *100.0,2) as daily_price_range_as_pct_of_previous_day_avg_daily_price    
+    -- -- -- , ( ( open ) - ( LAG(close) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) as price_diff_of_open_to_close_of_previous_day
+    -- -- -- , round( ( ( SAFE_DIVIDE( ( open ) , ( LAG(close) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_open_to_close_of_previous_day
+
+    -- -- -- , ( ( close ) - ( LAG(close) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) as price_diff_of_close_to_close_of_previous_day
+    -- -- -- , round( ( ( SAFE_DIVIDE( ( close ) , ( LAG(close) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_of_previous_day
+
+    -- -- -- , ( ( high ) - ( LAG(close) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) as price_diff_of_high_to_close_of_previous_day
+    -- -- -- , round( ( ( SAFE_DIVIDE( ( high ) , ( LAG(close) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_high_to_close_of_previous_day
+
+    -- -- -- , ( ( low ) - ( LAG(close) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) as price_diff_of_low_to_close_of_previous_day
+    -- -- -- , round( ( ( SAFE_DIVIDE( ( low ) , ( LAG(close) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_low_to_close_of_previous_day
+
+
+
+    
+    
+    
+    -- , round( SAFE_DIVIDE( abs( close - open ) , ( LAG(avg_daily_price) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) *100.0,2) as daily_price_movement_as_pct_of_previous_day_avg_daily_price
+    
+    -- , round( SAFE_DIVIDE( abs( high - low ) , ( LAG(avg_daily_price) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) *100.0,2) as daily_price_range_as_pct_of_previous_day_avg_daily_price    
+
+
 
 from stock_analysis.stock_analysis
