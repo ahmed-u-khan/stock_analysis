@@ -95,10 +95,10 @@ select
     -- -- -- , LEAD(close,90) OVER (PARTITION BY symbol ORDER BY date ASC) - close as price_diff_of_close_to_close_90_trading_days_in_advance
     -- -- -- , round( ( ( SAFE_DIVIDE( ( LEAD(close,90) OVER (PARTITION BY symbol ORDER BY date ASC) ) , ( close ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_90_trading_days_in_advance
 
-  , round( ( ( SAFE_DIVIDE( ( close ) , ( LAG(close,2) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_of_2_days_ago
-  , round( ( ( SAFE_DIVIDE( ( close ) , ( LAG(close,3) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_of_3_days_ago
-  , round( ( ( SAFE_DIVIDE( ( close ) , ( LAG(close,4) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_of_4_days_ago
-  , round( ( ( SAFE_DIVIDE( ( close ) , ( LAG(close,5) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_of_5_days_ago
+    -- -- --  , round( ( ( SAFE_DIVIDE( ( close ) , ( LAG(close,2) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_of_2_days_ago
+    -- -- -- , round( ( ( SAFE_DIVIDE( ( close ) , ( LAG(close,3) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_of_3_days_ago
+    -- -- -- , round( ( ( SAFE_DIVIDE( ( close ) , ( LAG(close,4) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_of_4_days_ago
+    -- -- -- , round( ( ( SAFE_DIVIDE( ( close ) , ( LAG(close,5) OVER (PARTITION BY symbol ORDER BY date ASC) ) ) ) -1 ) * 100.00,2) as price_diff_pct_of_close_to_close_of_5_days_ago
 
     
 
