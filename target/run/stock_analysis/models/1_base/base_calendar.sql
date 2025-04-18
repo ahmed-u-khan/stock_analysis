@@ -1,15 +1,10 @@
 
-  
-    
 
-    create or replace table `first-project-262802`.`stock_analysis`.`base_calendar`
-      
-    
-    
+  create or replace view `first-project-262802`.`stock_analysis`.`base_calendar`
+  OPTIONS()
+  as 
 
-    OPTIONS()
-    as (
-      select 
+select 
     is_workday
     , is_holiday
     , is_holiday_leave
@@ -28,7 +23,8 @@
     , day_of_month
     , day_of_year
     , week_of_month
-    , format_date('%W', a_date) as week_number
+    -- , format_date('%W', a_date) as week_number
+    , CAST(format_date('%W', a_date) AS INT64) as week_number
     , trim(month_full) as month_full
     , lower(trim(month_full)) as month_full_lower_case
     , month_abbrev
@@ -44,6 +40,5 @@
     , one_month_later
     , three_months_later
     , one_year_later
-from `first-project-262802`.`stock`.`400_years_of_generated_dates_and_holidays`
-    );
-  
+from `first-project-262802`.`stock`.`400_years_of_generated_dates_and_holidays`;
+

@@ -159,8 +159,4 @@ select
 
 
 
-    
-
-
-
 from stock_analysis.stock_analysis

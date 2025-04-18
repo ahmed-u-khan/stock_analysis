@@ -1,15 +1,8 @@
 
-  
-    
 
-    create or replace table `first-project-262802`.`stock_analysis`.`stg_calendar`
-      
-    
-    
-
-    OPTIONS()
-    as (
-      
+  create or replace view `first-project-262802`.`stock_analysis`.`stg_calendar`
+  OPTIONS()
+  as 
 
 with 
 
@@ -152,6 +145,5 @@ left join adding_last_working_day_of_year using (date)
 left join adding_first_working_day_of_month using (date)
 left join adding_last_working_day_of_month using (date)
 left join adding_first_working_day_of_week using (date)
-left join adding_last_working_day_of_week using (date)
-    );
-  
+left join adding_last_working_day_of_week using (date);
+
