@@ -5,7 +5,8 @@
   as 
 
 select
-    date(datetime_est) as date
+    datetime_est
+    , date(datetime_est) as date
     , time(datetime_est) as time
     , extract (hour from datetime_est ) as hour
     , extract (minute from datetime_est ) as minute
