@@ -5,4 +5,4 @@
 
 select 
     *
-from {{ ref('stg_polygon_stock_histories_1m') }}
+from {{ ref('int_stock_analysis_1m') }}
