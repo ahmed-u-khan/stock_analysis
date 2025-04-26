@@ -7,7 +7,8 @@ bigquery_project_name = 'first-project-262802'
 
 # bigquery_sql_query = 'SELECT * FROM `first-project-262802.stock_analysis.stock_analysis` limit 10 '
 # bigquery_sql_query = "SELECT * FROM `first-project-262802.stock_analysis.stock_analysis_1m` where symbol = 'NVDA' order by 1,2 "
-bigquery_sql_query = "SELECT * FROM `first-project-262802.stock_analysis.stock_analysis_1m` where symbol = 'NVDA' and minute_within_regular_trading_hours = 1 ORDER BY symbol, date, datetime_est"
+# bigquery_sql_query = "SELECT * FROM `first-project-262802.stock_analysis.stock_analysis_1m` where symbol = 'NVDA' and minute_within_regular_trading_hours = 1 ORDER BY symbol, date, datetime_est"
+bigquery_sql_query = "SELECT * FROM `first-project-262802.stock_analysis.stock_analysis_1m` where symbol = 'NVDA' ORDER BY symbol, date, datetime_est"
 
 
 # file_download_name = 'downloaded_data.csv'
