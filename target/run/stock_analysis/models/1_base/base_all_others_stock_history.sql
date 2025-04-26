@@ -1,15 +1,10 @@
 
-  
-    
 
-    create or replace table `first-project-262802`.`stock_analysis`.`base_all_others_stock_history`
-      
-    
-    
+  create or replace view `first-project-262802`.`stock_analysis`.`base_all_others_stock_history`
+  OPTIONS()
+  as 
 
-    OPTIONS()
-    as (
-      select	
+select	
     -- int64_field_0
     Date as date
     , Open as open
@@ -20,6 +15,5 @@
     , Volume as volume
     , Symbol as symbol
     , date(ETL_Date) as etl_date
-from `first-project-262802`.`stock`.`all_others_stock_history`
-    );
-  
+from `first-project-262802`.`stock`.`all_others_stock_history`;
+
