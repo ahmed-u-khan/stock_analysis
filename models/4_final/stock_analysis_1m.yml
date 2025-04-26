@@ -1,5 +1,7 @@
 models:
   - name: stock_analysis_1m
+    config:
+      tags: ['lightdash']
     columns:
       - name: symbol
         description: ""
