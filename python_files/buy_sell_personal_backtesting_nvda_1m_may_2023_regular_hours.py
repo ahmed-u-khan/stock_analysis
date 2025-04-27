@@ -49,11 +49,9 @@ buy_sell_df["buy_or_sell"] = ""
 for index, row in buy_sell_df.iterrows():
     
     if buy_sell_df["rsi_14"][index] < 30 :
-        # buy_sell_df["should_buy_or_sell"][index] = row
         buy_sell_df["should_buy_or_sell"][index] = "should_buy"
     
     if buy_sell_df["rsi_14"][index] > 70 :
-        # buy_sell_df["should_buy_or_sell"][index] = row
         buy_sell_df["should_buy_or_sell"][index] = "should_sell"
 
     if buy_sell_df["active_trade"][index] == "" :
@@ -61,25 +59,19 @@ for index, row in buy_sell_df.iterrows():
 
     
     if buy_sell_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 1 :
-        # buy_sell_df["should_buy_or_sell"][index] = row
-        # buy_sell_df["buy_or_sell"][index] = "buy"
         buy_sell_df["active_trade"][index] = 1
 
 
     if index > 0 :
         if buy_sell_df["rsi_14"][index] >= 30 and buy_sell_df["active_trade"][index-1] == 1 :
-            # buy_sell_df["should_buy_or_sell"][index] = row
-            # buy_sell_df["buy_or_sell"][index] = "buy"
             buy_sell_df["active_trade"][index] = 1
 
 
     if buy_sell_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 0 :
-        # buy_sell_df["should_buy_or_sell"][index] = row
         buy_sell_df["buy_or_sell"][index] = "buy"
         buy_sell_df["active_trade"][index] = 1
 
     if buy_sell_df["rsi_14"][index] > 70 and buy_sell_df["active_trade"][index-1] == 1 :
-        # buy_sell_df["should_buy_or_sell"][index] = row
         buy_sell_df["buy_or_sell"][index] = "sell"
         buy_sell_df["active_trade"][index] = 0
     
@@ -184,12 +176,31 @@ merged.rename(columns={'grouping_column': 'trade_count'}, inplace=True)
 summary_statistics_sql_buy_sell_per_row_output_df = merged
 
 summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss'] = summary_statistics_sql_buy_sell_per_row_output_df['txn_close_sell'] - summary_statistics_sql_buy_sell_per_row_output_df['txn_close_buy']
+
 summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss_10k'] = summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss']*10000
 
-# Output
-# print(summary_statistics_sql_buy_sell_per_row_output_df.head(150))
+summary_statistics_sql_buy_sell_per_row_output_df['account_value'] = 10000
 
-summary_statistics_sql_buy_sell_per_row_output_df.to_csv(summary_csv_name)
+# for index, row in summary_statistics_sql_buy_sell_per_row_output_df.iterrows()
+    
+#     if summary_statistics_sql_buy_sell_per_row_output_df["rsi_14"][index] < 30 :
+#         summary_statistics_sql_buy_sell_per_row_output_df["should_buy_or_sell"][index] = "should_buy"
+    
+#     if summary_statistics_sql_buy_sell_per_row_output_df["rsi_14"][index] > 70 :
+#         summary_statistics_sql_buy_sell_per_row_output_df["should_buy_or_sell"][index] = "should_sell"
+
+#     if summary_statistics_sql_buy_sell_per_row_output_df["active_trade"][index] == "" :
+#         summary_statistics_sql_buy_sell_per_row_output_df["active_trade"][index] = 0
+
+    
+#     if summary_statistics_sql_buy_sell_per_row_output_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 1 :
+#         summary_statistics_sql_buy_sell_per_row_output_df["active_trade"][index] = 1
+
+# Output
+print("\n\n\n\n summary_statistics_sql_buy_sell_per_row_output_df \n\n")
+print(summary_statistics_sql_buy_sell_per_row_output_df.head(150))
+
+# summary_statistics_sql_buy_sell_per_row_output_df.to_csv(summary_csv_name)
 
 
 
