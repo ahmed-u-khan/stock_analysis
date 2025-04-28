@@ -181,26 +181,20 @@ summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss_10k'] = summa
 
 summary_statistics_sql_buy_sell_per_row_output_df['account_value'] = 10000
 
-# for index, row in summary_statistics_sql_buy_sell_per_row_output_df.iterrows()
-    
-#     if summary_statistics_sql_buy_sell_per_row_output_df["rsi_14"][index] < 30 :
-#         summary_statistics_sql_buy_sell_per_row_output_df["should_buy_or_sell"][index] = "should_buy"
-    
-#     if summary_statistics_sql_buy_sell_per_row_output_df["rsi_14"][index] > 70 :
-#         summary_statistics_sql_buy_sell_per_row_output_df["should_buy_or_sell"][index] = "should_sell"
+new_row = pd.DataFrame({ 'trade_count':0, 'txn_datetime_buy':'1900-01-01 00:00:00.000000 UTC', 'txn_close_buy':0.0000, 'txn_datetime_sell':'1900-01-01 00:00:00.000000 UTC', 'txn_close_sell':0.0000, 'profit_and_loss':0.0000, 'profit_and_loss_10k':0.0000, 'account_value':10000 },index =[0])
+summary_statistics_sql_buy_sell_per_row_output_df = pd.concat([new_row, summary_statistics_sql_buy_sell_per_row_output_df]).reset_index(drop = True)
 
-#     if summary_statistics_sql_buy_sell_per_row_output_df["active_trade"][index] == "" :
-#         summary_statistics_sql_buy_sell_per_row_output_df["active_trade"][index] = 0
+for index, row in summary_statistics_sql_buy_sell_per_row_output_df.iterrows() :
 
+    if index > 0 :
+        summary_statistics_sql_buy_sell_per_row_output_df['account_value'][index] = summary_statistics_sql_buy_sell_per_row_output_df['account_value'][index-1] + summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss_10k'][index]
     
-#     if summary_statistics_sql_buy_sell_per_row_output_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 1 :
-#         summary_statistics_sql_buy_sell_per_row_output_df["active_trade"][index] = 1
 
 # Output
-print("\n\n\n\n summary_statistics_sql_buy_sell_per_row_output_df \n\n")
-print(summary_statistics_sql_buy_sell_per_row_output_df.head(150))
+# print("\n\n\n\n summary_statistics_sql_buy_sell_per_row_output_df \n\n")
+# print(summary_statistics_sql_buy_sell_per_row_output_df.head(150))
 
-# summary_statistics_sql_buy_sell_per_row_output_df.to_csv(summary_csv_name)
+summary_statistics_sql_buy_sell_per_row_output_df.to_csv(summary_csv_name)
 
 
 
