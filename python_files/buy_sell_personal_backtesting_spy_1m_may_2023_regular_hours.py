@@ -1,4 +1,4 @@
-file_title = 'buy_sell_personal_backtesting_nvda_1m_may_2023_regular_hours'
+file_title = 'buy_sell_personal_backtesting_spy_1m_may_2023_regular_hours'
 detailed_csv_name = file_title + '_detailed.csv'
 per_trade_summary_csv_name = file_title + '_summary_per_trade.csv'
 overall_summary_csv_name = file_title + '_summary_overall.csv'
@@ -27,8 +27,7 @@ import numpy as np
 ###############################################################################################################################################
 ###############################################################################################################################################
 
-ticker_data_csv_df_og = pd.read_csv("nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv")
-# ticker_data_csv_df_og = pd.read_csv("spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv")
+ticker_data_csv_df_og = pd.read_csv("spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv")
 
 analysis_df = ticker_data_csv_df_og.copy(deep=False)
 analysis_df = ticker_data_csv_df_og[["datetime_est","close","volume","rsi_14"]]
@@ -74,9 +73,58 @@ for index, row in buy_sell_df.iterrows():
         buy_sell_df["buy_or_sell"][index] = "buy"
         buy_sell_df["active_trade"][index] = 1
 
-    if buy_sell_df["rsi_14"][index] > 70 and buy_sell_df["active_trade"][index-1] == 1 :
-        buy_sell_df["buy_or_sell"][index] = "sell"
-        buy_sell_df["active_trade"][index] = 0
+    if index > 0 :
+        if buy_sell_df["rsi_14"][index] > 70 and buy_sell_df["active_trade"][index-1] == 1 :
+            buy_sell_df["buy_or_sell"][index] = "sell"
+            buy_sell_df["active_trade"][index] = 0
+
+# for index, row in buy_sell_df.iterrows():
+    
+#     try:
+#         if buy_sell_df["rsi_14"][index] < 30:
+#             buy_sell_df["should_buy_or_sell"][index] = "should_buy"
+#     except Exception as e:
+#         print(f"Error in first RSI check (should_buy): {e}")
+    
+#     try:
+#         if buy_sell_df["rsi_14"][index] > 70:
+#             buy_sell_df["should_buy_or_sell"][index] = "should_sell"
+#     except Exception as e:
+#         print(f"Error in second RSI check (should_sell): {e}")
+
+#     try:
+#         if buy_sell_df["active_trade"][index] == "":
+#             buy_sell_df["active_trade"][index] = 0
+#     except Exception as e:
+#         print(f"Error in setting default active_trade: {e}")
+    
+#     try:
+#         if buy_sell_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 1:
+#             buy_sell_df["active_trade"][index] = 1
+#     except Exception as e:
+#         print(f"Error in continuing active trade (RSI < 30): {e}")
+
+#     try:
+#         if index > 0:
+#             if buy_sell_df["rsi_14"][index] >= 30 and buy_sell_df["active_trade"][index-1] == 1:
+#                 buy_sell_df["active_trade"][index] = 1
+#     except Exception as e:
+#         print(f"Error in continuing active trade (RSI >= 30): {e}")
+
+#     try:
+#         if buy_sell_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 0:
+#             buy_sell_df["buy_or_sell"][index] = "buy"
+#             buy_sell_df["active_trade"][index] = 1
+#     except Exception as e:
+#         print(f"Error in buy signal: {e}")
+
+#     try:
+#       if index > 0 :
+#         if buy_sell_df["rsi_14"][index] > 70 and buy_sell_df["active_trade"][index-1] == 1:
+#             buy_sell_df["buy_or_sell"][index] = "sell"
+#             buy_sell_df["active_trade"][index] = 0
+#     except Exception as e:
+#         print(f"Error in sell signal: {e}")
     
     
 
