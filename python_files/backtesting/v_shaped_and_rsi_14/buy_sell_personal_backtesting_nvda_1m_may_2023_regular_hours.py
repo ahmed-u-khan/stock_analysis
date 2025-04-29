@@ -53,6 +53,8 @@ buy_sell_df = analysis_df.copy(deep=False)
 buy_sell_df["should_buy_or_sell"] = ""
 buy_sell_df["active_trade"] = ''
 buy_sell_df["buy_or_sell"] = ""
+buy_sell_df["buy_int"] = ""
+buy_sell_df["sell_int"] = ""
 
 
 for index, row in buy_sell_df.iterrows():
@@ -81,11 +83,13 @@ for index, row in buy_sell_df.iterrows():
             if buy_sell_df["close"][index-1] > buy_sell_df["close"][index-2] and buy_sell_df["close"][index-2] < buy_sell_df["close"][index-3] :
                 buy_sell_df["buy_or_sell"][index] = "buy"
                 buy_sell_df["active_trade"][index] = 1
+                buy_sell_df["buy_int"][index] = 1
 
     if index > 0 and analysis_df['hour_minute_int'][index] >= 930 and analysis_df['hour_minute_int'][index] <= 1559 :
         if buy_sell_df["rsi_14"][index] > 70 and buy_sell_df["active_trade"][index-1] == 1 :
             buy_sell_df["buy_or_sell"][index] = "sell"
             buy_sell_df["active_trade"][index] = 0
+            buy_sell_df["sell_int"][index] = 1
 
 # for index, row in buy_sell_df.iterrows():
     
