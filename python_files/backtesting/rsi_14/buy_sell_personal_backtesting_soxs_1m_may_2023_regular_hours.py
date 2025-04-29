@@ -67,8 +67,9 @@ for index, row in buy_sell_df.iterrows():
         buy_sell_df["active_trade"][index] = 0
 
 
-    if buy_sell_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 1 :
-        buy_sell_df["active_trade"][index] = 1
+    if index > 0 :
+        if buy_sell_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 1 :
+            buy_sell_df["active_trade"][index] = 1
 
 
     if index > 0 :

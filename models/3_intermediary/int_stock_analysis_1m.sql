@@ -9,6 +9,8 @@ with base as
     from {{ ref('stg_polygon_stock_histories_1m') }}
 )
 
+-- -- -- got the following from here: https://medium.com/google-cloud/how-to-calculate-technical-indicators-in-bigquery-using-sql-moving-averages-rsi-macd-b58b16e4f52e
+
 , prices AS (
   SELECT 
     symbol,
