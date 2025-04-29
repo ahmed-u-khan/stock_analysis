@@ -31,6 +31,9 @@ ticker_data_csv_df_og = pd.read_csv("soxs_1m_01-may-2023_to_01-june-2023_regular
 
 analysis_df = ticker_data_csv_df_og.copy(deep=False)
 analysis_df = ticker_data_csv_df_og[["datetime_est","close","volume","rsi_14"]]
+analysis_df['hour'] = analysis_df['datetime_est'].str.split(' ').str[1].str.split(':').str[0].astype(int)
+analysis_df['minute'] = analysis_df['datetime_est'].str.split(' ').str[1].str.split(':').str[1].astype(int)
+analysis_df['hour_minute_int'] = analysis_df['hour'] * 100 + analysis_df['minute']
 # analysis_df.index = pd.DatetimeIndex(ticker_data_csv_df_og["datetime_est"])
 
 
@@ -38,7 +41,11 @@ analysis_df = ticker_data_csv_df_og[["datetime_est","close","volume","rsi_14"]]
 # print(ticker_data_csv_df_og.head(150))
 
 # print("\n\n\n\n analysis_df \n\n")
+# print(analysis_df.dtypes)
+# print("\n\n\n\n analysis_df \n\n")
 # print(analysis_df.head(150))
+# print("\n\n\n\n analysis_df \n\n")
+# print(analysis_df.tail(150))
 
 
 buy_sell_df = analysis_df.copy(deep=False)
@@ -59,7 +66,7 @@ for index, row in buy_sell_df.iterrows():
     if buy_sell_df["active_trade"][index] == "" :
         buy_sell_df["active_trade"][index] = 0
 
-    
+
     if buy_sell_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 1 :
         buy_sell_df["active_trade"][index] = 1
 
@@ -68,12 +75,12 @@ for index, row in buy_sell_df.iterrows():
         if buy_sell_df["rsi_14"][index] >= 30 and buy_sell_df["active_trade"][index-1] == 1 :
             buy_sell_df["active_trade"][index] = 1
 
+    if analysis_df['hour_minute_int'][index] >= 930 and analysis_df['hour_minute_int'][index] <= 1559 : 
+        if buy_sell_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 0 :
+            buy_sell_df["buy_or_sell"][index] = "buy"
+            buy_sell_df["active_trade"][index] = 1
 
-    if buy_sell_df["rsi_14"][index] < 30 and buy_sell_df["active_trade"][index-1] == 0 :
-        buy_sell_df["buy_or_sell"][index] = "buy"
-        buy_sell_df["active_trade"][index] = 1
-
-    if index > 0 :
+    if index > 0 and analysis_df['hour_minute_int'][index] >= 930 and analysis_df['hour_minute_int'][index] <= 1559 :
         if buy_sell_df["rsi_14"][index] > 70 and buy_sell_df["active_trade"][index-1] == 1 :
             buy_sell_df["buy_or_sell"][index] = "sell"
             buy_sell_df["active_trade"][index] = 0
@@ -267,8 +274,9 @@ buy_and_hold_profit_pct = round( ( ( ( buy_and_hold_profit_amount + 10000 ) / 10
 
 
 
+print("###############################################################################################################################################")
 print(f"\n\n profit_amount: ${profit_amount:,} \n\n")
 print(f"\n\n profit_pct: {profit_pct:}% \n\n")
 print(f"\n\n buy_and_hold_profit_amount: ${buy_and_hold_profit_amount:,} \n\n")
 print(f"\n\n buy_and_hold_profit_pct: {buy_and_hold_profit_pct:}% \n\n")
-
+print("###############################################################################################################################################")
