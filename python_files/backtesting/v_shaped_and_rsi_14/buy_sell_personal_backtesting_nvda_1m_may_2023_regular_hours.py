@@ -273,6 +273,13 @@ profit_pct = round( ( ( summary_statistics_sql_buy_sell_per_row_output_df['accou
 buy_and_hold_profit_amount = round( ( summary_statistics_sql_buy_sell_per_row_output_df['txn_close_sell'].iloc[-1] - summary_statistics_sql_buy_sell_per_row_output_df['txn_close_buy'].iloc[1] ) * 10000 )
 buy_and_hold_profit_pct = round( ( ( ( buy_and_hold_profit_amount + 10000 ) / 10000 ) - 1 ) * 100 )
 
+number_of_trades = (summary_statistics_sql_buy_sell_per_row_output_df['trade_count'] > 0).sum()
+number_of_trades_won = (summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss'] > 0).sum()
+number_of_trades_tied = (summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss'] == 0).sum()
+number_of_trades_lost = (summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss'] < 0).sum()
+trade_win_pct = round( ( ( number_of_trades_won / number_of_trades ) * 100.0 ) )
+
+
 # print("\n\n\n\n summary_statioverall_summary_dfstics_sql_buy_sell_per_row_output_df \n\n")
 # print(overall_summary_df.head(150))
 
@@ -285,4 +292,9 @@ print(f"\n\n profit_amount: ${profit_amount:,} \n\n")
 print(f"\n\n profit_pct: {profit_pct:}% \n\n")
 print(f"\n\n buy_and_hold_profit_amount: ${buy_and_hold_profit_amount:,} \n\n")
 print(f"\n\n buy_and_hold_profit_pct: {buy_and_hold_profit_pct:}% \n\n")
+print(f"\n\n number_of_trades: {number_of_trades:} \n\n")
+print(f"\n\n number_of_trades_won: {number_of_trades_won:} \n\n")
+print(f"\n\n number_of_trades_tied: {number_of_trades_tied:} \n\n")
+print(f"\n\n number_of_trades_lost: {number_of_trades_lost:} \n\n")
+print(f"\n\n trade_win_pct: {trade_win_pct:}% \n\n")
 print("###############################################################################################################################################")
