@@ -1,4 +1,4 @@
-file_title = 'buy_sell_personal_backtesting_1m'
+file_title = 'testing_buy_sell_personal_backtesting_1m'
 detailed_csv_name = file_title + '_detailed.csv'
 per_trade_summary_csv_name = file_title + '_summary_per_trade.csv'
 overall_summary_csv_name = file_title + '_summary_overall.csv'
@@ -62,8 +62,13 @@ def buy_sell_analysis_input_dataset(csv_name) :
 
     return (buy_sell_df)
 
+###############################################################################################################################################
+###############################################################################################################################################
+###############################################################################################################################################
+###############################################################################################################################################
+###############################################################################################################################################
 
-def trading_strategy(input_df) :
+def trading_strategy(input_df, trading_hours, stategy_name, symbol_name) :
 
     buy_sell_df = input_df
 
@@ -105,8 +110,9 @@ def trading_strategy(input_df) :
     # print("\n\n\n\n buy_sell_df \n\n")
     # print(buy_sell_df.head(150))
 
-
-
+    buy_sell_df['trading_hours'] = trading_hours
+    buy_sell_df['stategy_name'] = stategy_name
+    buy_sell_df['symbol_name'] = symbol_name
     buy_sell_df.to_csv(detailed_csv_name)
     return (buy_sell_df)
     
@@ -116,7 +122,7 @@ def trading_strategy(input_df) :
 ###############################################################################################################################################
 ###############################################################################################################################################
 
-def per_trade_summary (input_df) :
+def per_trade_summary (input_df, trading_hours, stategy_name, symbol_name) :
 
     summary_statistics_df = input_df
 
@@ -223,6 +229,9 @@ def per_trade_summary (input_df) :
     # print("\n\n\n\n summary_statistics_sql_buy_sell_per_row_output_df \n\n")
     # print(summary_statistics_sql_buy_sell_per_row_output_df.head(150))
 
+    summary_statistics_sql_buy_sell_per_row_output_df['trading_hours'] = trading_hours
+    summary_statistics_sql_buy_sell_per_row_output_df['stategy_name'] = stategy_name
+    summary_statistics_sql_buy_sell_per_row_output_df['symbol_name'] = symbol_name
     summary_statistics_sql_buy_sell_per_row_output_df.to_csv(per_trade_summary_csv_name)
 
     return (summary_statistics_sql_buy_sell_per_row_output_df)
@@ -233,7 +242,7 @@ def per_trade_summary (input_df) :
 ###############################################################################################################################################
 ###############################################################################################################################################
 
-def overall_summary (input_df) :
+def overall_summary (input_df, trading_hours, stategy_name, symbol_name) :
 
     summary_statistics_sql_buy_sell_per_row_output_df = input_df
 
@@ -276,9 +285,27 @@ def overall_summary (input_df) :
     # print("\n\n\n\n overall_summary_df \n\n")
     # print(overall_summary_df.head(150))
 
+    overall_summary_df['trading_hours'] = trading_hours
+    overall_summary_df['stategy_name'] = stategy_name
+    overall_summary_df['symbol_name'] = symbol_name
     overall_summary_df.to_csv(overall_summary_csv_name)
 
     return (overall_summary_df)
+
+###############################################################################################################################################
+###############################################################################################################################################
+###############################################################################################################################################
+###############################################################################################################################################
+###############################################################################################################################################
+
+def execute_testing_strategy (csv_name,trading_hours,stategy_name, symbol_name ):
+
+    trading_strategy_df = trading_strategy(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, stategy_name = stategy_name, symbol_name = symbol_name)
+    
+    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, stategy_name = stategy_name, symbol_name = symbol_name)
+    
+    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, stategy_name = stategy_name, symbol_name = symbol_name)
+
 
 
 ###############################################################################################################################################
@@ -288,7 +315,14 @@ def overall_summary (input_df) :
 ###############################################################################################################################################
 
 if __name__ == "__main__":
-    # buy_sell_analysis_input_dataset("nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv")
-    # trading_strategy(buy_sell_analysis_input_dataset("nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv"))
-    # per_trade_summary(trading_strategy(buy_sell_analysis_input_dataset("nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv")))
-    overall_summary(per_trade_summary(trading_strategy(buy_sell_analysis_input_dataset("nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv"))))
+    
+    
+    # trading_strategy_df = trading_strategy(input_df = buy_sell_analysis_input_dataset("nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv"), trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'NVDA')
+    # per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'NVDA')
+    # overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'NVDA')
+
+
+    
+    execute_testing_strategy (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'NVDA' )
+    execute_testing_strategy (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'SPY' )
+    execute_testing_strategy (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'SOXS' )
