@@ -1,7 +1,7 @@
-file_title = 'testing_buy_sell_personal_backtesting_1m'
-detailed_csv_name = file_title + '_detailed.csv'
-per_trade_summary_csv_name = file_title + '_summary_per_trade.csv'
-overall_summary_csv_name = file_title + '_summary_overall.csv'
+file_title = 'buy_sell_personal_backtesting_1m_consolidated'
+consolidated_detailed_csv_name = file_title + '_detailed.csv'
+consolidated_per_trade_summary_csv_name = file_title + '_summary_per_trade.csv'
+consolidated_overall_summary_csv_name = file_title + '_summary_overall.csv'
 
 
 ###############################################################################################################################################
@@ -20,6 +20,10 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 import pandasql as ps
 
 import numpy as np
+
+consolidated_detailed_df = pd.DataFrame()
+consolidated_summary_per_trade_df = pd.DataFrame()
+consolidatedl_summary_overall_df = pd.DataFrame()
 
 ###############################################################################################################################################
 ###############################################################################################################################################
@@ -113,7 +117,12 @@ def trading_strategy_v_shape_and_rsi_30_70(input_df, trading_hours, stategy_name
     buy_sell_df['trading_hours'] = trading_hours
     buy_sell_df['stategy_name'] = stategy_name
     buy_sell_df['symbol_name'] = symbol_name
-    buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+
+    global consolidated_detailed_df
+    consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
+    
+    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+
     return (buy_sell_df)
     
 
@@ -159,7 +168,12 @@ def trading_strategy_rsi_30_70(input_df, trading_hours, stategy_name, symbol_nam
     buy_sell_df['trading_hours'] = trading_hours
     buy_sell_df['stategy_name'] = stategy_name
     buy_sell_df['symbol_name'] = symbol_name
-    buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+
+    global consolidated_detailed_df
+    consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
+    
+    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+
     return (buy_sell_df)
     
 
@@ -210,7 +224,12 @@ def trading_strategy_v_shape(input_df, trading_hours, stategy_name, symbol_name)
     buy_sell_df['trading_hours'] = trading_hours
     buy_sell_df['stategy_name'] = stategy_name
     buy_sell_df['symbol_name'] = symbol_name
-    buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+
+    global consolidated_detailed_df
+    consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
+    
+    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+
     return (buy_sell_df)
     
 ###############################################################################################################################################
@@ -329,7 +348,11 @@ def per_trade_summary (input_df, trading_hours, stategy_name, symbol_name) :
     summary_statistics_sql_buy_sell_per_row_output_df['trading_hours'] = trading_hours
     summary_statistics_sql_buy_sell_per_row_output_df['stategy_name'] = stategy_name
     summary_statistics_sql_buy_sell_per_row_output_df['symbol_name'] = symbol_name
-    summary_statistics_sql_buy_sell_per_row_output_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"summary_per_trade.csv")
+
+    global consolidated_summary_per_trade_df
+    consolidated_summary_per_trade_df = pd.concat([consolidated_summary_per_trade_df, summary_statistics_sql_buy_sell_per_row_output_df], ignore_index=True)
+    
+    # summary_statistics_sql_buy_sell_per_row_output_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"summary_per_trade.csv")
 
     return (summary_statistics_sql_buy_sell_per_row_output_df)
 
@@ -385,7 +408,11 @@ def overall_summary (input_df, trading_hours, stategy_name, symbol_name) :
     overall_summary_df['trading_hours'] = trading_hours
     overall_summary_df['stategy_name'] = stategy_name
     overall_summary_df['symbol_name'] = symbol_name
-    overall_summary_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"summary_overall.csv")
+
+    global consolidatedl_summary_overall_df
+    consolidatedl_summary_overall_df = pd.concat([consolidatedl_summary_overall_df, overall_summary_df], ignore_index=True)
+    
+    # overall_summary_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"summary_overall.csv")
 
     return (overall_summary_df)
 
@@ -429,16 +456,20 @@ def execute_testing_strategy_v_shape (csv_name,trading_hours,stategy_name, symbo
 ###############################################################################################################################################
 ###############################################################################################################################################
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     
-    execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'NVDA' )
-    execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'SPY' )
-    execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'SOXS' )
+execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'NVDA' )
+execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'SPY' )
+execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape_and_rsi_30_70', symbol_name = 'SOXS' )
 
-    execute_testing_strategy_rsi_30_70 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'rsi_30_70', symbol_name = 'NVDA' )
-    execute_testing_strategy_rsi_30_70 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'rsi_30_70', symbol_name = 'SPY' )
-    execute_testing_strategy_rsi_30_70 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'rsi_30_70', symbol_name = 'SOXS' )
+execute_testing_strategy_rsi_30_70 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'rsi_30_70', symbol_name = 'NVDA' )
+execute_testing_strategy_rsi_30_70 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'rsi_30_70', symbol_name = 'SPY' )
+execute_testing_strategy_rsi_30_70 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'rsi_30_70', symbol_name = 'SOXS' )
 
-    execute_testing_strategy_v_shape (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape', symbol_name = 'NVDA' )
-    execute_testing_strategy_v_shape (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape', symbol_name = 'SPY' )
-    execute_testing_strategy_v_shape (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape', symbol_name = 'SOXS' )
+execute_testing_strategy_v_shape (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape', symbol_name = 'NVDA' )
+execute_testing_strategy_v_shape (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape', symbol_name = 'SPY' )
+execute_testing_strategy_v_shape (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', stategy_name = 'v_shape', symbol_name = 'SOXS' )
+
+consolidated_detailed_df.to_csv(consolidated_detailed_csv_name)
+consolidated_summary_per_trade_df.to_csv(consolidated_per_trade_summary_csv_name)
+consolidatedl_summary_overall_df.to_csv(consolidated_overall_summary_csv_name)
