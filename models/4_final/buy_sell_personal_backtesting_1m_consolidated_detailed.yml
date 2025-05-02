@@ -1,0 +1,100 @@
+models:
+  - name: buy_sell_personal_backtesting_1m_consolidated_detailed
+    config:
+      tags: ['lightdash']
+    columns:
+      - name: int64_field_0
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: datetime_est
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: close
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: volume
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rsi_14
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: hour
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: minute
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: hour_minute_int
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: earliest_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: latest_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: should_buy_or_sell
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: active_trade
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: buy_or_sell
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: buy_int
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sell_int
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: trading_hours
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: stategy_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: symbol_name
+        description: ""
+        meta:
+          dimension:
+            type: string

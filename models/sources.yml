@@ -13,4 +13,10 @@ sources:
       - name: all_others_stock_history
 
       - name: polygon_all_different_stock_histories_1m
+
+      - name: buy_sell_personal_backtesting_1m_consolidated_detailed
+
+      - name: buy_sell_personal_backtesting_1m_consolidated_summary_overall
+
+      - name: buy_sell_personal_backtesting_1m_consolidated_summary_per_trade
       

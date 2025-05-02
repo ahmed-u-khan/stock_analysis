@@ -1,0 +1,80 @@
+models:
+  - name: buy_sell_personal_backtesting_1m_consolidated_summary_overall
+    config:
+      tags: ['lightdash']
+    columns:
+      - name: int64_field_0
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: profit_amount
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: profit_pct
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: buy_and_hold_profit_amount
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: buy_and_hold_profit_pct
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: number_of_trades
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: number_of_trades_won
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: number_of_trades_tied
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: number_of_trades_lost
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: trade_win_pct
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: earliest_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: latest_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: trading_hours
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: stategy_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: symbol_name
+        description: ""
+        meta:
+          dimension:
+            type: string

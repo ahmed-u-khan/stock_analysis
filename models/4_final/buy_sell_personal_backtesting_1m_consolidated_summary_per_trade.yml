@@ -1,0 +1,75 @@
+models:
+  - name: buy_sell_personal_backtesting_1m_consolidated_summary_per_trade
+    config:
+      tags: ['lightdash']
+    columns:
+      - name: int64_field_0
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: trade_count
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: txn_datetime_buy
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: txn_close_buy
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: txn_datetime_sell
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: txn_close_sell
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: profit_and_loss
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: profit_and_loss_10k
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: account_value
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: earliest_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: latest_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: trading_hours
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: stategy_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: symbol_name
+        description: ""
+        meta:
+          dimension:
+            type: string

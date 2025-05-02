@@ -35,8 +35,6 @@ consolidatedl_summary_overall_df = pd.DataFrame()
 ###############################################################################################################################################
 ###############################################################################################################################################
 
-# ticker_data_csv_df_og = pd.read_csv("nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv")
-
 def buy_sell_analysis_input_dataset(csv_name) :
 
     ticker_data_csv_df_og = pd.read_csv(csv_name)
@@ -46,6 +44,9 @@ def buy_sell_analysis_input_dataset(csv_name) :
     analysis_df['hour'] = analysis_df['datetime_est'].str.split(' ').str[1].str.split(':').str[0].astype(int)
     analysis_df['minute'] = analysis_df['datetime_est'].str.split(' ').str[1].str.split(':').str[1].astype(int)
     analysis_df['hour_minute_int'] = analysis_df['hour'] * 100 + analysis_df['minute']
+    analysis_df['date'] = analysis_df['datetime_est'].str.split().str[0]
+    analysis_df['earliest_date'] = analysis_df['date'].iloc[0]
+    analysis_df['latest_date'] = analysis_df['date'].iloc[-1]
     # analysis_df.index = pd.DatetimeIndex(ticker_data_csv_df_og["datetime_est"])
 
 
@@ -571,6 +572,9 @@ def per_trade_summary (input_df, trading_hours, stategy_name, symbol_name) :
             summary_statistics_sql_buy_sell_per_row_output_df['account_value'][index] = summary_statistics_sql_buy_sell_per_row_output_df['account_value'][index-1] + summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss_10k'][index]
         
 
+    summary_statistics_sql_buy_sell_per_row_output_df['earliest_date'] = input_df['earliest_date'].iloc[0]
+    summary_statistics_sql_buy_sell_per_row_output_df['latest_date'] = input_df['latest_date'].iloc[0]
+    
     # Output
     # print("\n\n\n\n summary_statistics_sql_buy_sell_per_row_output_df \n\n")
     # print(summary_statistics_sql_buy_sell_per_row_output_df.head(150))
@@ -632,12 +636,16 @@ def overall_summary (input_df, trading_hours, stategy_name, symbol_name) :
     }
 
     overall_summary_df = pd.DataFrame([metrics])
-    # print("\n\n\n\n overall_summary_df \n\n")
-    # print(overall_summary_df.head(150))
 
+    overall_summary_df['earliest_date'] = input_df['earliest_date'].iloc[0]
+    overall_summary_df['latest_date'] = input_df['latest_date'].iloc[0]
+    
     overall_summary_df['trading_hours'] = trading_hours
     overall_summary_df['stategy_name'] = stategy_name
     overall_summary_df['symbol_name'] = symbol_name
+
+    # print("\n\n\n\n overall_summary_df \n\n")
+    # print(overall_summary_df.head(150))
 
     global consolidatedl_summary_overall_df
     consolidatedl_summary_overall_df = pd.concat([consolidatedl_summary_overall_df, overall_summary_df], ignore_index=True)
@@ -731,30 +739,51 @@ print("\n\n PROGRAM START TIME : " + datetime.datetime.now().strftime("%Y-%m-%d 
 execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'NVDA' )
 execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SPY' )
 execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SOXS' )
+execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "qqq_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'QQQ' )
+execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "aapl_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'AAPL' )
+execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name = "sbux_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SBUX' )
 
 execute_testing_strategy_rsi_30_70 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'NVDA' )
 execute_testing_strategy_rsi_30_70 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SPY' )
 execute_testing_strategy_rsi_30_70 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SOXS' )
+execute_testing_strategy_rsi_30_70 (csv_name = "qqq_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'QQQ' )
+execute_testing_strategy_rsi_30_70 (csv_name = "aapl_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'AAPL' )
+execute_testing_strategy_rsi_30_70 (csv_name = "sbux_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SBUX' )
 
 execute_testing_strategy_v_shape (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'NVDA' )
 execute_testing_strategy_v_shape (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SPY' )
 execute_testing_strategy_v_shape (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SOXS' )
+execute_testing_strategy_v_shape (csv_name = "qqq_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'QQQ' )
+execute_testing_strategy_v_shape (csv_name = "aapl_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'AAPL' )
+execute_testing_strategy_v_shape (csv_name = "sbux_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SBUX' )
 
 execute_testing_strategy_rsi_40_60 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'NVDA' )
 execute_testing_strategy_rsi_40_60 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SPY' )
 execute_testing_strategy_rsi_40_60 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SOXS' )
+execute_testing_strategy_rsi_40_60 (csv_name = "qqq_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'QQQ' )
+execute_testing_strategy_rsi_40_60 (csv_name = "aapl_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'AAPL' )
+execute_testing_strategy_rsi_40_60 (csv_name = "sbux_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SBUX' )
 
 execute_testing_strategy_rsi_20_80 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'NVDA' )
 execute_testing_strategy_rsi_20_80 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SPY' )
 execute_testing_strategy_rsi_20_80 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SOXS' )
+execute_testing_strategy_rsi_20_80 (csv_name = "qqq_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'QQQ' )
+execute_testing_strategy_rsi_20_80 (csv_name = "aapl_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'AAPL' )
+execute_testing_strategy_rsi_20_80 (csv_name = "sbux_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SBUX' )
 
 execute_testing_strategy_v_shape_and_rsi_40_60 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'NVDA' )
 execute_testing_strategy_v_shape_and_rsi_40_60 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SPY' )
 execute_testing_strategy_v_shape_and_rsi_40_60 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SOXS' )
+execute_testing_strategy_v_shape_and_rsi_40_60 (csv_name = "qqq_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'QQQ' )
+execute_testing_strategy_v_shape_and_rsi_40_60 (csv_name = "aapl_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'AAPL' )
+execute_testing_strategy_v_shape_and_rsi_40_60 (csv_name = "sbux_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SBUX' )
 
 execute_testing_strategy_v_shape_and_rsi_20_80 (csv_name = "nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'NVDA' )
 execute_testing_strategy_v_shape_and_rsi_20_80 (csv_name = "spy_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SPY' )
 execute_testing_strategy_v_shape_and_rsi_20_80 (csv_name = "soxs_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SOXS' )
+execute_testing_strategy_v_shape_and_rsi_20_80 (csv_name = "qqq_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'QQQ' )
+execute_testing_strategy_v_shape_and_rsi_20_80 (csv_name = "aapl_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'AAPL' )
+execute_testing_strategy_v_shape_and_rsi_20_80 (csv_name = "sbux_1m_01-may-2023_to_01-june-2023_regular_hours.csv", trading_hours = 'regular_trading_hours', symbol_name = 'SBUX' )
 
 
 
