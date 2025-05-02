@@ -1,5 +1,5 @@
 models:
-  - name: buy_sell_personal_backtesting_1m_consolidated_summary_per_trade
+  - name: consolidated_summary_per_trade
     config:
       tags: ['lightdash']
     columns:
