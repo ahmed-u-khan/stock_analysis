@@ -4,6 +4,7 @@ models:
       tags: ['lightdash']
     meta:
       label: 'consolidated_summary_overall'
+      order_fields_by: 'index'
     columns:
       - name: int64_field_0
         description: ""
