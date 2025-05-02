@@ -1,7 +1,9 @@
 models:
-  - name: consolidated_summary_per_trade
+  - name: buy_sell_personal_backtesting_1m_consolidated_summary_per_trade
     config:
       tags: ['lightdash']
+    meta:
+      label: 'consolidated_summary_per_trade'
     columns:
       - name: int64_field_0
         description: ""

@@ -1,7 +1,9 @@
 models:
-  - name: consolidated_detailed
+  - name: buy_sell_personal_backtesting_1m_consolidated_detailed
     config:
       tags: ['lightdash']
+    meta:
+      label: 'consolidated_detailed'
     columns:
       - name: int64_field_0
         description: ""

@@ -1,7 +1,9 @@
 models:
-  - name: consolidated_summary_overall
+  - name: buy_sell_personal_backtesting_1m_consolidated_summary_overall
     config:
       tags: ['lightdash']
+    meta:
+      label: 'consolidated_summary_overall'
     columns:
       - name: int64_field_0
         description: ""
