@@ -41,12 +41,20 @@ def buy_sell_analysis_input_dataset(csv_name) :
 
     analysis_df = ticker_data_csv_df_og.copy(deep=False)
     analysis_df = ticker_data_csv_df_og[["datetime_est","close","volume","rsi_14"]]
+    
     analysis_df['hour'] = analysis_df['datetime_est'].str.split(' ').str[1].str.split(':').str[0].astype(int)
     analysis_df['minute'] = analysis_df['datetime_est'].str.split(' ').str[1].str.split(':').str[1].astype(int)
     analysis_df['hour_minute_int'] = analysis_df['hour'] * 100 + analysis_df['minute']
+    
     analysis_df['date'] = analysis_df['datetime_est'].str.split().str[0]
     analysis_df['earliest_date'] = analysis_df['date'].iloc[0]
     analysis_df['latest_date'] = analysis_df['date'].iloc[-1]
+
+    regular_trading_hours_first_close_price = analysis_df.loc[(analysis_df['hour_minute_int'] == 930) & (analysis_df['date'] == analysis_df['earliest_date'][0]), 'close'].iloc[0]
+    regular_trading_hours_last_close_price = analysis_df.loc[(analysis_df['hour_minute_int'] == 1559) & (analysis_df['date'] == analysis_df['latest_date'][0]), 'close'].iloc[0]
+    analysis_df['regular_trading_hours_first_close_price'] = regular_trading_hours_first_close_price
+    analysis_df['regular_trading_hours_last_close_price'] = regular_trading_hours_last_close_price
+    
     # analysis_df.index = pd.DatetimeIndex(ticker_data_csv_df_og["datetime_est"])
 
 
@@ -70,6 +78,14 @@ def buy_sell_analysis_input_dataset(csv_name) :
     buy_sell_df["sell_int"] = ""
 
     return (buy_sell_df)
+    
+#     return (regular_trading_hours_first_close_price)
+
+# print('\n\n\n')
+# print(buy_sell_analysis_input_dataset("nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv"))
+# print('\n\n\n')
+# print(type(buy_sell_analysis_input_dataset("nvda_1m_01-may-2023_to_01-june-2023_regular_hours.csv")))
+# print('\n\n\n')
 
 ###############################################################################################################################################
 ###############################################################################################################################################
@@ -79,7 +95,7 @@ def buy_sell_analysis_input_dataset(csv_name) :
 
 
 
-def trading_strategy_v_shape_and_rsi_30_70(input_df, trading_hours, stategy_name, symbol_name) :
+def trading_strategy_v_shape_and_rsi_30_70(input_df, trading_hours, strategy_name, symbol_name) :
 
     buy_sell_df = input_df
 
@@ -122,20 +138,20 @@ def trading_strategy_v_shape_and_rsi_30_70(input_df, trading_hours, stategy_name
     # print(buy_sell_df.head(150))
 
     buy_sell_df['trading_hours'] = trading_hours
-    buy_sell_df['stategy_name'] = stategy_name
+    buy_sell_df['strategy_name'] = strategy_name
     buy_sell_df['symbol_name'] = symbol_name
 
     global consolidated_detailed_df
     consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
     
-    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+    # buy_sell_df.to_csv(symbol_name+"_"+strategy_name+"_"+trading_hours+"_"+"detailed.csv")
 
     return (buy_sell_df)
     
 
 
 
-def trading_strategy_v_shape_and_rsi_20_80(input_df, trading_hours, stategy_name, symbol_name) :
+def trading_strategy_v_shape_and_rsi_20_80(input_df, trading_hours, strategy_name, symbol_name) :
 
     buy_sell_df = input_df
 
@@ -178,20 +194,20 @@ def trading_strategy_v_shape_and_rsi_20_80(input_df, trading_hours, stategy_name
     # print(buy_sell_df.head(150))
 
     buy_sell_df['trading_hours'] = trading_hours
-    buy_sell_df['stategy_name'] = stategy_name
+    buy_sell_df['strategy_name'] = strategy_name
     buy_sell_df['symbol_name'] = symbol_name
 
     global consolidated_detailed_df
     consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
     
-    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+    # buy_sell_df.to_csv(symbol_name+"_"+strategy_name+"_"+trading_hours+"_"+"detailed.csv")
 
     return (buy_sell_df)
     
 
 
 
-def trading_strategy_v_shape_and_rsi_40_60(input_df, trading_hours, stategy_name, symbol_name) :
+def trading_strategy_v_shape_and_rsi_40_60(input_df, trading_hours, strategy_name, symbol_name) :
 
     buy_sell_df = input_df
 
@@ -234,20 +250,20 @@ def trading_strategy_v_shape_and_rsi_40_60(input_df, trading_hours, stategy_name
     # print(buy_sell_df.head(150))
 
     buy_sell_df['trading_hours'] = trading_hours
-    buy_sell_df['stategy_name'] = stategy_name
+    buy_sell_df['strategy_name'] = strategy_name
     buy_sell_df['symbol_name'] = symbol_name
 
     global consolidated_detailed_df
     consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
     
-    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+    # buy_sell_df.to_csv(symbol_name+"_"+strategy_name+"_"+trading_hours+"_"+"detailed.csv")
 
     return (buy_sell_df)
     
 
 
 
-def trading_strategy_rsi_30_70(input_df, trading_hours, stategy_name, symbol_name) :
+def trading_strategy_rsi_30_70(input_df, trading_hours, strategy_name, symbol_name) :
 
     buy_sell_df = input_df
 
@@ -287,20 +303,20 @@ def trading_strategy_rsi_30_70(input_df, trading_hours, stategy_name, symbol_nam
     # print(buy_sell_df.head(150))
 
     buy_sell_df['trading_hours'] = trading_hours
-    buy_sell_df['stategy_name'] = stategy_name
+    buy_sell_df['strategy_name'] = strategy_name
     buy_sell_df['symbol_name'] = symbol_name
 
     global consolidated_detailed_df
     consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
     
-    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+    # buy_sell_df.to_csv(symbol_name+"_"+strategy_name+"_"+trading_hours+"_"+"detailed.csv")
 
     return (buy_sell_df)
     
 
 
 
-def trading_strategy_rsi_20_80(input_df, trading_hours, stategy_name, symbol_name) :
+def trading_strategy_rsi_20_80(input_df, trading_hours, strategy_name, symbol_name) :
 
     buy_sell_df = input_df
 
@@ -340,20 +356,20 @@ def trading_strategy_rsi_20_80(input_df, trading_hours, stategy_name, symbol_nam
     # print(buy_sell_df.head(150))
 
     buy_sell_df['trading_hours'] = trading_hours
-    buy_sell_df['stategy_name'] = stategy_name
+    buy_sell_df['strategy_name'] = strategy_name
     buy_sell_df['symbol_name'] = symbol_name
 
     global consolidated_detailed_df
     consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
     
-    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+    # buy_sell_df.to_csv(symbol_name+"_"+strategy_name+"_"+trading_hours+"_"+"detailed.csv")
 
     return (buy_sell_df)
     
 
 
 
-def trading_strategy_rsi_40_60(input_df, trading_hours, stategy_name, symbol_name) :
+def trading_strategy_rsi_40_60(input_df, trading_hours, strategy_name, symbol_name) :
 
     buy_sell_df = input_df
 
@@ -393,20 +409,20 @@ def trading_strategy_rsi_40_60(input_df, trading_hours, stategy_name, symbol_nam
     # print(buy_sell_df.head(150))
 
     buy_sell_df['trading_hours'] = trading_hours
-    buy_sell_df['stategy_name'] = stategy_name
+    buy_sell_df['strategy_name'] = strategy_name
     buy_sell_df['symbol_name'] = symbol_name
 
     global consolidated_detailed_df
     consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
     
-    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+    # buy_sell_df.to_csv(symbol_name+"_"+strategy_name+"_"+trading_hours+"_"+"detailed.csv")
 
     return (buy_sell_df)
     
 
 
 
-def trading_strategy_v_shape(input_df, trading_hours, stategy_name, symbol_name) :
+def trading_strategy_v_shape(input_df, trading_hours, strategy_name, symbol_name) :
 
     buy_sell_df = input_df
 
@@ -451,13 +467,13 @@ def trading_strategy_v_shape(input_df, trading_hours, stategy_name, symbol_name)
     # print(buy_sell_df.head(150))
 
     buy_sell_df['trading_hours'] = trading_hours
-    buy_sell_df['stategy_name'] = stategy_name
+    buy_sell_df['strategy_name'] = strategy_name
     buy_sell_df['symbol_name'] = symbol_name
 
     global consolidated_detailed_df
     consolidated_detailed_df = pd.concat([consolidated_detailed_df, buy_sell_df], ignore_index=True)
     
-    # buy_sell_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"detailed.csv")
+    # buy_sell_df.to_csv(symbol_name+"_"+strategy_name+"_"+trading_hours+"_"+"detailed.csv")
 
     return (buy_sell_df)
 
@@ -469,7 +485,7 @@ def trading_strategy_v_shape(input_df, trading_hours, stategy_name, symbol_name)
 ###############################################################################################################################################
 ###############################################################################################################################################
 
-def per_trade_summary (input_df, trading_hours, stategy_name, symbol_name) :
+def per_trade_summary (input_df, trading_hours, strategy_name, symbol_name) :
 
     summary_statistics_df = input_df
 
@@ -574,19 +590,21 @@ def per_trade_summary (input_df, trading_hours, stategy_name, symbol_name) :
 
     summary_statistics_sql_buy_sell_per_row_output_df['earliest_date'] = input_df['earliest_date'].iloc[0]
     summary_statistics_sql_buy_sell_per_row_output_df['latest_date'] = input_df['latest_date'].iloc[0]
+    summary_statistics_sql_buy_sell_per_row_output_df['regular_trading_hours_first_close_price'] = input_df['regular_trading_hours_first_close_price'].iloc[0]
+    summary_statistics_sql_buy_sell_per_row_output_df['regular_trading_hours_last_close_price'] = input_df['regular_trading_hours_last_close_price'].iloc[0]
     
     # Output
     # print("\n\n\n\n summary_statistics_sql_buy_sell_per_row_output_df \n\n")
     # print(summary_statistics_sql_buy_sell_per_row_output_df.head(150))
 
     summary_statistics_sql_buy_sell_per_row_output_df['trading_hours'] = trading_hours
-    summary_statistics_sql_buy_sell_per_row_output_df['stategy_name'] = stategy_name
+    summary_statistics_sql_buy_sell_per_row_output_df['strategy_name'] = strategy_name
     summary_statistics_sql_buy_sell_per_row_output_df['symbol_name'] = symbol_name
 
     global consolidated_summary_per_trade_df
     consolidated_summary_per_trade_df = pd.concat([consolidated_summary_per_trade_df, summary_statistics_sql_buy_sell_per_row_output_df], ignore_index=True)
     
-    # summary_statistics_sql_buy_sell_per_row_output_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"summary_per_trade.csv")
+    # summary_statistics_sql_buy_sell_per_row_output_df.to_csv(symbol_name+"_"+strategy_name+"_"+trading_hours+"_"+"summary_per_trade.csv")
 
     return (summary_statistics_sql_buy_sell_per_row_output_df)
 
@@ -596,13 +614,13 @@ def per_trade_summary (input_df, trading_hours, stategy_name, symbol_name) :
 ###############################################################################################################################################
 ###############################################################################################################################################
 
-def overall_summary (input_df, trading_hours, stategy_name, symbol_name) :
+def overall_summary (input_df, trading_hours, strategy_name, symbol_name) :
 
     summary_statistics_sql_buy_sell_per_row_output_df = input_df
 
     profit_amount = round( summary_statistics_sql_buy_sell_per_row_output_df['account_value'].iloc[-1] - summary_statistics_sql_buy_sell_per_row_output_df['account_value'].iloc[0] )
     profit_pct = round( ( ( summary_statistics_sql_buy_sell_per_row_output_df['account_value'].iloc[-1] / summary_statistics_sql_buy_sell_per_row_output_df['account_value'].iloc[0] ) -1 ) * 100 )
-    buy_and_hold_profit_amount = round( ( summary_statistics_sql_buy_sell_per_row_output_df['txn_close_sell'].iloc[-1] - summary_statistics_sql_buy_sell_per_row_output_df['txn_close_buy'].iloc[1] ) * 10000 )
+    buy_and_hold_profit_amount = round( ( summary_statistics_sql_buy_sell_per_row_output_df['regular_trading_hours_last_close_price'].iloc[-1] - summary_statistics_sql_buy_sell_per_row_output_df['regular_trading_hours_first_close_price'].iloc[1] ) * 10000 )
     buy_and_hold_profit_pct = round( ( ( ( buy_and_hold_profit_amount + 10000 ) / 10000 ) - 1 ) * 100 )
 
     number_of_trades = (summary_statistics_sql_buy_sell_per_row_output_df['trade_count'] > 0).sum()
@@ -610,18 +628,6 @@ def overall_summary (input_df, trading_hours, stategy_name, symbol_name) :
     number_of_trades_tied = (summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss'] == 0).sum()
     number_of_trades_lost = (summary_statistics_sql_buy_sell_per_row_output_df['profit_and_loss'] < 0).sum()
     trade_win_pct = round( ( ( number_of_trades_won / number_of_trades ) * 100.0 ) )
-
-    # print("###############################################################################################################################################")
-    # print(f"\n\n profit_amount: ${profit_amount:,} \n\n")
-    # print(f"\n\n profit_pct: {profit_pct:}% \n\n")
-    # print(f"\n\n buy_and_hold_profit_amount: ${buy_and_hold_profit_amount:,} \n\n")
-    # print(f"\n\n buy_and_hold_profit_pct: {buy_and_hold_profit_pct:}% \n\n")
-    # print(f"\n\n number_of_trades: {number_of_trades:} \n\n")
-    # print(f"\n\n number_of_trades_won: {number_of_trades_won:} \n\n")
-    # print(f"\n\n number_of_trades_tied: {number_of_trades_tied:} \n\n")
-    # print(f"\n\n number_of_trades_lost: {number_of_trades_lost:} \n\n")
-    # print(f"\n\n trade_win_pct: {trade_win_pct:}% \n\n")
-    # print("###############################################################################################################################################")
 
     metrics = {
         "profit_amount": profit_amount,
@@ -641,7 +647,7 @@ def overall_summary (input_df, trading_hours, stategy_name, symbol_name) :
     overall_summary_df['latest_date'] = input_df['latest_date'].iloc[0]
     
     overall_summary_df['trading_hours'] = trading_hours
-    overall_summary_df['stategy_name'] = stategy_name
+    overall_summary_df['strategy_name'] = strategy_name
     overall_summary_df['symbol_name'] = symbol_name
 
     # print("\n\n\n\n overall_summary_df \n\n")
@@ -650,7 +656,7 @@ def overall_summary (input_df, trading_hours, stategy_name, symbol_name) :
     global consolidatedl_summary_overall_df
     consolidatedl_summary_overall_df = pd.concat([consolidatedl_summary_overall_df, overall_summary_df], ignore_index=True)
     
-    # overall_summary_df.to_csv(symbol_name+"_"+stategy_name+"_"+trading_hours+"_"+"summary_overall.csv")
+    # overall_summary_df.to_csv(symbol_name+"_"+strategy_name+"_"+trading_hours+"_"+"summary_overall.csv")
 
     return (overall_summary_df)
 
@@ -662,67 +668,67 @@ def overall_summary (input_df, trading_hours, stategy_name, symbol_name) :
 
 def execute_testing_strategy_v_shape_and_rsi_30_70 (csv_name, trading_hours, symbol_name ):
 
-    trading_strategy_df = trading_strategy_v_shape_and_rsi_30_70(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, stategy_name = 'v_shape_and_rsi_30_70', symbol_name = symbol_name)
+    trading_strategy_df = trading_strategy_v_shape_and_rsi_30_70(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, strategy_name = 'v_shape_and_rsi_30_70', symbol_name = symbol_name)
     
-    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, stategy_name = 'v_shape_and_rsi_30_70', symbol_name = symbol_name)
+    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, strategy_name = 'v_shape_and_rsi_30_70', symbol_name = symbol_name)
     
-    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, stategy_name = 'v_shape_and_rsi_30_70', symbol_name = symbol_name)
+    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, strategy_name = 'v_shape_and_rsi_30_70', symbol_name = symbol_name)
 
 
 def execute_testing_strategy_rsi_30_70 (csv_name, trading_hours, symbol_name ):
 
-    trading_strategy_df = trading_strategy_rsi_30_70(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, stategy_name = 'rsi_30_70', symbol_name = symbol_name)
+    trading_strategy_df = trading_strategy_rsi_30_70(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, strategy_name = 'rsi_30_70', symbol_name = symbol_name)
     
-    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, stategy_name = 'rsi_30_70', symbol_name = symbol_name)
+    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, strategy_name = 'rsi_30_70', symbol_name = symbol_name)
     
-    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, stategy_name = 'rsi_30_70', symbol_name = symbol_name)
+    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, strategy_name = 'rsi_30_70', symbol_name = symbol_name)
 
 
 def execute_testing_strategy_v_shape (csv_name, trading_hours, symbol_name ):
 
-    trading_strategy_df = trading_strategy_v_shape(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, stategy_name = 'v_shape', symbol_name = symbol_name)
+    trading_strategy_df = trading_strategy_v_shape(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, strategy_name = 'v_shape', symbol_name = symbol_name)
     
-    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, stategy_name = 'v_shape', symbol_name = symbol_name)
+    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, strategy_name = 'v_shape', symbol_name = symbol_name)
     
-    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, stategy_name = 'v_shape', symbol_name = symbol_name)
+    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, strategy_name = 'v_shape', symbol_name = symbol_name)
 
 
 def execute_testing_strategy_rsi_40_60 (csv_name, trading_hours, symbol_name ):
 
-    trading_strategy_df = trading_strategy_rsi_40_60(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, stategy_name = 'rsi_40_60', symbol_name = symbol_name)
+    trading_strategy_df = trading_strategy_rsi_40_60(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, strategy_name = 'rsi_40_60', symbol_name = symbol_name)
     
-    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, stategy_name = 'rsi_40_60', symbol_name = symbol_name)
+    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, strategy_name = 'rsi_40_60', symbol_name = symbol_name)
     
-    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, stategy_name = 'rsi_40_60', symbol_name = symbol_name)
+    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, strategy_name = 'rsi_40_60', symbol_name = symbol_name)
 
 
 
 def execute_testing_strategy_rsi_20_80 (csv_name, trading_hours, symbol_name ):
 
-    trading_strategy_df = trading_strategy_rsi_20_80(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, stategy_name = 'rsi_20_80', symbol_name = symbol_name)
+    trading_strategy_df = trading_strategy_rsi_20_80(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, strategy_name = 'rsi_20_80', symbol_name = symbol_name)
     
-    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, stategy_name = 'rsi_20_80', symbol_name = symbol_name)
+    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, strategy_name = 'rsi_20_80', symbol_name = symbol_name)
     
-    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, stategy_name = 'rsi_20_80', symbol_name = symbol_name)
+    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, strategy_name = 'rsi_20_80', symbol_name = symbol_name)
 
 
 
 def execute_testing_strategy_v_shape_and_rsi_40_60 (csv_name, trading_hours, symbol_name ):
 
-    trading_strategy_df = trading_strategy_v_shape_and_rsi_40_60(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, stategy_name = 'v_shape_and_rsi_40_60', symbol_name = symbol_name)
+    trading_strategy_df = trading_strategy_v_shape_and_rsi_40_60(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, strategy_name = 'v_shape_and_rsi_40_60', symbol_name = symbol_name)
     
-    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, stategy_name = 'v_shape_and_rsi_40_60', symbol_name = symbol_name)
+    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, strategy_name = 'v_shape_and_rsi_40_60', symbol_name = symbol_name)
     
-    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, stategy_name = 'v_shape_and_rsi_40_60', symbol_name = symbol_name)
+    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, strategy_name = 'v_shape_and_rsi_40_60', symbol_name = symbol_name)
 
 
 def execute_testing_strategy_v_shape_and_rsi_20_80 (csv_name, trading_hours, symbol_name ):
 
-    trading_strategy_df = trading_strategy_v_shape_and_rsi_20_80(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, stategy_name = 'v_shape_and_rsi_20_80', symbol_name = symbol_name)
+    trading_strategy_df = trading_strategy_v_shape_and_rsi_20_80(input_df = buy_sell_analysis_input_dataset(csv_name), trading_hours = trading_hours, strategy_name = 'v_shape_and_rsi_20_80', symbol_name = symbol_name)
     
-    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, stategy_name = 'v_shape_and_rsi_20_80', symbol_name = symbol_name)
+    per_trade_summary_df = per_trade_summary(input_df = trading_strategy_df, trading_hours = trading_hours, strategy_name = 'v_shape_and_rsi_20_80', symbol_name = symbol_name)
     
-    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, stategy_name = 'v_shape_and_rsi_20_80', symbol_name = symbol_name)
+    overall_summary_df = overall_summary(input_df = per_trade_summary_df, trading_hours = trading_hours, strategy_name = 'v_shape_and_rsi_20_80', symbol_name = symbol_name)
 
 
 ###############################################################################################################################################
