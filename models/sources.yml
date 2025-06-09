@@ -12,7 +12,9 @@ sources:
 
       - name: all_others_stock_history
 
-      - name: polygon_all_different_stock_histories_1m
+      - name: polygon_all_different_stock_histories_1m_etl_date_2025_04_17
+
+      - name: polygon_all_different_stock_histories_1m_elt_date_2025_06_09
 
       - name: buy_sell_personal_backtesting_1m_consolidated_detailed
 
